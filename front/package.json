@@ -1,6 +1,7 @@
 {
   "name": "front",
   "version": "0.1.0",
+  "description": "Frontend code for HubX Consulting",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
