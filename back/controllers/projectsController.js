@@ -1,29 +1,39 @@
 const Project = require('../models/Project')
+const User = require('../models/User')
 const asyncHandler = require('express-async-handler')
 
 // @desc Get all projects
 // @route GET /projects
 // @access Private
 const getAllProjects = asyncHandler(async (req, res) => {
-  const projects = await Project.find().select().lean()
+  // Get all project from MongoDB
+  const projects = await Project.find().lean()
+
+  // If no projects
   if (!projects?.length) {
     return res.status(400).json({message: 'No projects found'})
   }
-  res.json(projects)
+
+  // Add username to each project before sending the response
+  const projectsWithUser = await Promise.all(projects.map(async (project) => {
+    const user = await User.findById(project.creator).lean().exec()
+    return { ...project, username: user.username }
+  }))
+  res.json(projectsWithUser)
 })
 
 // @desc Create new project
 // @route POST /projects
 // @access Private
 const createNewProject = asyncHandler(async (req, res) => {
-  const { creator, title, category, text, assigner, assignees } = req.body
+  const { creator, title, category, text } = req.body
 
   // Validate data
   if (!creator || !title || !category || !text) {
-    return res.status(400).json({message: 'Some fields are required'})
+    return res.status(400).json({message: 'All fields are required'})
   }
 
-  const projectObj = { creator, title, category, text, assigner, assignees }
+  const projectObj = { creator, title, category, text }
 
   // Create and store new project
   const project = await Project.create(projectObj)
@@ -79,7 +89,7 @@ const deleteProject = asyncHandler(async (req, res) => {
   }
 
   const result = await project.deleteOne()
-  const msg = `Poject ${result.title} with ID ${result._id} deleted`
+  const msg = `Project ${result.title} with ID ${result._id} deleted`
   res.json(msg)
 })
 
