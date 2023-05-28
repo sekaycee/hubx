@@ -23,12 +23,12 @@ const createNewProject = asyncHandler(async (req, res) => {
     return res.status(400).json({message: 'Some fields are required'})
   }
 
-  const projectObj = { creator, title, category, text, assigner, assignees}
+  const projectObj = { creator, title, category, text, assigner, assignees }
 
   // Create and store new project
   const project = await Project.create(projectObj)
   if (project) { // created
-    res.status(201).json({message: `New project ${title} created`})
+    res.status(201).json({message: `New project: ${title} created`})
   } else {
     res.status(400).json({message: 'Invalid project data received'})
   }
@@ -50,6 +50,7 @@ const editProject = asyncHandler(async (req, res) => {
     return res.status(400).json({message: 'Project not found'})
   }
 
+  project.text = text
   project.title = title
   project.creator = creator
   project.category = category
@@ -59,7 +60,7 @@ const editProject = asyncHandler(async (req, res) => {
 
   const updatedProject = await project.save()
 
-  res.json({message: `Project ${updatedProject.title} updated`})
+  res.json({message: `Project: ${updatedProject.title} updated`})
 })
 
 // @desc Delete a project
