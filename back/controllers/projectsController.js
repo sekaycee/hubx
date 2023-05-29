@@ -33,15 +33,18 @@ const createNewProject = asyncHandler(async (req, res) => {
     return res.status(400).json({message: 'All fields are required'})
   }
 
-  const projectObj = { creator, title, category, text }
+  // Check for duplicate
+  const duplicate = await Project.findOne({title}).lean().exec()
+  if (duplicate) {
+    return res.status(409).json({message: 'Duplicate note title'})
+  }
 
   // Create and store new project
-  const project = await Project.create(projectObj)
-  if (project) { // created
-    res.status(201).json({message: `New project: ${title} created`})
-  } else {
-    res.status(400).json({message: 'Invalid project data received'})
+  const project = await Project.create({ creator, title, category, text })
+  if (project) { // Created
+    return res.status(201).json({message: 'New project created'})
   }
+  res.status(400).json({message: 'Invalid project data received'})
 })
 
 // @desc Edit a project

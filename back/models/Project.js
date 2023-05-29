@@ -14,6 +14,7 @@ const projectSchema = new Schema({
     },
     category: {
       type: String,
+      required: true,
       default: 'Translation'
     },
     text: {
