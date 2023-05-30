@@ -2,6 +2,7 @@ import { Routes, Route } from 'react-router-dom'
 import Layout from './components/Layout'
 import Home from './components/public/Home'
 import Login from './features/auth/Login'
+import Register from './features/auth/Register'
 import DashLayout from './components/dash/DashLayout'
 import Welcome from './features/auth/Welcome'
 import UsersList from './features/users/UsersList'
@@ -13,7 +14,8 @@ function App() {
       <Route path='/' element={<Layout />}>
         <Route index element={<Home />} />
         <Route path='login' element={<Login />} />
-        
+        <Route path='register' element={<Register />} />
+
         <Route path='dash' element={<DashLayout />}>
           <Route index element={<Welcome />} />
 
