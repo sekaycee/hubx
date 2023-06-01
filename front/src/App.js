@@ -15,20 +15,17 @@ function App() {
         <Route index element={<Home />} />
         <Route path='login' element={<Login />} />
         <Route path='register' element={<Register />} />
-
-        <Route path='dash' element={<DashLayout />}>
-          <Route index element={<Welcome />} />
-
-          <Route path='users'>
-            <Route index element={<UsersList />} />
-          </Route>
-
-          <Route path='projects'>
-            <Route index element={<ProjectsList />} />
-          </Route>
-        </Route>{/* end dash */}
-
       </Route>
+
+      <Route path='/dash' element={<DashLayout />}>
+        <Route index element={<Welcome />} />
+        <Route path='users'>
+          <Route index element={<UsersList />} />
+        </Route>
+        <Route path='projects'>
+          <Route index element={<ProjectsList />} />
+        </Route>
+      </Route>{/* end dash */}
     </Routes>
   )
 }
