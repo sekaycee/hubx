@@ -35,46 +35,46 @@ const Footer = () => {
         <div className="grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4">
           <div>
             <div class="text-xs font-semibold text-gray-800 tracking-wide uppercase">Category</div>
-            <a href="#" class="block mt-4 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400">
+            <a href="/services/" class="block mt-4 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400">
               Graphic Design
             </a>
-            <a href="#" class="block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400">
+            <a href="/services/" class="block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400">
               Digital Marketing
             </a>
-            <a href="#" class="block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400">
+            <a href="/services/" class="block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400">
               Writing and Translation
             </a>
-            <a href="#" class="block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400">
+            <a href="/services/" class="block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400">
               Programming
             </a>
-            <a href="#" class="block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400">
+            <a href="/services/" class="block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400">
               Consultation
             </a>
-            <a href="#" class="block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400">
+            <a href="/services/" class="block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400">
               Mentorship
             </a>
-            <a href="#" class="block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400">
+            <a href="/services/" class="block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400">
               Photography
             </a>
           </div>
           <div>
             <div class="text-xs font-semibold text-gray-800 tracking-wide uppercase">About</div>
-            <a href="#" class="block mt-4 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400">
+            <a href="/about/intro" class="block mt-4 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400">
               Introduction
             </a>
-            <a href="#" class="block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400">
+            <a href="/about/press" class="block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400">
               Press
             </a>
-            <a href="#" class="block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400">
+            <a href="/about/jobs" class="block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400">
               Careers
             </a>
-            <a href="#" class="block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400">
+            <a href="/about/license" class="block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400">
               Licensing
             </a>
-            <a href="#" class="block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400">
+            <a href="/about/privacy" class="block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400">
               Privacy Policy
             </a>
-            <a href="#" class="block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400">
+            <a href="/about/terms" class="block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400">
               Terms and Conditions
             </a>
           </div>
