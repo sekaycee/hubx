@@ -23,12 +23,12 @@ const Footer = () => {
           </a>
           <div className="mt-4 lg:max-w-sm">
             <p className="text-sm text-gray-800">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque laudantium, totam rem aperiam.
+              Welcome to HubX, the consultancy arm of HubX limited: 
+              Founded in March 2023 with UK company registration number 14722644.
             </p>
             <p className="mt-4 text-sm text-gray-800">
-              Eaque ipsa quae ab illo inventore veritatis et quasi architecto
-              beatae vitae dicta sunt explicabo.
+              At HubX, we believe that every student has the potential to succeed and excel, 
+              and it is our mission to help them realise their full potential.
             </p>
           </div>
         </div>
