@@ -1,4 +1,4 @@
-import { PenToSquare } from "react-bootstrap-icons"
+import { PencilSquare } from "react-bootstrap-icons"
 import { useNavigate } from 'react-router-dom'
 
 import { useSelector } from 'react-redux'
@@ -22,7 +22,7 @@ const User = ({ userId }) => {
               className="icon-button table__button"
               onClick={handleEdit}
           >
-            <PenToSquare />
+            <PencilSquare />
           </button>
         </td>
       </tr>
