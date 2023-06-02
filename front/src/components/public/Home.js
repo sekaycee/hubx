@@ -28,7 +28,7 @@ const Home = () => {
               >
                 Get started
               </a>
-              <a href="/services" className="text-sm font-semibold leading-6 text-gray-900">
+              <a href="/services" className="text-sm font-semibold leading-6 text-gray-900 hover:text-blue-700">
                 Learn more <span aria-hidden="true">→</span>
               </a>
             </div>
@@ -40,7 +40,7 @@ const Home = () => {
         <div className="grid gap-10 lg:grid-cols-2">
           <div className="flex flex-col justify-center md:pr-8 xl:pr-0 lg:max-w-lg">
             <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-blue-100">
-              <svg className="text-blue-900 w-7 h-7" viewBox="0 0 24 24">
+              <svg className="text-blue-700 w-7 h-7" viewBox="0 0 24 24">
                 <polyline
                   fill="none"
                   stroke="currentColor"
@@ -105,7 +105,7 @@ const Home = () => {
                 Connect with us
               </a>
               <a
-                href="/services/application" className="text-sm font-semibold leading-6 text-gray-900 ml-5">
+                href="/services/application" className="text-sm font-semibold leading-6 text-gray-900 ml-5 hover:text-blue-700">
                 Learn more <span aria-hidden="true">→</span>
               </a>
             </div>
@@ -167,7 +167,7 @@ const Home = () => {
               </svg>
               <span className="relative">Why</span>
             </span>{' '}
-            choose us?
+            <span className="inline-block text-blue-700">choose us?</span>
           </h2>
           <p className="text-base text-gray-700 md:text-lg">
             We believe there's no love or hate without reason, as such
@@ -344,7 +344,7 @@ const Home = () => {
               help you gain admission (paid/scholarship) to any university of your choice.
             </p>
             <div className="mt-2">
-              <a href="/services" className="text-sm font-semibold leading-6 text-gray-900">
+              <a href="/services" className="text-sm font-semibold leading-6 text-gray-900 hover:text-blue-700">
                 Learn more <span aria-hidden="true">→</span>
               </a>
             </div>
@@ -363,7 +363,7 @@ const Home = () => {
               help you through your application process.
             </p>
             <div className="mt-2">
-              <a href="/services" className="text-sm font-semibold leading-6 text-gray-900">
+              <a href="/services" className="text-sm font-semibold leading-6 text-gray-900 hover:text-blue-700">
                 Learn more <span aria-hidden="true">→</span>
               </a>
             </div>
@@ -381,7 +381,7 @@ const Home = () => {
               We provide guidance on affordable accomodation strategies and help you secure an accomodation for the duration of your studies.
             </p>
             <div className="mt-2">
-              <a href="/services" className="text-sm font-semibold leading-6 text-gray-900">
+              <a href="/services" className="text-sm font-semibold leading-6 text-gray-900 hover:text-blue-700">
                 Learn more <span aria-hidden="true">→</span>
               </a>
             </div>
