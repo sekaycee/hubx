@@ -1,4 +1,4 @@
-import { useGetUsersQuery } from "./usersApiSlice"
+import { useGetUsersQuery } from './usersApiSlice'
 import User from './User'
 
 const UsersList = () => {
@@ -14,7 +14,7 @@ const UsersList = () => {
   if (isLoading) content = <p>Loading...</p>
 
   if (isError) {
-      content = <p className="errmsg">{error?.data?.message}</p>
+      content = <p className='errmsg'>{error?.data?.message}</p>
   }
 
   if (isSuccess) {
@@ -24,12 +24,12 @@ const UsersList = () => {
         : null
 
     content = (
-      <table className="">
-        <thead className="">
+      <table className=''>
+        <thead className=''>
           <tr>
-            <th scope="col" className="">Username</th>
-            <th scope="col" className="">Roles</th>
-            <th scope="col" className="">Edit</th>
+            <th scope='col' className=''>Username</th>
+            <th scope='col' className=''>Roles</th>
+            <th scope='col' className=''>Edit</th>
           </tr>
         </thead>
         <tbody>

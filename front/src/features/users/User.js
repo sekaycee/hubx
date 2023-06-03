@@ -1,4 +1,4 @@
-import { PencilSquare } from "react-bootstrap-icons"
+import { PencilSquare } from 'react-bootstrap-icons'
 import { useNavigate } from 'react-router-dom'
 
 import { useSelector } from 'react-redux'
@@ -14,12 +14,12 @@ const User = ({ userId }) => {
     const cellStatus = user.active ? '' : 'table__cell--inactive'
 
     return (
-      <tr className="table__row user">
+      <tr className='table__row user'>
         <td className={`table__cell ${cellStatus}`}>{user.username}</td>
         <td className={`table__cell ${cellStatus}`}>{userRolesString}</td>
         <td className={`table__cell ${cellStatus}`}>
           <button
-              className="icon-button table__button"
+              className='icon-button table__button'
               onClick={handleEdit}
           >
             <PencilSquare />

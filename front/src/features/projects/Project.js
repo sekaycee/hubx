@@ -1,4 +1,4 @@
-import { PencilSquare } from "react-bootstrap-icons"
+import { PencilSquare } from 'react-bootstrap-icons'
 import { useNavigate } from 'react-router-dom'
 
 import { useSelector } from 'react-redux'
@@ -15,21 +15,21 @@ const Project = ({ projectId }) => {
       const handleEdit = () => navigate(`/dash/projects/${projectId}`)
 
       return (
-        <tr className="">
-          <td className="">
+        <tr className=''>
+          <td className=''>
             {project.completed
-              ? <span className="">Completed</span>
-              : <span className="">Open</span>
+              ? <span className=''>Completed</span>
+              : <span className=''>Open</span>
             }
           </td>
-          <td className="">{created}</td>
-          <td className="">{updated}</td>
-          <td className="">{project.title}</td>
-          <td className="">{project.creator}</td>
+          <td className=''>{created}</td>
+          <td className=''>{updated}</td>
+          <td className=''>{project.title}</td>
+          <td className=''>{project.creator}</td>
 
-          <td className="">
+          <td className=''>
             <button
-              className=""
+              className=''
               onClick={handleEdit}
             >
               <PencilSquare size={24} />

@@ -8,8 +8,8 @@ const Welcome = () => {
     <section>
       <p>{today}</p>
       <h1>Welcome</h1>
-      <p><Link to="/dash/projects">View Projects</Link></p>
-      <p><Link to="/dash/users">View User Setting</Link></p>
+      <p><Link to='/dash/projects'>View Projects</Link></p>
+      <p><Link to='/dash/users'>View User Setting</Link></p>
     </section>
   )
   return content

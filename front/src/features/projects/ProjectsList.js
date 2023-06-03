@@ -1,5 +1,5 @@
-import { useGetProjectsQuery } from "./projectsApiSlice"
-import Project from "./Project"
+import { useGetProjectsQuery } from './projectsApiSlice'
+import Project from './Project'
 
 const ProjectsList = () => {
   const {
@@ -14,7 +14,7 @@ const ProjectsList = () => {
   if (isLoading) content = <p>Loading...</p>
 
   if (isError) {
-    content = <p className="errmsg">{error?.data?.message}</p>
+    content = <p className='errmsg'>{error?.data?.message}</p>
   }
 
   if (isSuccess) {
@@ -25,15 +25,15 @@ const ProjectsList = () => {
       : null
 
     content = (
-      <table className="table table--projects">
-        <thead className="table__thead">
+      <table className='table table--projects'>
+        <thead className='table__thead'>
           <tr>
-            <th scope="col" className="">Creator</th>
-            <th scope="col" className="">Created</th>
-            <th scope="col" className="">Updated</th>
-            <th scope="col" className="">Title</th>
-            <th scope="col" className="">Owner</th>
-            <th scope="col" className="">Actions</th>
+            <th scope='col' className=''>Creator</th>
+            <th scope='col' className=''>Created</th>
+            <th scope='col' className=''>Updated</th>
+            <th scope='col' className=''>Title</th>
+            <th scope='col' className=''>Owner</th>
+            <th scope='col' className=''>Actions</th>
           </tr>
         </thead>
         <tbody>
