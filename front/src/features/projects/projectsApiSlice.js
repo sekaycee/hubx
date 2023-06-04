@@ -17,7 +17,6 @@ export const projectsApiSlice = apiSlice.injectEndpoints({
       validateStatus: (response, result) => {
         return response.status === 200 && !result.isError
       },
-      keepUnusedDataFor: 5,
       transformResponse: responseData => {
         const loadedProjects = responseData.map(project => {
           project.id = project._id
@@ -34,11 +33,48 @@ export const projectsApiSlice = apiSlice.injectEndpoints({
         } else return [{ type: 'Project', id: 'LIST' }]
       }
     }),
+    addNewProject: builder.mutation({
+      query: initialProject => ({
+        url: '/projects',
+        method: 'POST',
+        body: {
+          ...initialProject,
+        }
+      }),
+      invalidatesTags: [
+        { type: 'Project', id: 'LIST' }
+      ]
+    }),
+    updateProject: builder.mutation({
+      query: initialProject => ({
+        url: '/projects',
+        method: 'PATCH',
+        body: {
+          ...initialProject,
+        }
+      }),
+      invalidatesTags: (result, error, arg) => [
+        { type: 'Project', id: arg.id }
+      ]
+    }),
+    deleteProject: builder.mutation({
+      query: ({ id }) => ({
+        url: `/projects`,
+        method: 'DELETE',
+        body: { id }
+      }),
+      invalidatesTags: (result, error, arg) => [
+        { type: 'Project', id: arg.id }
+      ]
+    }),
   }),
 })
 
 export const {
   useGetProjectsQuery,
+  useAddNewProjectMutation,
+  useUpdateProjectMutation,
+  useDeleteProjectMutation,
 } = projectsApiSlice
 
 // returns the query result object
