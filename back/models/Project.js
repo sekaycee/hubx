@@ -14,7 +14,8 @@ const projectSchema = new Schema(
       required: true
     },
     category: {
-      type: String
+      type: String,
+      required: true
     },
     text: {
       type: String,
@@ -24,14 +25,20 @@ const projectSchema = new Schema(
       type: Boolean,
       default: false
     },
-    assigner: {
+    files: [{
+      name: String,
+      path: String
+    }],
+    thumbnails: [{
+      url: String,
+      title: String
+    }],
+    manager: {
       type: Schema.Types.ObjectId,
-      required: false,
       ref: 'User'
     },
-    assignees: [{
+    shareholders: [{
       type: Schema.Types.ObjectId,
-      required: false,
       ref: 'User'
     }]
   },

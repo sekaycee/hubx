@@ -29,10 +29,10 @@ const getAllProjects = asyncHandler(async (req, res) => {
 // @route POST /projects
 // @access Private
 const createNewProject = asyncHandler(async (req, res) => {
-  const { creator, title, text } = req.body
+  const { creator, title, category, text } = req.body
 
   // Confirm data
-  if (!creator || !title || !text) {
+  if (!creator || !title || !category || !text) {
     return res.status(400).json({ message: 'All fields are required' })
   }
 
@@ -43,7 +43,7 @@ const createNewProject = asyncHandler(async (req, res) => {
   }
 
   // Create and store the new project 
-  const project = await Project.create({ creator, title, text })
+  const project = await Project.create({ creator, title, category, text })
   if (project) { // Created 
     return res.status(201).json({ message: 'New project created' })
   } else {
@@ -55,10 +55,10 @@ const createNewProject = asyncHandler(async (req, res) => {
 // @route PATCH /projects
 // @access Private
 const editProject = asyncHandler(async (req, res) => {
-  const { id, creator, title, text, completed } = req.body
+  const { id, creator, title, category, text, completed, files, thumbnails, manager, shareholders } = req.body
 
   // Confirm data
-  if (!id || !creator || !title || !text || typeof completed !== 'boolean') {
+  if (!id || !creator || !title || !category || !text || typeof completed !== 'boolean') {
     return res.status(400).json({ message: 'All fields are required' })
   }
 
@@ -78,8 +78,13 @@ const editProject = asyncHandler(async (req, res) => {
 
   project.creator = creator
   project.title = title
+  project.category = category
   project.text = text
   project.completed = completed
+  project.files = files
+  project.thumbnails = thumbnails
+  project.manager = manager
+  project.shareholders = shareholders
 
   const updatedProject = await project.save()
 

@@ -5,23 +5,27 @@ const userSchema = new Schema({
     type: String,
     required: true
   },
+  email: {
+    type: String,
+    unique: true
+  },
+  phoneNumber: {
+    type: String
+  },
   password: {
     type: String,
     required: true
   },
   roles: [{
     type: String,
-    default: "Employee"
+    default: 'Client'
   }],
   active: {
     type: Boolean,
     default: true
-  },
-  projects: [{
-    type: Schema.Types.ObjectId,
-    required: false,
-    ref: 'Project'
-  }]
-})
+  }
+},
+{ timestamps: true }
+)
 
 module.exports = model('User', userSchema)
