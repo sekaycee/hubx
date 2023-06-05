@@ -2,7 +2,8 @@ const mongoose = require('mongoose')
 const { Schema, model } = mongoose
 const AutoIncrement = require('mongoose-sequence')(mongoose)
 
-const projectSchema = new Schema({
+const projectSchema = new Schema(
+  {
     creator: {
       type: Schema.Types.ObjectId,
       required: true,
@@ -13,13 +14,15 @@ const projectSchema = new Schema({
       required: true
     },
     category: {
-      type: String,
-      required: true,
-      default: 'Translation'
+      type: String
     },
     text: {
       type: String,
       required: true
+    },
+    completed: {
+      type: Boolean,
+      default: false
     },
     assigner: {
       type: Schema.Types.ObjectId,
@@ -30,11 +33,7 @@ const projectSchema = new Schema({
       type: Schema.Types.ObjectId,
       required: false,
       ref: 'User'
-    }],
-    completed: {
-      type: Boolean,
-      default: false
-    }
+    }]
   },
   {
     timestamps: true
@@ -42,9 +41,9 @@ const projectSchema = new Schema({
 )
 
 projectSchema.plugin(AutoIncrement, {
-  inc_field: 'code',
-  id: 'codeNums',
-  start_seq: 1000
+  inc_field: 'ticket',
+  id: 'ticketNums',
+  start_seq: 500
 })
 
 module.exports = model('Project', projectSchema)

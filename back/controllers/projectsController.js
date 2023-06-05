@@ -2,23 +2,26 @@ const Project = require('../models/Project')
 const User = require('../models/User')
 const asyncHandler = require('express-async-handler')
 
-// @desc Get all projects
+// @desc Get all projects 
 // @route GET /projects
 // @access Private
 const getAllProjects = asyncHandler(async (req, res) => {
-  // Get all project from MongoDB
+  // Get all projects from MongoDB
   const projects = await Project.find().lean()
 
-  // If no projects
+  // If no projects 
   if (!projects?.length) {
-    return res.status(400).json({message: 'No projects found'})
+    return res.status(400).json({ message: 'No projects found' })
   }
 
-  // Add username to each project before sending the response
+  // Add username to each project before sending the response 
+  // See Promise.all with map() here: https://youtu.be/4lqJBBEpjRE 
+  // You could also do this with a for...of loop
   const projectsWithUser = await Promise.all(projects.map(async (project) => {
     const user = await User.findById(project.creator).lean().exec()
-    return { ...project, username: user.username }
+    return { ...project, creator: user.username }
   }))
+
   res.json(projectsWithUser)
 })
 
@@ -26,48 +29,61 @@ const getAllProjects = asyncHandler(async (req, res) => {
 // @route POST /projects
 // @access Private
 const createNewProject = asyncHandler(async (req, res) => {
-  const { creator, title, category, text } = req.body
+  const { creator, title, text } = req.body
 
-  // Validate data
-  if (!creator || !title || !category || !text) {
-    return res.status(400).json({message: 'All fields are required'})
+  // Confirm data
+  if (!creator || !title || !text) {
+    return res.status(400).json({ message: 'All fields are required' })
   }
 
-  // Create and store new project
-  const project = await Project.create({ creator, title, category, text })
-  if (project) { // Created
-    return res.status(201).json({message: 'New project created'})
+  // Check for duplicate title
+  const duplicate = await Project.findOne({ title }).lean().exec()
+  if (duplicate) {
+    return res.status(409).json({ message: 'Duplicate project title' })
   }
-  return res.status(400).json({message: 'Invalid project data received'})
+
+  // Create and store the new project 
+  const project = await Project.create({ creator, title, text })
+  if (project) { // Created 
+    return res.status(201).json({ message: 'New project created' })
+  } else {
+    return res.status(400).json({ message: 'Invalid project data received' })
+  }
 })
 
-// @desc Edit a project
+// @desc Update a project
 // @route PATCH /projects
 // @access Private
 const editProject = asyncHandler(async (req, res) => {
-  const { id, creator, title, category, text, assigner, assignees, completed } = req.body
+  const { id, creator, title, text, completed } = req.body
 
-  // Validate data
-  if (!id || !creator || !title || !category || typeof completed !== 'boolean') {
-    return res.status(400).json({message: 'Some fields are required'})
+  // Confirm data
+  if (!id || !creator || !title || !text || typeof completed !== 'boolean') {
+    return res.status(400).json({ message: 'All fields are required' })
   }
 
+  // Confirm project exists to update
   const project = await Project.findById(id).exec()
   if (!project) {
-    return res.status(400).json({message: 'Project not found'})
+    return res.status(400).json({ message: 'Project not found' })
   }
 
-  project.text = text
-  project.title = title
+  // Check for duplicate title
+  const duplicate = await Project.findOne({ title }).lean().exec()
+
+  // Allow renaming of the original project 
+  if (duplicate && duplicate?._id.toString() !== id) {
+    return res.status(409).json({ message: 'Duplicate project title' })
+  }
+
   project.creator = creator
-  project.category = category
-  project.assigner = assigner
-  project.assignees = assignees
+  project.title = title
+  project.text = text
   project.completed = completed
 
   const updatedProject = await project.save()
 
-  res.json({message: `Project: ${updatedProject.title} updated`})
+  res.json(`'${updatedProject.title}' updated`)
 })
 
 // @desc Delete a project
@@ -76,18 +92,22 @@ const editProject = asyncHandler(async (req, res) => {
 const deleteProject = asyncHandler(async (req, res) => {
   const { id } = req.body
 
+  // Confirm data
   if (!id) {
-    return res.status(400).json({message: 'Project ID is required'})
+    return res.status(400).json({ message: 'Project ID required' })
   }
 
+  // Confirm project exists to delete 
   const project = await Project.findById(id).exec()
   if (!project) {
-    return res.status(400).json({message: 'Project not found'})
+    return res.status(400).json({ message: 'Project not found' })
   }
 
   const result = await project.deleteOne()
-  const msg = `Project ${result.title} with ID ${result._id} deleted`
-  res.json(msg)
+
+  const reply = `Project '${result.title}' with ID ${result._id} deleted`
+
+  res.json(reply)
 })
 
 module.exports = {
