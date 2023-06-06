@@ -44,11 +44,11 @@ const createNewProject = asyncHandler(async (req, res) => {
 
   // Create and store the new project 
   const project = await Project.create({ creator, title, category, text })
-  if (project) { // Created 
+  if (project) { // Created
     return res.status(201).json({ message: 'New project created' })
-  } else {
-    return res.status(400).json({ message: 'Invalid project data received' })
   }
+
+  return res.status(400).json({ message: 'Invalid project data received' })
 })
 
 // @desc Update a project

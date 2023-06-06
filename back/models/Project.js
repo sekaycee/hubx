@@ -6,7 +6,10 @@ const projectSchema = new Schema(
   {
     creator: {
       type: Schema.Types.ObjectId,
-      required: true,
+      ref: 'User'
+    },
+    user: {
+      type: Schema.Types.ObjectId,
       ref: 'User'
     },
     title: {
@@ -31,7 +34,7 @@ const projectSchema = new Schema(
     }],
     thumbnails: [{
       url: String,
-      title: String
+      caption: String
     }],
     manager: {
       type: Schema.Types.ObjectId,
