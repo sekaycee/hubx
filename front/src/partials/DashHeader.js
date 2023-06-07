@@ -5,7 +5,7 @@ import Help from './common/DropdownHelp'
 import UserMenu from './common/DropdownProfile'
 import ThemeToggle from './common/ThemeToggle'
 
-const Header = ({ sidebarOpen, setSidebarOpen }) => {
+const DashHeader = ({ sidebarOpen, setSidebarOpen }) => {
   const [searchModalOpen, setSearchModalOpen] = useState(false);
 
   return (
@@ -73,4 +73,4 @@ const Header = ({ sidebarOpen, setSidebarOpen }) => {
   )
 }
 
-export default Header
+export default DashHeader
