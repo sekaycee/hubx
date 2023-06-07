@@ -53,7 +53,7 @@ const DropdownProfile = ({
       </button>
 
       <Transition
-        className={`origin-top-right z-10 absolute top-full min-w-72 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 py-1.5 rounded shadow-lg overflow-hidden mt-1 ${align === 'right' ? 'right-0' : 'left-0'}`}
+        className={`origin-top-right z-10 absolute top-full min-w-72 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 py-1.5 rounded-md shadow-lg overflow-hidden mt-1 ${align === 'right' ? 'right-0' : 'left-0'}`}
         show={dropdownOpen}
         enter='transition ease-out duration-200 transform'
         enterStart='opacity-0 -translate-y-2'
@@ -67,15 +67,29 @@ const DropdownProfile = ({
           onFocus={() => setDropdownOpen(true)}
           onBlur={() => setDropdownOpen(false)}
         >
-          <div className='pt-0.5 pb-2 px-3 mb-1 border-b border-slate-200 dark:border-slate-700'>
-            <div className='font-medium text-slate-800 dark:text-slate-100'>Acme Inc.</div>
-            <div className='text-xs text-slate-500 dark:text-slate-400 italic'>Administrator</div>
+          <div className='flex pt-0.5 pb-2 px-3 mb-1 border-b border-slate-200 dark:border-slate-700'>
+            <div className='mr-3 mt-1'>
+              <img className='rounded' width={32} height={32} src='/img/logos/logo-square.png' alt='Profile' />
+            </div>
+            <div>
+              <div className='font-medium text-slate-800 dark:text-slate-100'>HubX Consulting</div>
+              <div className='text-xs text-slate-500 dark:text-slate-400 italic'>Administrator</div>
+            </div>
+            
           </div>
-          <div className='grid grid-cols-12 gap-0 items-center text-center'>
-            <a className='col-span-6 py-4 hover:bg-slate-100 border-r border-slate-200 dark:border-slate-700'>Profile</a>
-            <a className='col-span-6 py-4 border-slate-200 dark:border-slate-700'>Settings</a>
-            <a className='col-span-6 py-4 border-t border-r border-slate-200 dark:border-slate-700'>Account</a>
-            <a className='col-span-6 py-4 border-t border-slate-200 dark:border-slate-700'>Logout</a>
+          <div className='grid grid-cols-12 gap-0 items-center text-xs text-center'>
+            <a className='col-span-6 py-4 border-r border-slate-200 dark:border-slate-700' href='/'>
+              <span className='hover:text-slate-300'>Profile</span>
+            </a>
+            <a className='col-span-6 py-4 border-slate-200 dark:border-slate-700' href='/'>
+              <span className='hover:text-slate-300'>Settings</span>
+            </a>
+            <a className='col-span-6 py-4 border-t border-r border-slate-200 dark:border-slate-700' href='/'>
+              <span className='hover:text-slate-300'>Account</span>
+            </a>
+            <a className='col-span-6 py-4 border-t border-slate-200 dark:border-slate-700' href='/'>
+              <span className='hover:text-slate-300'>Logout</span>
+            </a>
           </div>
         </div>
       </Transition>
