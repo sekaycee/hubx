@@ -35,83 +35,83 @@ const Footer = () => {
         </div>
         <div className='grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4'>
           <div>
-            <div class='text-xs font-semibold text-gray-800 tracking-wide uppercase'>Category</div>
-            <a href='/services/' class='block mt-4 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
+            <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase'>Category</div>
+            <a href='/services/' className='block mt-4 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
               Graphic Design
             </a>
-            <a href='/services/' class='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
+            <a href='/services/' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
               Digital Marketing
             </a>
-            <a href='/services/' class='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
+            <a href='/services/' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
               Writing and Translation
             </a>
-            <a href='/services/' class='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
+            <a href='/services/' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
               Programming
             </a>
-            <a href='/services/' class='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
+            <a href='/services/' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
               Consultation
             </a>
-            <a href='/services/' class='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
+            <a href='/services/' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
               Mentorship
             </a>
-            <a href='/services/' class='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
+            <a href='/services/' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
               Photography
             </a>
           </div>
           <div>
-            <div class='text-xs font-semibold text-gray-800 tracking-wide uppercase'>About</div>
-            <a href='/about/intro' class='block mt-4 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
+            <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase'>About</div>
+            <a href='/about/intro' className='block mt-4 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
               Introduction
             </a>
-            <a href='/about/press' class='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
+            <a href='/about/press' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
               Press
             </a>
-            <a href='/about/jobs' class='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
+            <a href='/about/jobs' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
               Careers
             </a>
-            <a href='/about/license' class='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
+            <a href='/about/license' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
               Licensing
             </a>
-            <a href='/about/privacy' class='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
+            <a href='/about/privacy' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
               Privacy Policy
             </a>
-            <a href='/about/terms' class='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
+            <a href='/about/terms' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
               Terms and Conditions
             </a>
           </div>
           <div>
-            <div class='text-xs font-semibold text-gray-800 tracking-wide uppercase'>Support</div>
-            <a href='/support/' class='block mt-4 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
+            <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase'>Support</div>
+            <a href='/support/' className='block mt-4 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
               Help
             </a>
-            <a href='/support/' class='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
+            <a href='/support/' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
               Trust and Safety
             </a>
-            <a href='/support/' class='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
+            <a href='/support/' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
               FAQs
             </a>
-            <a href='/support/' class='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
+            <a href='/support/' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
               Inquiries
             </a>
-            <a href='/support/' class='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
+            <a href='/support/' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
               How Tos
             </a>
           </div>
           <div>
-            <div class='text-xs font-semibold text-gray-800 tracking-wide uppercase'>Company</div>
-            <a href='/company/' class='block mt-4 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
+            <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase'>Company</div>
+            <a href='/company/' className='block mt-4 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
               Leadership
             </a>
-            <a href='/company/' class='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
+            <a href='/company/' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
               Investors
             </a>
-            <a href='/company/' class='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
+            <a href='/company/' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
               Affiliates
             </a>
-            <a href='/company/' class='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
+            <a href='/company/' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
               Our Impact
             </a>
-            <a href='/company/' class='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
+            <a href='/company/' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
               Podcast
             </a>
           </div>
