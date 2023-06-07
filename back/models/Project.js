@@ -28,6 +28,8 @@ const projectSchema = new Schema(
       type: Boolean,
       default: false
     },
+    budget: Number,
+    due: Date,
     files: [{
       name: String,
       path: String
