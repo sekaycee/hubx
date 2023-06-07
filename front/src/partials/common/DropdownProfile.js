@@ -53,7 +53,7 @@ const DropdownProfile = ({
       </button>
 
       <Transition
-        className={`origin-top-right z-10 absolute top-full min-w-44 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 py-1.5 rounded shadow-lg overflow-hidden mt-1 ${align === 'right' ? 'right-0' : 'left-0'}`}
+        className={`origin-top-right z-10 absolute top-full min-w-72 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 py-1.5 rounded shadow-lg overflow-hidden mt-1 ${align === 'right' ? 'right-0' : 'left-0'}`}
         show={dropdownOpen}
         enter='transition ease-out duration-200 transform'
         enterStart='opacity-0 -translate-y-2'
@@ -71,26 +71,12 @@ const DropdownProfile = ({
             <div className='font-medium text-slate-800 dark:text-slate-100'>Acme Inc.</div>
             <div className='text-xs text-slate-500 dark:text-slate-400 italic'>Administrator</div>
           </div>
-          <ul>
-            <li>
-              <Link
-                className='font-medium text-sm text-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center py-1 px-3'
-                to='/settings'
-                onClick={() => setDropdownOpen(!dropdownOpen)}
-              >
-                Settings
-              </Link>
-            </li>
-            <li>
-              <Link
-                className='font-medium text-sm text-indigo-500 hover:text-indigo-600 dark:hover:text-indigo-400 flex items-center py-1 px-3'
-                to='/signin'
-                onClick={() => setDropdownOpen(!dropdownOpen)}
-              >
-                Sign Out
-              </Link>
-            </li>
-          </ul>
+          <div className='grid grid-cols-12 gap-0 items-center text-center'>
+            <a className='col-span-6 py-4 hover:bg-slate-100 border-r border-slate-200 dark:border-slate-700'>Profile</a>
+            <a className='col-span-6 py-4 border-slate-200 dark:border-slate-700'>Settings</a>
+            <a className='col-span-6 py-4 border-t border-r border-slate-200 dark:border-slate-700'>Account</a>
+            <a className='col-span-6 py-4 border-t border-slate-200 dark:border-slate-700'>Logout</a>
+          </div>
         </div>
       </Transition>
     </div>
