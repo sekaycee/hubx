@@ -1,5 +1,4 @@
 import React, { useState, useRef, useEffect } from 'react'
-import { Link } from 'react-router-dom'
 import Transition from '../../utils/Transition'
 
 import UserAvatar from '../../img/user-avatar-32.png'

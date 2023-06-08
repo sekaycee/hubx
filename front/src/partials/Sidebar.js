@@ -77,7 +77,7 @@ function Sidebar({ sidebarOpen, setSidebarOpen }) {
           {/* Logo */}
           <NavLink end to='/' className='block'>
             <div className='flex items-center justify-center w-8 h-8 rounded-full dark:bg-blue-100'>
-              <img color='blue' width='16' height='16' src='/media/logos/logo-default.svg' />
+              <img color='blue' width='16' height='16' src='/media/logos/logo-default.svg' alt='Logo' />
             </div>
           </NavLink>
         </div>
