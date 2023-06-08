@@ -15,7 +15,7 @@ const Footer = () => {
             <span className='text-xl font-bold tracking-wide text-gray-800 uppercase'>
               Hub
             </span>
-            <img width={16} height={16} src='/media/logos/logo-default.svg'/>
+            <img width={16} height={16} src='/media/logos/logo-default.svg' alt='Logo'/>
             <span className='ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase'>
               Consulting
             </span>
