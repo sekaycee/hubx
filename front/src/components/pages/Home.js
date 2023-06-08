@@ -2,7 +2,7 @@ import { React } from 'react'
 
 const Home = () => {
   const content = (
-    <main className='bg-white'>
+    <main>
       <section className='relative isolate px-6 pt-14 lg:px-8'>
         <div className='mx-auto max-w-2xl py-24 sm:py-48 lg:py-56'>
           <div className='hidden sm:mb-8 sm:flex sm:justify-center'>
