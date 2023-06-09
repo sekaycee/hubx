@@ -1,8 +1,11 @@
+import * as sv from './components/pages/services/Index'
+
 import React, { useEffect } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import Layout from './components/Layout'
 import Home from './components/pages/Home'
 import Login from './features/auth/Login'
+import Prefetch from './features/auth/Prefetch'
 import Register from './features/auth/Register'
 import DashLayout from './components/dash/DashLayout'
 import Welcome from './partials/dashboard/Welcome'
@@ -12,7 +15,6 @@ import EditUser from './features/users/EditUser'
 import NewUserForm from './features/users/NewUserForm'
 import EditProject from './features/projects/EditProject'
 import NewProject from './features/projects/NewProject'
-import Prefetch from './features/auth/Prefetch'
 
 function App() {
   const location = useLocation();
@@ -29,6 +31,24 @@ function App() {
         <Route index element={<Home />} />
         <Route path='login' element={<Login />} />
         <Route path='register' element={<Register />} />
+
+        <Route path='services/'>
+          <Route index element={<sv.Service />} />
+          <Route path='writing' element={<sv.Writing />} />
+          <Route path='translation' element={<sv.Translation />} />
+          <Route path='proofreading' element={<sv.Proofreading />} />
+          <Route path='cv-check' element={<sv.CVCheck />} />
+          <Route path='academic' element={<sv.Academic />} />
+          <Route path='career' element={<sv.Career />} />
+          <Route path='accommodation' element={<sv.Accommodation />} />
+          <Route path='conciarge' element={<sv.Conciarge />} />
+          <Route path='consultation' element={<sv.Consultation />} />
+          <Route path='design' element={<sv.Design />} />
+          <Route path='digital-marketing' element={<sv.DigitalMarketing />} />
+          <Route path='photography' element={<sv.Photography />} />
+          <Route path='programming' element={<sv.Programming />} />
+          <Route path='mentorship' element={<sv.Mentorship />} />
+        </Route>
       </Route>
 
       <Route element={<Prefetch />}>
