@@ -1,25 +1,35 @@
 import { Fragment, useState } from 'react'
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
 import {
-  ArrowPathIcon,
   Bars3Icon,
-  ChartPieIcon,
-  CursorArrowRaysIcon,
-  FingerPrintIcon,
-  SquaresPlusIcon,
+  PaperAirplaneIcon,
+  AcademicCapIcon,
+  BuildingOffice2Icon,
+  LightBulbIcon,
+  DocumentTextIcon,
   XMarkIcon,
+  HomeModernIcon,
+  NewspaperIcon,
+  IdentificationIcon,
+  LifebuoyIcon
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 
 const services = [
-  { name: 'Writing', description: 'Get a better understanding of your traffic', href: '/services/writing', icon: ChartPieIcon },
-  { name: 'Translation', description: 'Speak directly to your customers', href: '/services/translation', icon: CursorArrowRaysIcon },
-  { name: 'Mentorship', description: 'Your customers’ data will be safe and secure', href: '/services/mentorship', icon: FingerPrintIcon },
-  { name: 'Design', description: 'Connect with third-party tools', href: '/services/design', icon: SquaresPlusIcon },
-  { name: 'Programming', description: 'Build strategic funnels that will convert', href: '/services/coding', icon: ArrowPathIcon },
+  { name: 'Academic', description: 'Bootstrap your academic goals', href: '/services/academic', icon: AcademicCapIcon },
+  { name: 'Career', description: 'Get help fast-tracking your career goals', href: '/services/career', icon: BuildingOffice2Icon },
+  { name: 'Mentorship', description: 'Let our professors guide you', href: '/services/mentorship', icon: LightBulbIcon },
+  { name: 'CV Check', description: 'Check the validity of your CV and Resume', href: '/services/cv-check', icon: DocumentTextIcon },
+  { name: 'Conciarge', description: 'Get help moving from one place to another', href: '/services/conciarge', icon: PaperAirplaneIcon },
+]
+const about = [
+  { name: 'Introduction', description: 'Bootstrap and fast-track your academic|career goals', href: '/about/us', icon: HomeModernIcon },
+  { name: 'Press', description: 'Hear what people say about us', href: '/about/press', icon: NewspaperIcon },
+  { name: 'Careers', description: 'We are currently hiring', href: '/about/jobs', icon: IdentificationIcon },
+  { name: 'How Tos', description: 'Get to know how we work', href: '/about/how-tos', icon: LifebuoyIcon }
 ]
 const callsToAction = [
-  { name: 'Watch demo', href: '/demo', icon: PlayCircleIcon },
+  { name: 'How it works', href: '/about/process', icon: PlayCircleIcon },
   { name: 'Contact support', href: '/help/contact', icon: PhoneIcon },
 ]
 
@@ -75,7 +85,7 @@ const Header = () => {
                       className='group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50'
                     >
                       <div className='flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white'>
-                        <item.icon className='h-6 w-6 text-gray-600 group-hover:text-indigo-600' aria-hidden='true' />
+                        <item.icon className='h-6 w-6 text-gray-600 group-hover:text-blue-600' aria-hidden='true' />
                       </div>
                       <div className='flex-auto'>
                         <a href={item.href} className='block font-semibold text-gray-900'>
@@ -120,13 +130,13 @@ const Header = () => {
             >
               <Popover.Panel className='absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5'>
                 <div className='p-4'>
-                  {services.map((item) => (
+                  {about.map((item) => (
                     <div
                       key={item.name}
                       className='group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50'
                     >
                       <div className='flex h-11 w-11 flex-none items-center justify-center rounded-lg bg-gray-50 group-hover:bg-white'>
-                        <item.icon className='h-6 w-6 text-gray-600 group-hover:text-indigo-600' aria-hidden='true' />
+                        <item.icon className='h-6 w-6 text-gray-600 group-hover:text-blue-600' aria-hidden='true' />
                       </div>
                       <div className='flex-auto'>
                         <a href={item.href} className='block font-semibold text-gray-900'>
@@ -136,18 +146,6 @@ const Header = () => {
                         <p className='mt-1 text-gray-600'>{item.description}</p>
                       </div>
                     </div>
-                  ))}
-                </div>
-                <div className='grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50'>
-                  {callsToAction.map((item) => (
-                    <a
-                      key={item.name}
-                      href={item.href}
-                      className='flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-gray-900 hover:bg-gray-100'
-                    >
-                      <item.icon className='h-5 w-5 flex-none text-gray-400' aria-hidden='true' />
-                      {item.name}
-                    </a>
                   ))}
                 </div>
               </Popover.Panel>

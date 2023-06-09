@@ -1,6 +1,40 @@
 import { React } from 'react'
 import { Facebook, Instagram, Twitter } from 'react-bootstrap-icons'
 
+const linkStyle = 'block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-blue-700'
+const services = [
+  { name: 'Translation', class: linkStyle, href: '/services/translation' },
+  { name: 'Digital Marketing', class: linkStyle, href: '/services/digital-marketing' },
+  { name: 'Writing', class: linkStyle, href: '/services/writing' },
+  { name: 'Programming', class: linkStyle, href: '/services/programming' },
+  { name: 'Design', class: linkStyle, href: '/services/design' },
+  { name: 'Proofreading', class: linkStyle, href: '/services/proofreading' },
+  { name: 'Photography', class: linkStyle, href: '/services/photography' },
+  { name: 'Accommodation', class: linkStyle, href: '/services/accommodation' },
+]
+const company = [
+  { name: 'Leadership', class: linkStyle, href: '/company/team' },
+  { name: 'Investors', class: linkStyle, href: '/company/investors' },
+  { name: 'Affiliates', class: linkStyle, href: '/company/affiliates' },
+  { name: 'Our Impact', class: linkStyle, href: '/company/impact' },
+  { name: 'Podcast', class: linkStyle, href: '/company/podcast' },
+  { name: 'Licensing', class: linkStyle, href: '/company/licensing' },
+  { name: 'Privacy Policy', class: linkStyle, href: '/company/privacy' },
+  { name: 'Terms of Service', class: linkStyle, href: '/company/terms' },
+]
+const about = [
+  { name: 'Introduction', class: linkStyle, href: '/about/us' },
+  { name: 'Press', class: linkStyle, href: '/about/press' },
+  { name: 'Careers', class: linkStyle, href: '/about/jobs' },
+  { name: 'How Tos', class: linkStyle, href: '/about/how-tos' },
+]
+const support = [
+  { name: 'Help', class: linkStyle, href: '/support/help' },
+  { name: 'Trust and Safety', class: linkStyle, href: '/support/trust' },
+  { name: 'FAQs', class: linkStyle, href: '/support/faqs' },
+  { name: 'Inquiries', class: linkStyle, href: '/support/inquiries' },
+]
+
 const Footer = () => {
   const content = (
     <footer className='px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8'>
@@ -34,84 +68,27 @@ const Footer = () => {
         <div className='grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4'>
           <div>
             <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase'>Category</div>
-            <a href='/services/' className='block mt-4 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
-              Graphic Design
-            </a>
-            <a href='/services/' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
-              Digital Marketing
-            </a>
-            <a href='/services/' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
-              Writing and Translation
-            </a>
-            <a href='/services/' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
-              Programming
-            </a>
-            <a href='/services/' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
-              Consultation
-            </a>
-            <a href='/services/' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
-              Mentorship
-            </a>
-            <a href='/services/' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
-              Photography
-            </a>
-          </div>
-          <div>
-            <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase'>About</div>
-            <a href='/about/intro' className='block mt-4 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
-              Introduction
-            </a>
-            <a href='/about/press' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
-              Press
-            </a>
-            <a href='/about/jobs' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
-              Careers
-            </a>
-            <a href='/about/license' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
-              Licensing
-            </a>
-            <a href='/about/privacy' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
-              Privacy Policy
-            </a>
-            <a href='/about/terms' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
-              Terms and Conditions
-            </a>
-          </div>
-          <div>
-            <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase'>Support</div>
-            <a href='/support/' className='block mt-4 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
-              Help
-            </a>
-            <a href='/support/' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
-              Trust and Safety
-            </a>
-            <a href='/support/' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
-              FAQs
-            </a>
-            <a href='/support/' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
-              Inquiries
-            </a>
-            <a href='/support/' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
-              How Tos
-            </a>
+            {services.map((link) => (
+              <a className={link.class} href={link.href}>{link.name}</a>
+            ))}
           </div>
           <div>
             <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase'>Company</div>
-            <a href='/company/' className='block mt-4 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
-              Leadership
-            </a>
-            <a href='/company/' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
-              Investors
-            </a>
-            <a href='/company/' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
-              Affiliates
-            </a>
-            <a href='/company/' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
-              Our Impact
-            </a>
-            <a href='/company/' className='block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-deep-purple-accent-400'>
-              Podcast
-            </a>
+            {company.map((link) => (
+              <a className={link.class} href={link.href}>{link.name}</a>
+            ))}
+          </div>
+          <div>
+            <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase'>About</div>
+            {about.map((link) => (
+              <a className={link.class} href={link.href}>{link.name}</a>
+            ))}
+          </div>
+          <div>
+            <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase'>Support</div>
+            {support.map((link) => (
+              <a className={link.class} href={link.href}>{link.name}</a>
+            ))}
           </div>
         </div>
       </div>
