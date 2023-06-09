@@ -1,8 +1,79 @@
-import { React } from 'react'
+import { React, useState } from 'react'
+import { Question, PersonFill, Award, BookHalf, CalendarCheck, CarFront, ClipboardCheck, Airplane, Briefcase, PatchCheck, BookmarkStar, ListNested, GlobeEuropeAfrica, Boxes, ClipboardPulse } from 'react-bootstrap-icons'
 
 const Home = () => {
+  const testimonials = [
+    {
+      name: 'Wissam',
+      title: 'Founder of BlueGinnee',
+      quote: 'Thank you so very much for your swift and effective service. I appreciate your feedback! Hopefully after editing, I will get good marks. Thanks again'
+    },
+    {
+      name: 'Maria',
+      title: 'Product designer | Finbarrs',
+      quote: 'Your service was amazing. My thesis editor gave me pretty specific feedback on how to improve my critical discussion, which was most helpful. My work was returned much quicker than I estimated. Very delighted with the outcome. Cannot commend you guys enough. Thank you'
+    },
+    {
+      name: 'Botham Gene',
+      title: 'Student | University of East London',
+      quote: 'Just got my grade for my thesis, it is an A+! Thank you very much for your service. I will definitely recommend hubx consulting to my friends. All the best'
+    },
+  ]
+  const [currentTestimonial, setCurrentTestimonial] = useState(0)
+  const posts = [
+    {
+      id: 1,
+      title: 'Top 10 Internships for 2023',
+      href: '/blog/top-intenships',
+      description:
+        'While the importance of aiming for an exceptional academic degree goes without saying, it is not sufficient to standout in these competitive job market. You must add some practical experience to the mix...',
+      date: 'Mar 16, 2023',
+      datetime: '2023-03-16',
+      category: { title: 'Internships', href: '/blog/category/internships' },
+      author: {
+        name: 'Caleb Egbuta',
+        role: 'Founder / CEO',
+        href: '#',
+        imageUrl: PersonFill,
+      },
+    },
+    {
+      id: 2,
+      title: 'Write a strong research proposal, thesis or dissertation',
+      href: '/blog/research-proposal',
+      description:
+        'As a student or academic personnel, one thing you can never fail to get sufficient proficiency in, is the ability to write strong, appreciable and noteworthy research proposals, theses or dissertations. It is a most beneficial skill to have...',
+      date: 'Mar 16, 2023',
+      datetime: '2023-03-16',
+      category: { title: 'Writing', href: '/blog/category/writing' },
+      author: {
+        name: 'Praise Egbuta',
+        role: 'Co-Founder / CTO',
+        href: '#',
+        imageUrl: PersonFill,
+      },
+    },
+    {
+      id: 3,
+      title: 'Write a strong literature review',
+      href: '/blog/literature-review',
+      description:
+        'To understand how to write a strong literature review, it is important to define what a literature review is. A literature review is the summary of the current research on a topic or subject...',
+      date: 'Mar 27, 2023',
+      datetime: '2023-03-27',
+      category: { title: 'Writing', href: '/blog/category/writing' },
+      author: {
+        name: 'Timothy Duru',
+        role: 'Co-Founder / CFO',
+        href: '#',
+        imageUrl: PersonFill,
+      },
+    }
+  ]
+
   const content = (
     <main>
+      {/* Hero */}
       <section className='relative isolate px-6 pt-14 lg:px-8'>
         <div className='mx-auto max-w-2xl py-24 sm:py-48 lg:py-56'>
           <div className='hidden sm:mb-8 sm:flex sm:justify-center'>
@@ -24,7 +95,7 @@ const Home = () => {
             <div className='mt-10 flex items-center justify-center gap-x-6'>
               <a
                 href='/register'
-                className='rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600'
+                className='rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-1000 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600'
               >
                 Get started
               </a>
@@ -36,51 +107,84 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Features */}
+      <section className='px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20'>
+        <div className='grid row-gap-8 sm:row-gap-0 sm:grid-cols-2 lg:grid-cols-3'>
+          <div className='p-8 border-b sm:border-r'>
+            <div className='max-w-md text-center'>
+              <div className='flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100 sm:w-16 sm:h-16'>
+                <Award size={28} />
+              </div>
+              <h6 className='mb-2 font-semibold leading-5'>University Application</h6>
+              <p className='mb-3 text-sm text-gray-900'>
+                Personal statements, Statements of interest, Research proposals, Admission and funding counseling
+              </p>
+            </div>
+          </div>
+          <div className='p-8 border-b lg:border-r'>
+            <div className='max-w-md text-center'>
+              <div className='flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100 sm:w-16 sm:h-16'>
+                <BookHalf size={28} />
+              </div>
+              <h6 className='mb-2 font-semibold leading-5'>Proofreading & Feedback</h6>
+              <p className='mb-3 text-sm text-gray-900'>
+                Theses, Dissertations, Essays, Citation checks, Translation, Conference/Research posters, Term papers
+              </p>
+            </div>
+          </div>
+          <div className='p-8 border-b sm:border-r lg:border-r-0'>
+            <div className='max-w-md text-center'>
+              <div className='flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100 sm:w-16 sm:h-16'>
+                <CalendarCheck size={28} />
+              </div>
+              <h6 className='mb-2 font-semibold leading-5'>Hourly Consultation</h6>
+              <p className='mb-3 text-sm text-gray-900'>
+                One on one Academic mentorship, Essay support and Career guidance
+              </p>
+            </div>
+          </div>
+          <div className='p-8 border-b lg:border-b-0 lg:border-r'>
+            <div className='max-w-md text-center'>
+              <div className='flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100 sm:w-16 sm:h-16'>
+                <CarFront size={28} />
+              </div>
+              <h6 className='mb-2 font-semibold leading-5'>Concierge Services</h6>
+              <p className='mb-3 text-sm text-gray-900'>
+                Accommodation bookings, Personalized shopping, Flight booking and Airport pickup
+              </p>
+            </div>
+          </div>
+          <div className='p-8 border-b sm:border-b-0 sm:border-r'>
+            <div className='max-w-md text-center'>
+              <div className='flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100 sm:w-16 sm:h-16'>
+                <ClipboardCheck size={28} />
+              </div>
+              <h6 className='mb-2 font-semibold leading-5'>CV/Resume Check</h6>
+              <p className='mb-3 text-sm text-gray-900'>
+                Tailored for job applications, Interview practice and Personal statement reviews
+              </p>
+            </div>
+          </div>
+          <div className='p-8'>
+            <div className='max-w-md text-center'>
+              <div className='flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100 sm:w-16 sm:h-16'>
+                <Airplane size={28} />
+              </div>
+              <h6 className='mb-2 font-semibold leading-5'>Translocation</h6>
+              <p className='mb-3 text-sm text-gray-900'>
+                Proven immigration advice and Functional visa guidance
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Application */}
       <section className='px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20'>
         <div className='grid gap-10 lg:grid-cols-2'>
           <div className='flex flex-col justify-center md:pr-8 xl:pr-0 lg:max-w-lg'>
             <div className='flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-blue-100'>
-              <svg className='text-blue-700 w-7 h-7' viewBox='0 0 24 24'>
-                <polyline
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='2'
-                  strokeLinecap='round'
-                  strokeMiterlimit='10'
-                  points=' 8,5 8,1 16,1 16,5'
-                  strokeLinejoin='round'
-                />
-                <polyline
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='2'
-                  strokeLinecap='round'
-                  strokeMiterlimit='10'
-                  points='9,15 1,15 1,5 23,5 23,15 15,15'
-                  strokeLinejoin='round'
-                />
-                <polyline
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='2'
-                  strokeLinecap='round'
-                  strokeMiterlimit='10'
-                  points='22,18 22,23 2,23 2,18'
-                  strokeLinejoin='round'
-                />
-                <rect
-                  x='9'
-                  y='13'
-                  fill='none'
-                  stroke='currentColor'
-                  strokeWidth='2'
-                  strokeLinecap='round'
-                  strokeMiterlimit='10'
-                  width='6'
-                  height='4'
-                  strokeLinejoin='round'
-                />
-              </svg>
+              <Briefcase size={28} />
             </div>
             <div className='max-w-xl mb-6'>
               <h2 className='max-w-lg mb-6 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none'>
@@ -100,7 +204,7 @@ const Home = () => {
             <div>
               <a
                 href='/about/contact'
-                className='rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600'
+                className='rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-1000 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600'
               >
                 Connect with us
               </a>
@@ -134,6 +238,7 @@ const Home = () => {
         </div>
       </section>
 
+      {/* Service Deliverables */}
       <section className='px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20'>
         <div className='max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12'>
           <div>
@@ -176,20 +281,8 @@ const Home = () => {
         </div>
         <div className='grid gap-5 mb-8 md:grid-cols-2 lg:grid-cols-3'>
           <div className='p-5 duration-300 transform bg-white border rounded shadow-sm hover:-translate-y-2'>
-            <div className='flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-indigo-50'>
-              <svg
-                className='w-10 h-10 text-deep-purple-accent-400'
-                stroke='currentColor'
-                viewBox='0 0 52 52'
-              >
-                <polygon
-                  strokeWidth='3'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  fill='none'
-                  points='29 13 14 29 25 29 23 39 38 23 27 23'
-                />
-              </svg>
+            <div className='flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-blue-100'>
+              <Boxes size={24} />
             </div>
             <h6 className='mb-2 font-semibold leading-5'>Custom solutions</h6>
             <p className='text-sm text-gray-900'>
@@ -198,20 +291,8 @@ const Home = () => {
             </p>
           </div>
           <div className='p-5 duration-300 transform bg-white border rounded shadow-sm hover:-translate-y-2'>
-            <div className='flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-indigo-50'>
-              <svg
-                className='w-10 h-10 text-deep-purple-accent-400'
-                stroke='currentColor'
-                viewBox='0 0 52 52'
-              >
-                <polygon
-                  strokeWidth='3'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  fill='none'
-                  points='29 13 14 29 25 29 23 39 38 23 27 23'
-                />
-              </svg>
+            <div className='flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-blue-100'>
+              <BookmarkStar size={24} />
             </div>
             <h6 className='mb-2 font-semibold leading-5'>Reliable information</h6>
             <p className='text-sm text-gray-900'>
@@ -220,20 +301,8 @@ const Home = () => {
             </p>
           </div>
           <div className='p-5 duration-300 transform bg-white border rounded shadow-sm hover:-translate-y-2'>
-            <div className='flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-indigo-50'>
-              <svg
-                className='w-10 h-10 text-deep-purple-accent-400'
-                stroke='currentColor'
-                viewBox='0 0 52 52'
-              >
-                <polygon
-                  strokeWidth='3'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  fill='none'
-                  points='29 13 14 29 25 29 23 39 38 23 27 23'
-                />
-              </svg>
+            <div className='flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-blue-100'>
+              <ClipboardPulse size={24} />
             </div>
             <h6 className='mb-2 font-semibold leading-5'>Effective support</h6>
             <p className='text-sm text-gray-900'>
@@ -242,20 +311,8 @@ const Home = () => {
             </p>
           </div>
           <div className='p-5 duration-300 transform bg-white border rounded shadow-sm hover:-translate-y-2'>
-            <div className='flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-indigo-50'>
-              <svg
-                className='w-10 h-10 text-deep-purple-accent-400'
-                stroke='currentColor'
-                viewBox='0 0 52 52'
-              >
-                <polygon
-                  strokeWidth='3'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  fill='none'
-                  points='29 13 14 29 25 29 23 39 38 23 27 23'
-                />
-              </svg>
+            <div className='flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-blue-100'>
+              <ListNested size={24} />
             </div>
             <h6 className='mb-2 font-semibold leading-5'>Proven guidelines</h6>
             <p className='text-sm text-gray-900'>
@@ -264,20 +321,8 @@ const Home = () => {
             </p>
           </div>
           <div className='p-5 duration-300 transform bg-white border rounded shadow-sm hover:-translate-y-2'>
-            <div className='flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-indigo-50'>
-              <svg
-                className='w-10 h-10 text-deep-purple-accent-400'
-                stroke='currentColor'
-                viewBox='0 0 52 52'
-              >
-                <polygon
-                  strokeWidth='3'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  fill='none'
-                  points='29 13 14 29 25 29 23 39 38 23 27 23'
-                />
-              </svg>
+            <div className='flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-blue-100'>
+              <GlobeEuropeAfrica size={24} />
             </div>
             <h6 className='mb-2 font-semibold leading-5'>Great network</h6>
             <p className='text-sm text-gray-900'>
@@ -286,20 +331,8 @@ const Home = () => {
             </p>
           </div>
           <div className='p-5 duration-300 transform bg-white border rounded shadow-sm hover:-translate-y-2'>
-            <div className='flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-indigo-50'>
-              <svg
-                className='w-10 h-10 text-deep-purple-accent-400'
-                stroke='currentColor'
-                viewBox='0 0 52 52'
-              >
-                <polygon
-                  strokeWidth='3'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  fill='none'
-                  points='29 13 14 29 25 29 23 39 38 23 27 23'
-                />
-              </svg>
+            <div className='flex items-center justify-center w-12 h-12 mb-4 rounded-full bg-blue-100'>
+              <PatchCheck size={24} />
             </div>
             <h6 className='mb-2 font-semibold leading-5'>Quality service</h6>
             <p className='text-sm text-gray-900'>
@@ -311,13 +344,14 @@ const Home = () => {
         <div className='text-center'>
           <a
             href='/services'
-            className='rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600'
+            className='rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-1000 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600'
           >
             Learn more
           </a>
         </div>
       </section>
 
+      {/* Popular Services */}
       <section className='px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20'>
         <div className='max-w-xl mb-6 sm:mx-auto sm:text-center md:mb-10 lg:max-w-2xl'>
           <p className='mb-1 text-xs font-semibold tracking-wide uppercase md:mb-2'>
@@ -389,57 +423,104 @@ const Home = () => {
         </div>
       </section>
 
-      <section className="bg-white py-6 sm:py-8 lg:py-12">
-        <div className="mx-auto max-w-screen-xl px-4 md:px-8">
-          <h2 className="mb-8 text-center text-2xl font-bold text-gray-800 md:mb-12 lg:text-3xl">What our clients say</h2>
-
-          <div className="grid gap-y-10 sm:grid-cols-2 sm:gap-y-12 lg:grid-cols-3 lg:divide-x">
-            <div className="flex flex-col items-center gap-4 sm:px-4 md:gap-6 lg:px-8">
-              <div className="text-center text-gray-600">“This is a section of some simple filler text, also known as placeholder text.”</div>
-
-              <div className="flex flex-col items-center gap-2 sm:flex-row md:gap-3">
-                <div className="h-12 w-12 overflow-hidden rounded-full bg-gray-100 shadow-lg md:h-14 md:w-14">
-                  <img src="https://images.unsplash.com/photo-1567515004624-219c11d31f2e??auto=format&q=75&fit=crop&w=112" loading="lazy" alt="Radu Florin" className="h-full w-full object-cover object-center" />
-                </div>
-
-                <div>
-                  <div className="text-center text-sm font-bold text-indigo-500 sm:text-left md:text-base">John McCulling</div>
-                  <p className="text-center text-sm text-gray-500 sm:text-left md:text-sm">CEO / Datadrift</p>
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-col items-center gap-4 sm:px-4 md:gap-6 lg:px-8">
-              <div className="text-center text-gray-600">“This is a section of some simple filler text, also known as placeholder text.”</div>
-
-              <div className="flex flex-col items-center gap-2 sm:flex-row md:gap-3">
-                <div className="h-12 w-12 overflow-hidden rounded-full bg-gray-100 shadow-lg md:h-14 md:w-14">
-                  <img src="https://images.unsplash.com/photo-1532073150508-0c1df022bdd1?auto=format&q=75&fit=crop&w=112" loading="lazy" alt="christian ferrer" className="h-full w-full object-cover object-center" />
-                </div>
-
-                <div>
-                  <div className="text-center text-sm font-bold text-indigo-500 sm:text-left md:text-base">Kate Berg</div>
-                  <p className="text-center text-sm text-gray-500 sm:text-left md:text-sm">CFO / Dashdash</p>
-                </div>
-              </div>
-            </div>
-            <div className="flex flex-col items-center gap-4 sm:px-4 md:gap-6 lg:px-8">
-              <div className="text-center text-gray-600">“This is a section of some simple filler text, also known as placeholder text.”</div>
-
-              <div className="flex flex-col items-center gap-2 sm:flex-row md:gap-3">
-                <div className="h-12 w-12 overflow-hidden rounded-full bg-gray-100 shadow-lg md:h-14 md:w-14">
-                  <img src="https://images.unsplash.com/photo-1463453091185-61582044d556?auto=format&q=75&fit=crop&w=500" loading="lazy" alt="Ayo Ogunseinde" className="h-full w-full object-cover object-center" />
-                </div>
-
-                <div>
-                  <div className="text-center text-sm font-bold text-indigo-500 sm:text-left md:text-base">Greg Jackson</div>
-                  <p className="text-center text-sm text-gray-500 sm:text-left md:text-sm">CTO / Uptime</p>
-                </div>
-              </div>
-            </div>
+      {/* Testimonials */}
+      <section className='py-14'>
+        <div className='max-w-screen-xl mx-auto px-4 md:px-8'>
+          <div className='max-w-3xl mx-auto text-center'>
+            <h3 className='text-blue-600 font-semibold pb-6'>What people are saying</h3>
+            <ul>
+              {
+                testimonials.map((item, idx) => (
+                  currentTestimonial === idx ? (
+                    <li key={idx}>
+                      <figure>
+                        <blockquote>
+                          <p className='text-gray-800 text-xl font-semibold sm:text-2xl'>
+                            “{item.quote}“
+                          </p>
+                        </blockquote>
+                        <div className='mt-6'>
+                          <div className='mt-3'>
+                            <span className='block text-gray-800 font-semibold'>{item.name}</span>
+                            <span className='block text-gray-600 text-sm mt-0.5'>{item.title}</span>
+                          </div>
+                        </div>
+                      </figure>
+                    </li>
+                  ) : ''
+                ))
+              }
+            </ul>
+          </div>
+          <div className='mt-6'>
+            <ul className='flex gap-x-3 justify-center'>
+              {
+                testimonials.map((item, idx) => (
+                  <li key={idx}>
+                    <button className={`w-2.5 h-2.5 rounded-full duration-150 ring-offset-2 ring-blue-600 focus:ring ${currentTestimonial === idx ? 'bg-blue-600' : 'bg-gray-300'}`}
+                      onClick={() => setCurrentTestimonial(idx)}
+                    ></button>
+                  </li>
+                ))
+              }
+            </ul>
           </div>
         </div>
       </section>
 
+      {/* Insights */}
+      <section className='bg-white py-24 sm:py-32'>
+        <div className='mx-auto max-w-7xl px-6 lg:px-8'>
+          <div className='mx-auto max-w-2xl lg:mx-0'>
+            <h2 className='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>From our insights pool</h2>
+            <p className='mt-2 text-lg leading-8 text-gray-600'>
+              Learn how to fast-track your academic|career goals with our expert advice.
+            </p>
+          </div>
+          <div className='mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3'>
+            {posts.map((post) => (
+              <article key={post.id} className='flex max-w-xl flex-col items-start justify-between'>
+                <div className='flex items-center gap-x-4 text-xs'>
+                  <time dateTime={post.datetime} className='text-gray-500'>
+                    {post.date}
+                  </time>
+                  <a
+                    href={post.category.href}
+                    className='relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100'
+                  >
+                    {post.category.title}
+                  </a>
+                </div>
+                <div className='group relative'>
+                  <h3 className='mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600'>
+                    <a href={post.href}>
+                      <span className='absolute inset-0' />
+                      {post.title}
+                    </a>
+                  </h3>
+                  <p className='mt-5 line-clamp-3 text-sm leading-6 text-gray-600'>{post.description}</p>
+                </div>
+                <div className='relative mt-8 flex items-center gap-x-4'>
+                  <div className='flex items-center justify-center h-10 w-10 rounded-full bg-gray-50'>
+                    <post.author.imageUrl />
+                  </div>
+                  <div className='text-sm leading-6'>
+                    <p className='font-semibold text-gray-900'>
+                      <a href={post.author.href}>
+                        <span className='absolute inset-0' />
+                        {post.author.name}
+                      </a>
+                    </p>
+                    <p className='text-gray-600'>{post.author.role}</p>
+                  </div>
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Support */}
       <section className='px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20'>
         <div className='max-w-screen-sm sm:text-center sm:mx-auto'>
           <a
@@ -447,20 +528,8 @@ const Home = () => {
             aria-label='View'
             className='inline-block mb-5 rounded-full sm:mx-auto'
           >
-            <div className='flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50'>
-              <svg
-                className='w-12 h-12 text-deep-purple-accent-400'
-                stroke='currentColor'
-                viewBox='0 0 52 52'
-              >
-                <polygon
-                  strokeWidth='3'
-                  strokeLinecap='round'
-                  strokeLinejoin='round'
-                  fill='none'
-                  points='29 13 14 29 25 29 23 39 38 23 27 23'
-                />
-              </svg>
+            <div className='flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-blue-100'>
+              <Question size={48} />
             </div>
           </a>
           <h2 className='mb-4 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none'>
@@ -473,7 +542,7 @@ const Home = () => {
           <div className='mt-10 flex items-center justify-center gap-x-6'>
             <a
               href='/about/contact'
-              className='rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600'
+              className='rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-1000 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600'
             >
               Get in touch
             </a>

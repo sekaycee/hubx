@@ -27,6 +27,7 @@ const about = [
   { name: 'Press', class: linkStyle, href: '/about/press' },
   { name: 'Careers', class: linkStyle, href: '/about/jobs' },
   { name: 'How Tos', class: linkStyle, href: '/about/how-tos' },
+  { name: 'Contact', class: linkStyle, href: '/about/contact' },
 ]
 const support = [
   { name: 'Help', class: linkStyle, href: '/support/help' },
@@ -98,20 +99,20 @@ const Footer = () => {
         </p>
         <div className='flex items-center mt-4 space-x-4 sm:mt-0'>
           <a
-            href='/'
-            className='text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400'
+            href='https://twitter.com/hubx-consulting'
+            className='text-gray-500 transition-colors duration-300 hover:text-blue-400'
           >
             <Twitter size={16} />
           </a>
           <a
-            href='/'
-            className='text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400'
+            href='https://instagram.com/hubx-consulting'
+            className='text-gray-500 transition-colors duration-300 hover:text-purple-400'
           >
             <Instagram size={16} />
           </a>
           <a
-            href='/'
-            className='text-gray-500 transition-colors duration-300 hover:text-deep-purple-accent-400'
+            href='https://facebook.com/hubx-consulting'
+            className='text-gray-500 transition-colors duration-300 hover:text-blue-700'
           >
             <Facebook size={16} />
           </a>
