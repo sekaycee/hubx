@@ -177,6 +177,14 @@ const Home = () => {
             </div>
           </div>
         </div>
+        <div className='text-center mt-7'>
+          <a
+            href='/services/quote'
+            className='rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-1000 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600'
+          >
+            Get instant quote
+          </a>
+        </div>
       </section>
 
       {/* Application */}
@@ -192,7 +200,7 @@ const Home = () => {
                 <br className='hidden md:block' />
                 {' '}an{' '}
                 <span className='inline-block text-blue-700'>
-                  admission or job abroad?
+                  admission or job elsewhere?
                 </span>
               </h2>
               <p className='text-base text-gray-700 md:text-lg'>
@@ -354,7 +362,7 @@ const Home = () => {
       {/* Popular Services */}
       <section className='px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20'>
         <div className='max-w-xl mb-6 sm:mx-auto sm:text-center md:mb-10 lg:max-w-2xl'>
-          <p className='mb-1 text-xs font-semibold tracking-wide uppercase md:mb-2'>
+          <p className='inline-block px-3 py-px mb-1 text-xs font-semibold uppercase md:mb-2 tracking-wider text-blue-900 rounded-full bg-blue-100'>
             Popular Services
           </p>
           <p className='text-base text-gray-700 md:text-lg'>
@@ -427,7 +435,7 @@ const Home = () => {
       <section className='py-14'>
         <div className='max-w-screen-xl mx-auto px-4 md:px-8'>
           <div className='max-w-3xl mx-auto text-center'>
-            <h3 className='text-blue-600 font-semibold pb-6'>What people are saying</h3>
+            <p className='inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-blue-900 uppercase rounded-full bg-blue-100'>What people are saying</p>
             <ul>
               {
                 testimonials.map((item, idx) => (
@@ -472,7 +480,9 @@ const Home = () => {
       <section className='bg-white py-24 sm:py-32'>
         <div className='mx-auto max-w-7xl px-6 lg:px-8'>
           <div className='mx-auto max-w-2xl lg:mx-0'>
-            <h2 className='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>From our insights pool</h2>
+            <h2 className='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>From our {' '}
+              <span className='inline-block text-blue-700'>insights pool</span>
+            </h2>
             <p className='mt-2 text-lg leading-8 text-gray-600'>
               Learn how to fast-track your academic|career goals with our expert advice.
             </p>
@@ -533,7 +543,9 @@ const Home = () => {
             </div>
           </a>
           <h2 className='mb-4 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none'>
-            Still unsure where to start?
+            Still {' '}
+            <span className='inline-block text-blue-700'>unsure</span> where to {' '}
+            <span className='inline-block text-blue-700'>start?</span>
           </h2>
           <p className='text-base text-gray-700 md:text-lg sm:px-4'>
             We are available for a free 15-minute consultation to help you get started.
