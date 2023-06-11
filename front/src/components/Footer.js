@@ -12,16 +12,17 @@ const links = {
   ],
   company: [
     { name: 'Leadership', class: linkStyle, href: '/company/team' },
+    { name: 'Jobs', class: linkStyle, href: '/company/jobs' },
+    { name: 'Insights', class: linkStyle, href: '/company/insights' },
     { name: 'Investors', class: linkStyle, href: '/company/investors' },
     { name: 'Podcast', class: linkStyle, href: '/company/podcast' },
-    { name: 'Affiliates', class: linkStyle, href: '/company/affiliates' },
-    { name: 'Our Impact', class: linkStyle, href: '/company/impact' }
+    { name: 'Affiliates', class: linkStyle, href: '/company/affiliates' }
   ],
   about: [
     { name: 'Intro', class: linkStyle, href: '/about/us' },
     { name: 'Press', class: linkStyle, href: '/about/press' },
-    { name: 'Careers', class: linkStyle, href: '/about/jobs' },
     { name: 'How Tos', class: linkStyle, href: '/about/how-tos' },
+    { name: 'Our Impact', class: linkStyle, href: '/about/impact' },
     { name: 'Contact', class: linkStyle, href: '/about/contact' },
   ],
   support: [
