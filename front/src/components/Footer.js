@@ -39,7 +39,7 @@ const support = [
 const Footer = () => {
   const content = (
     <footer className='px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8'>
-      <div class='mx-auto max-w-screen-2xl mb-12'>
+      {/* <div class='mx-auto max-w-screen-2xl mb-12'>
         <div class='flex flex-col items-center justify-between gap-2 border-t border-b py-7 md:flex-row'>
           <div class='mb-3 text-center md:mb-0 md:text-left'>
             <span class='font-bold uppercase tracking-widest text-gray-800'>Newsletter</span>
@@ -52,7 +52,7 @@ const Footer = () => {
             <button class='inline-block rounded-md bg-blue-500 px-8 py-2 text-center text-sm font-semibold text-white outline-none ring-blue-300 transition duration-100 hover:bg-blue-600 focus-visible:ring active:bg-blue-700 md:text-base'>Send</button>
           </form>
         </div>
-      </div>
+      </div> */}
 
       <div className='grid gap-16 row-gap-10 mb-8 lg:grid-cols-6'>
         <div className='md:max-w-md lg:col-span-2'>

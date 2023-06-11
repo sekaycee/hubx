@@ -1,5 +1,6 @@
 import { React, useState } from 'react'
-import { Question, PersonFill, Award, BookHalf, CalendarCheck, CarFront, ClipboardCheck, Airplane, Briefcase, PatchCheck, BookmarkStar, ListNested, GlobeEuropeAfrica, Boxes, ClipboardPulse } from 'react-bootstrap-icons'
+import { Question, PersonFill, Award, BookHalf, CalendarCheck, CarFront, ClipboardCheck, Airplane, Briefcase, PatchCheck, BookmarkStar, ListNested, GlobeEuropeAfrica, Boxes, ClipboardPulse, Envelope } from 'react-bootstrap-icons'
+import Scholarship from './common/Scholarship'
 
 const Home = () => {
   const testimonials = [
@@ -95,7 +96,7 @@ const Home = () => {
             <div className='mt-10 flex items-center justify-center gap-x-6'>
               <a
                 href='/register'
-                className='rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-1000 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600'
+                className='rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600'
               >
                 Get started
               </a>
@@ -180,7 +181,7 @@ const Home = () => {
         <div className='text-center mt-7'>
           <a
             href='/services/quote'
-            className='rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-900 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600'
+            className='rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600'
           >
             Get instant quote
           </a>
@@ -199,7 +200,7 @@ const Home = () => {
                 Need help applying for
                 <br className='hidden md:block' />
                 {' '}an{' '}
-                <span className='inline-block text-blue-700'>
+                <span className='inline-block text-blue-600'>
                   admission or job elsewhere?
                 </span>
               </h2>
@@ -212,7 +213,7 @@ const Home = () => {
             <div>
               <a
                 href='/about/contact'
-                className='rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-1000 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600'
+                className='rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600'
               >
                 Connect with us
               </a>
@@ -245,6 +246,8 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+      <Scholarship />
 
       {/* Service Deliverables */}
       <section className='px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20'>
@@ -280,7 +283,7 @@ const Home = () => {
               </svg>
               <span className='relative'>Why</span>
             </span>{' '}
-            <span className='inline-block text-blue-700'>choose us?</span>
+            <span className='inline-block text-blue-600'>choose us?</span>
           </h2>
           <p className='text-base text-gray-700 md:text-lg'>
             We believe there's no love or hate without reason, as such
@@ -352,7 +355,7 @@ const Home = () => {
         <div className='text-center'>
           <a
             href='/services'
-            className='rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-1000 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600'
+            className='rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600'
           >
             Learn more
           </a>
@@ -481,7 +484,7 @@ const Home = () => {
         <div className='mx-auto max-w-7xl px-6 lg:px-8'>
           <div className='mx-auto max-w-2xl lg:mx-0'>
             <h2 className='text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>From our {' '}
-              <span className='inline-block text-blue-700'>insights pool</span>
+              <span className='inline-block text-blue-600'>insights pool</span>
             </h2>
             <p className='mt-2 text-lg leading-8 text-gray-600'>
               Learn how to fast-track your academic|career goals with our expert advice.
@@ -544,8 +547,8 @@ const Home = () => {
           </a>
           <h2 className='mb-4 font-sans text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl sm:leading-none'>
             Still {' '}
-            <span className='inline-block text-blue-700'>unsure</span> where to {' '}
-            <span className='inline-block text-blue-700'>start?</span>
+            <span className='inline-block text-blue-600'>unsure</span> where to {' '}
+            <span className='inline-block text-blue-600'>start?</span>
           </h2>
           <p className='text-base text-gray-700 md:text-lg sm:px-4'>
             We are available for a free 15-minute consultation to help you get started.
@@ -554,12 +557,40 @@ const Home = () => {
           <div className='mt-10 flex items-center justify-center gap-x-6'>
             <a
               href='/about/contact'
-              className='rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-1000 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600'
+              className='rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600'
             >
               Get in touch
             </a>
           </div>
         </div>
+      </section>
+
+      {/* Newsletter */}
+      <section className="py-28 relative">
+        <div className="relative z-10 max-w-screen-xl mx-auto px-4 justify-between items-center gap-12 md:px-8 md:flex">
+          <div className="flex-1 max-w-lg">
+            <h3 className="text-3xl font-bold">
+              Get our beautiful newsletter straight to your inbox.
+            </h3>
+          </div>
+          <div className="flex-1 mt-6 md:mt-0">
+            <form onSubmit={(e) => e.preventDefault()} className="flex items-center gap-x-3 md:justify-end">
+              <div className="relative">
+                <Envelope className="w-6 h-6 text-gray-400 absolute left-3 inset-y-0 my-auto" />
+                <input
+                  type="email"
+                  required
+                  placeholder="Enter your email"
+                  className="w-full pl-12 pr-3 py-2 text-gray-500 bg-white outline-2 border focus:border-blue-600 shadow-sm rounded-lg"
+                />
+              </div>
+              <button className="block rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600">
+                Subscribe
+              </button>
+            </form>
+          </div>
+        </div>
+        <div className="absolute inset-0 w-full h-full" style={{ background: "linear-gradient(137.92deg, rgba(192, 132, 252, 0) 20.43%, rgba(232, 121, 249, 0.26) 49.66%, rgba(204, 171, 238, 0) 92.38%)" }}></div>
       </section>
     </main>
   )
