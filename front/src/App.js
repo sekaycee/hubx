@@ -1,9 +1,9 @@
-import * as sv from './components/pages/services/Index'
+import * as sv from './pages/services/index'
 
 import React, { useEffect } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 import Layout from './components/Layout'
-import Home from './components/pages/Home'
+import Home from './pages/home'
 import Login from './features/auth/Login'
 import Prefetch from './features/auth/Prefetch'
 import Register from './features/auth/Register'
@@ -15,6 +15,7 @@ import EditUser from './features/users/EditUser'
 import NewUserForm from './features/users/NewUserForm'
 import EditProject from './features/projects/EditProject'
 import NewProject from './features/projects/NewProject'
+import Blog from './pages/insights/blog'
 
 function App() {
   const location = useLocation();
@@ -48,6 +49,10 @@ function App() {
           <Route path='photography' element={<sv.Photography />} />
           <Route path='programming' element={<sv.Programming />} />
           <Route path='mentorship' element={<sv.Mentorship />} />
+        </Route>
+
+        <Route path='blog/'>
+          <Route index element={<Blog />} />
         </Route>
       </Route>
 
