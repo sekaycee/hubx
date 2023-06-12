@@ -2,9 +2,11 @@ import { Fragment, useState } from 'react'
 import { Dialog, Disclosure, Popover, Transition } from '@headlessui/react'
 import {
   Bars3Icon,
+  BriefcaseIcon,
   PaperAirplaneIcon,
   AcademicCapIcon,
   BuildingOffice2Icon,
+  BuildingLibraryIcon,
   LightBulbIcon,
   DocumentTextIcon,
   XMarkIcon,
@@ -17,7 +19,9 @@ import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/
 
 const services = [
   { name: 'Academic', description: 'Bootstrap your academic goals', href: '/services/academic', icon: AcademicCapIcon },
+  { name: 'Scholarships', description: 'Access our list of current scholarship positions', href: '/services/scholarships', icon: BuildingLibraryIcon },
   { name: 'Career', description: 'Get help fast-tracking your career goals', href: '/services/career', icon: BuildingOffice2Icon },
+  { name: 'Jobs', description: 'Access our curated listing of job openings', href: '/services/jobs', icon: BriefcaseIcon },
   { name: 'Mentorship', description: 'Let our professors guide you', href: '/services/mentorship', icon: LightBulbIcon },
   { name: 'CV Check', description: 'Check the validity of your CV and Resume', href: '/services/cv-check', icon: DocumentTextIcon },
   { name: 'Conciarge', description: 'Get help moving from one place to another', href: '/services/conciarge', icon: PaperAirplaneIcon },

@@ -263,7 +263,7 @@ const Home = () => {
       {/* Jobs and Scholarships */}
       <section className='px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20'>
         <div className='mb-10'>
-          <ul role='tablist' className='border-b flex items-center gap-x-3 overflow-x-auto text-sm'>
+          <ul role='tablist' className='border-b flex md:place-content-center gap-x-3 overflow-x-auto text-sm'>
             {
               tabItems.map((item, idx) => (
                 <li key={idx} className={`py-2 border-b-2 ${selectedItem === idx ? 'border-blue-600 text-blue-600' : 'border-white text-gray-500'}`}>
