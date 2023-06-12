@@ -47,7 +47,7 @@ const Header = () => {
           <a href='/' className='-m-1.5 p-1.5'>
             <span className='sr-only'>HubX Consulting</span>
             <div className='flex items-center justify-center w-8 h-8 rounded-full bg-blue-100'>
-              <img width={16} height={16} src='/media/logos/logo-default.svg' alt='Logo' />
+              <img width={16} height={16} src='/media/logos/hubx-logo.svg' alt='Logo' />
             </div>
           </a>
         </div>
@@ -171,7 +171,7 @@ const Header = () => {
             <a href='/' className='-m-1.5 p-1.5'>
               <span className='sr-only'>HubX Consulting</span>
               <div className='flex items-center justify-center w-8 h-8 rounded-full bg-blue-100'>
-                <img width={16} height={16} src='/media/logos/logo-default.svg' alt='Logo'/>
+                <img width={16} height={16} src='/media/logos/hubx-logo.svg' alt='Logo'/>
               </div>
             </a>
             <button
