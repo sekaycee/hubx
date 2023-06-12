@@ -15,7 +15,6 @@ const links = {
     { name: 'Jobs', class: linkStyle, href: '/company/jobs' },
     { name: 'Insights', class: linkStyle, href: '/company/insights' },
     { name: 'Investors', class: linkStyle, href: '/company/investors' },
-    { name: 'Podcast', class: linkStyle, href: '/company/podcast' },
     { name: 'Affiliates', class: linkStyle, href: '/company/affiliates' }
   ],
   about: [
@@ -28,6 +27,7 @@ const links = {
   support: [
     { name: 'Help', class: linkStyle, href: '/support/help' },
     { name: 'FAQs', class: linkStyle, href: '/support/faqs' },
+    { name: 'Podcast', class: linkStyle, href: '/company/podcast' },
     { name: 'Inquiries', class: linkStyle, href: '/support/inquiries' },
     { name: 'Trust and Safety', class: linkStyle, href: '/support/trust' }
   ],
