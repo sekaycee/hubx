@@ -13,7 +13,7 @@ const links = {
   company: [
     { name: 'Leadership', class: linkStyle, href: '/company/team' },
     { name: 'Jobs', class: linkStyle, href: '/company/jobs' },
-    { name: 'Insights', class: linkStyle, href: '/company/insights' },
+    { name: 'Insights', class: linkStyle, href: '/blog' },
     { name: 'Investors', class: linkStyle, href: '/company/investors' },
     { name: 'Affiliates', class: linkStyle, href: '/company/affiliates' }
   ],

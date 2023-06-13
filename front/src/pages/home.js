@@ -1,7 +1,8 @@
 import { React, useState } from 'react'
-import { Question, PersonFill, Award, BookHalf, CalendarCheck, CarFront, ClipboardCheck, Airplane, Briefcase, PatchCheck, BookmarkStar, ListNested, GlobeEuropeAfrica, Boxes, ClipboardPulse, Envelope } from 'react-bootstrap-icons'
+import { Question, Award, BookHalf, CalendarCheck, CarFront, ClipboardCheck, Airplane, Briefcase, PatchCheck, BookmarkStar, ListNested, GlobeEuropeAfrica, Boxes, ClipboardPulse, Envelope } from 'react-bootstrap-icons'
 import Scholarship from './common/scholarship'
 import Job from './common/job'
+import { POSTS } from './config/blog'
 
 const Home = () => {
   const tabItems = [
@@ -34,56 +35,6 @@ const Home = () => {
 
   const [selectedItem, setSelectedItem ] = useState(0)
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
-  const posts = [
-    {
-      id: 1,
-      title: 'Top 10 Internships for 2023',
-      href: '/blog/top-intenships',
-      description:
-        'While the importance of aiming for an exceptional academic degree goes without saying, it is not sufficient to standout in these competitive job market. You must add some practical experience to the mix...',
-      date: 'Mar 16, 2023',
-      datetime: '2023-03-16',
-      category: { title: 'Internships', href: '/blog/category/internships' },
-      author: {
-        name: 'Caleb Egbuta',
-        role: 'Founder / CEO',
-        href: '#',
-        imageUrl: PersonFill,
-      },
-    },
-    {
-      id: 2,
-      title: 'Write a strong research proposal, thesis or dissertation',
-      href: '/blog/research-proposal',
-      description:
-        'As a student or academic personnel, one thing you can never fail to get sufficient proficiency in, is the ability to write strong, appreciable and noteworthy research proposals, theses or dissertations. It is a most beneficial skill to have...',
-      date: 'Mar 16, 2023',
-      datetime: '2023-03-16',
-      category: { title: 'Writing', href: '/blog/category/writing' },
-      author: {
-        name: 'Praise Egbuta',
-        role: 'Co-Founder / CTO',
-        href: '#',
-        imageUrl: PersonFill,
-      },
-    },
-    {
-      id: 3,
-      title: 'Write a strong literature review',
-      href: '/blog/literature-review',
-      description:
-        'To understand how to write a strong literature review, it is important to define what a literature review is. A literature review is the summary of the current research on a topic or subject...',
-      date: 'Mar 27, 2023',
-      datetime: '2023-03-27',
-      category: { title: 'Writing', href: '/blog/category/writing' },
-      author: {
-        name: 'Timothy Duru',
-        role: 'Co-Founder / CFO',
-        href: '#',
-        imageUrl: PersonFill,
-      },
-    }
-  ]
 
   const content = (
     <main>
@@ -536,7 +487,7 @@ const Home = () => {
             </p>
           </div>
           <div className='mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3'>
-            {posts.map((post) => (
+            {POSTS.map((post) => (
               <article key={post.id} className='flex max-w-xl flex-col items-start justify-between'>
                 <div className='flex items-center gap-x-4 text-xs'>
                   <time dateTime={post.datetime} className='text-gray-500'>
