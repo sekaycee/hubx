@@ -92,26 +92,26 @@ const Footer = () => {
         <div className='grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4'>
           <div className='text-center md:text-left'>
             <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase'>Category</div>
-            {links.services.map((link) => (
-              <a className={link.class} href={link.href}>{link.name}</a>
+            {links.services.map((link, idx) => (
+              <a key={idx} className={link.class} href={link.href}>{link.name}</a>
             ))}
           </div>
           <div className='text-center md:text-left'>
             <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase'>Company</div>
-            {links.company.map((link) => (
-              <a className={link.class} href={link.href}>{link.name}</a>
+            {links.company.map((link, idx) => (
+              <a key={idx} className={link.class} href={link.href}>{link.name}</a>
             ))}
           </div>
           <div className='text-center md:text-left'>
             <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase'>About</div>
-            {links.about.map((link) => (
-              <a className={link.class} href={link.href}>{link.name}</a>
+            {links.about.map((link, idx) => (
+              <a key={idx} className={link.class} href={link.href}>{link.name}</a>
             ))}
           </div>
           <div className='text-center md:text-left'>
             <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase'>Support</div>
-            {links.support.map((link) => (
-              <a className={link.class} href={link.href}>{link.name}</a>
+            {links.support.map((link, idx) => (
+              <a key={idx} className={link.class} href={link.href}>{link.name}</a>
             ))}
           </div>
         </div>
@@ -121,8 +121,8 @@ const Footer = () => {
           © Copyright 2023 HubX Inc.
         </p>
         <nav className='flex text-center mt-3 md:mt-0 font-normal'>
-          {links.legal.map((item) => (
-            <a className='mx-1 duration-300 hover:text-blue-600' href={item.href}>{item.name}</a>
+          {links.legal.map((item, idx) => (
+            <a key={idx} className='mx-1 duration-300 hover:text-blue-600' href={item.href}>{item.name}</a>
           ))}
         </nav>
         <p className='mt-3 md:mt-0'>All rights reserved.</p>

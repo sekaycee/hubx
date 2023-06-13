@@ -1,21 +1,24 @@
-import * as sv from './pages/services/index'
-
 import React, { useEffect } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
+
 import Layout from './components/Layout'
+import DashLayout from './components/dash/DashLayout'
+
 import Home from './pages/home'
+import Blog from './pages/insights/blog'
+import * as sv from './pages/services/index'
+
+import Welcome from './partials/dashboard/Welcome'
+
 import Login from './features/auth/Login'
 import Prefetch from './features/auth/Prefetch'
 import Register from './features/auth/Register'
-import DashLayout from './components/dash/DashLayout'
-import Welcome from './partials/dashboard/Welcome'
-import UsersList from './features/users/UsersList'
-import ProjectsList from './features/projects/ProjectsList'
 import EditUser from './features/users/EditUser'
+import UsersList from './features/users/UsersList'
 import NewUserForm from './features/users/NewUserForm'
-import EditProject from './features/projects/EditProject'
 import NewProject from './features/projects/NewProject'
-import Blog from './pages/insights/blog'
+import EditProject from './features/projects/EditProject'
+import ProjectsList from './features/projects/ProjectsList'
 
 function App() {
   const location = useLocation();
