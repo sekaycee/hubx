@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import { Outlet } from 'react-router-dom'
-import DashHeader from '../../partials/DashHeader'
-import DashFooter from '../../partials/DashFooter'
-import Sidebar from '../../partials/Sidebar'
+import DashHeader from '../../partials/dash/Header'
+import DashFooter from '../../partials/dash/Footer'
+import Sidebar from '../../partials/dash/Sidebar'
 
 const DashLayout = () => {
   const [sidebarOpen, setSidebarOpen] = useState(false)

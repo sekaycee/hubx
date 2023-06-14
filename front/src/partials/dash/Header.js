@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import SearchModal from './common/ModalSearch'
-import Notifications from './common/DropdownNotifications'
-import Help from './common/DropdownHelp'
-import UserMenu from './common/DropdownProfile'
-import ThemeToggle from './common/ThemeToggle'
+import SearchModal from '../common/ModalSearch'
+import Notifications from '../common/DropdownNotifications'
+import Help from '../common/DropdownHelp'
+import UserMenu from '../common/DropdownProfile'
+import ThemeToggle from '../common/ThemeToggle'
 
 const DashHeader = ({ sidebarOpen, setSidebarOpen }) => {
   const [searchModalOpen, setSearchModalOpen] = useState(false)

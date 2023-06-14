@@ -2,13 +2,13 @@ import React, { useEffect } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
 
 import Layout from './components/Layout'
-import DashLayout from './components/dash/DashLayout'
+import DashLayout from './components/dash/Layout'
 
 import Home from './pages/home'
 import Blog from './pages/insights/blog'
 import * as sv from './pages/services/index'
 
-import Welcome from './partials/dashboard/Welcome'
+import Welcome from './components/dash/Welcome'
 
 import Login from './features/auth/Login'
 import Prefetch from './features/auth/Prefetch'

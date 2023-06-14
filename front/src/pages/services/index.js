@@ -1,24 +1,26 @@
-import Academic from './Academic'
-import Accommodation from './Accommodation'
-import Career from './Career'
-import Conciarge from './Conciarge'
-import Consultation from './Consultation'
-import CVCheck from './CVCheck'
-import Design from './Design'
-import DigitalMarketing from './DigitalMarketing'
-import Mentorship from './Mentorship'
-import Photography from './Photography'
-import Programming from './Programming'
-import Proofreading from './Proofreading'
-import Translation from './Translation'
-import Writing from './Writing'
+import Newsletter from '../../partials/Newsletter'
+import Academic from './academic'
+import Accommodation from './accommodation'
+import Career from './career'
+import Conciarge from './conciarge'
+import Consultation from './consultation'
+import CVCheck from './cvCheck'
+import Design from './design'
+import DigitalMarketing from './digitalMarketing'
+import Mentorship from './mentorship'
+import Photography from './photography'
+import Programming from './programming'
+import Proofreading from './proofreading'
+import Translation from './translation'
+import Writing from './writing'
 
 const Service = () => {
   const content = (
     <>
-      <section>
-        <div className='h-screen items-center place-content-center justify-center text-lg'>Coming Soon</div>
+      <section className='h-screen place-items-center'>
+        <div className='text-center text-[10rem] mt-[20rem]'>Coming Soon</div>
       </section>
+      <Newsletter />
     </>
   )
   return content

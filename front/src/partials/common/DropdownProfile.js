@@ -1,8 +1,6 @@
 import React, { useState, useRef, useEffect } from 'react'
 import Transition from '../../utils/Transition'
 
-import UserAvatar from '../../img/user-avatar-32.png'
-
 const DropdownProfile = ({
   align
 }) => {
@@ -42,7 +40,7 @@ const DropdownProfile = ({
         onClick={() => setDropdownOpen(!dropdownOpen)}
         aria-expanded={dropdownOpen}
       >
-        <img className='w-8 h-8 rounded-full' src={UserAvatar} width='32' height='32' alt='User' />
+        <img className='w-8 h-8 rounded-full' src='/img/logos/hubx-bcircle.png' width='32' height='32' alt='User' />
         <div className='flex items-center truncate'>
           {/* <span className='truncate ml-2 text-sm font-medium dark:text-slate-300 group-hover:text-slate-800 dark:group-hover:text-slate-200'>Acme Inc.</span> */}
           <svg className='w-3 h-3 shrink-0 ml-1 fill-current text-slate-400' viewBox='0 0 12 12'>
@@ -68,7 +66,7 @@ const DropdownProfile = ({
         >
           <div className='flex pt-0.5 pb-2 px-3 mb-1 border-b border-slate-200 dark:border-slate-700'>
             <div className='mr-3 mt-1'>
-              <img className='rounded' width={32} height={32} src='/img/logos/logo-square.png' alt='Profile' />
+              <img className='rounded' width={32} height={32} src='/img/logos/hubx-circle.png' alt='Profile' />
             </div>
             <div>
               <div className='font-medium text-slate-800 dark:text-slate-100'>HubX Consulting</div>
