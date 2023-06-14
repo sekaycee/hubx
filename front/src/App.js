@@ -9,6 +9,22 @@ import Blog from './pages/insights/blog'
 import * as sv from './pages/services/index'
 import Jobs from './pages/company/jobs'
 import Team from './pages/company/team'
+import Contact from './pages/about/contact'
+import Intro from './pages/about/intro'
+import Press from './pages/about/press'
+import Impact from './pages/about/impact'
+import HowTos from './pages/about/howTos'
+import Podcast from './pages/company/podcast'
+import Investors from './pages/company/investors'
+import Affiliates from './pages/company/affiliates'
+import Terms from './pages/legal/terms'
+import Cookies from './pages/legal/cookies'
+import Privacy from './pages/legal/privacy'
+import Licensing from './pages/legal/licensing'
+import Help from './pages/support/help'
+import FAQs from './pages/support/faqs'
+import Trust from './pages/support/trust'
+import Inquiries from './pages/support/inquiries'
 
 import Welcome from './components/dash/Welcome'
 
@@ -33,9 +49,11 @@ function App() {
 
   return (
     <Routes>
+      {/* Public routes */}
       <Route path='/' element={<Layout />}>
         <Route index element={<Home />} />
         <Route path='login' element={<Login />} />
+        <Route path='contact' element={<Contact />} />
         <Route path='register' element={<Register />} />
 
         <Route path='services/'>
@@ -60,13 +78,41 @@ function App() {
           <Route index element={<Blog />} />
         </Route>
 
+        <Route path='about'>
+          <Route index />
+          <Route path='us' element={<Intro />} />
+          <Route path='press' element={<Press />} />
+          <Route path='how-tos' element={<HowTos />} />
+          <Route path='impact' element={<Impact />} />
+        </Route>
+
         <Route path='company'>
           <Route index />
           <Route path='jobs' element={<Jobs />} />
           <Route path='team' element={<Team />} />
+          <Route path='podcast' element={<Podcast />} />
+          <Route path='investors' element={<Investors />} />
+          <Route path='affiliates' element={<Affiliates />} />
+        </Route>
+
+        <Route path='legal'>
+          <Route index />
+          <Route path='terms' element={<Terms />} />
+          <Route path='cookies' element={<Cookies />} />
+          <Route path='privacy' element={<Privacy />} />
+          <Route path='licensing' element={<Licensing />} />
+        </Route>
+
+        <Route path='support'>
+          <Route index />
+          <Route path='help' element={<Help />} />
+          <Route path='faqs' element={<FAQs />} />
+          <Route path='trust' element={<Trust />} />
+          <Route path='inquiries' element={<Inquiries />} />
         </Route>
       </Route>
 
+      {/* Dash routes */}
       <Route element={<Prefetch />}>
         <Route path='/dash' element={<DashLayout />}>
           <Route index element={<Welcome />} />
@@ -81,7 +127,7 @@ function App() {
             <Route path=":id" element={<EditProject />} />
             <Route path="new" element={<NewProject />} />
           </Route>
-        </Route>{/* end dash */}
+        </Route>
       </Route>
     </Routes>
   )
