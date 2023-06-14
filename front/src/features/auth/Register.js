@@ -1,5 +1,5 @@
 import React from 'react'
-import Newsletter from '../slices/newsletter'
+import Newsletter from '../../pages/slices/newsletter'
 
 const Register = () => {
   return (
