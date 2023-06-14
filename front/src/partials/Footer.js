@@ -22,7 +22,7 @@ const links = {
     { name: 'Press', class: linkStyle, href: '/about/press' },
     { name: 'How Tos', class: linkStyle, href: '/about/how-tos' },
     { name: 'Our Impact', class: linkStyle, href: '/about/impact' },
-    { name: 'Contact', class: linkStyle, href: '/about/contact' },
+    { name: 'Contact', class: linkStyle, href: '/contact' },
   ],
   support: [
     { name: 'Help', class: linkStyle, href: '/support/help' },

@@ -17,25 +17,29 @@ import {
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
 
-const services = [
-  { name: 'Academic', description: 'Bootstrap your academic goals', href: '/services/academic', icon: AcademicCapIcon },
-  { name: 'Scholarships', description: 'Access our list of current scholarship positions', href: '/services/scholarships', icon: BuildingLibraryIcon },
-  { name: 'Career', description: 'Get help fast-tracking your career goals', href: '/services/career', icon: BuildingOffice2Icon },
-  { name: 'Jobs', description: 'Access our curated listing of job openings', href: '/services/jobs', icon: BriefcaseIcon },
-  { name: 'Mentorship', description: 'Let our professors guide you', href: '/services/mentorship', icon: LightBulbIcon },
-  { name: 'CV Check', description: 'Check the validity of your CV and Resume', href: '/services/cv-check', icon: DocumentTextIcon },
-  { name: 'Conciarge', description: 'Get help moving from one place to another', href: '/services/conciarge', icon: PaperAirplaneIcon },
-]
-const about = [
-  { name: 'Introduction', description: 'Bootstrap and fast-track your academic|career goals', href: '/about/us', icon: HomeModernIcon },
-  { name: 'Press', description: 'Hear what people say about us', href: '/about/press', icon: NewspaperIcon },
-  { name: 'Careers', description: 'We are currently hiring', href: '/about/jobs', icon: IdentificationIcon },
-  { name: 'How Tos', description: 'Get to know how we work', href: '/about/how-tos', icon: LifebuoyIcon }
-]
-const callsToAction = [
-  { name: 'How it works', href: '/about/process', icon: PlayCircleIcon },
-  { name: 'Contact support', href: '/help/contact', icon: PhoneIcon },
-]
+const navigation = {
+  services: [
+    { name: 'Academic', description: 'Bootstrap your academic goals', href: '/services/academic', icon: AcademicCapIcon },
+    { name: 'Scholarships', description: 'Access our list of current scholarship positions', href: '/services/scholarships', icon: BuildingLibraryIcon },
+    { name: 'Career', description: 'Get help fast-tracking your career goals', href: '/services/career', icon: BuildingOffice2Icon },
+    { name: 'Jobs', description: 'Access our curated listing of job openings', href: '/services/jobs', icon: BriefcaseIcon },
+    { name: 'Mentorship', description: 'Let our professors guide you', href: '/services/mentorship', icon: LightBulbIcon },
+    { name: 'CV Check', description: 'Check the validity of your CV and Resume', href: '/services/cv-check', icon: DocumentTextIcon },
+    { name: 'Conciarge', description: 'Get help moving from one place to another', href: '/services/conciarge', icon: PaperAirplaneIcon },
+  ],
+  about: [
+    { name: 'Introduction', description: 'Bootstrap and fast-track your academic|career goals', href: '/about/us', icon: HomeModernIcon },
+    { name: 'Press', description: 'Hear what people say about us', href: '/about/press', icon: NewspaperIcon },
+    { name: 'Careers', description: 'We are currently hiring', href: '/about/jobs', icon: IdentificationIcon },
+    { name: 'How Tos', description: 'Get to know how we work', href: '/about/how-tos', icon: LifebuoyIcon }
+  ],
+  insights: [],
+  company: [],
+  callsToAction: [
+    { name: 'How it works', href: '/about/process', icon: PlayCircleIcon },
+    { name: 'Contact support', href: '/contact', icon: PhoneIcon },
+  ]
+}
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -45,7 +49,7 @@ const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   const content = (
-    <header>
+    <header className='absolute inset-x-0 top-0 z-50'>
       <nav className='mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8' aria-label='Global'>
         <div className='flex lg:flex-1'>
           <a href='/' className='-m-1.5 p-1.5'>
@@ -81,9 +85,9 @@ const Header = () => {
               leaveFrom='opacity-100 translate-y-0'
               leaveTo='opacity-0 translate-y-1'
             >
-              <Popover.Panel className='absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5'>
+              <Popover.Panel className='absolute -left-8 top-full z-50 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5'>
                 <div className='p-4'>
-                  {services.map((item) => (
+                  {navigation.services.map((item) => (
                     <div
                       key={item.name}
                       className='group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50'
@@ -102,7 +106,7 @@ const Header = () => {
                   ))}
                 </div>
                 <div className='grid grid-cols-2 divide-x divide-gray-900/5 bg-gray-50'>
-                  {callsToAction.map((item) => (
+                  {navigation.callsToAction.map((item) => (
                     <a
                       key={item.name}
                       href={item.href}
@@ -134,7 +138,7 @@ const Header = () => {
             >
               <Popover.Panel className='absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5'>
                 <div className='p-4'>
-                  {about.map((item) => (
+                  {navigation.about.map((item) => (
                     <div
                       key={item.name}
                       className='group relative flex items-center gap-x-6 rounded-lg p-4 text-sm leading-6 hover:bg-gray-50'
@@ -169,8 +173,8 @@ const Header = () => {
         </div>
       </nav>
       <Dialog as='div' className='lg:hidden' open={mobileMenuOpen} onClose={setMobileMenuOpen}>
-        <div className='fixed inset-0 z-10' />
-        <Dialog.Panel className='fixed inset-y-0 right-0 z-10 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10'>
+        <div className='fixed inset-0 z-50' />
+        <Dialog.Panel className='fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10'>
           <div className='flex items-center justify-between'>
             <a href='/' className='-m-1.5 p-1.5'>
               <span className='sr-only'>HubX Consulting</span>
@@ -201,7 +205,7 @@ const Header = () => {
                         />
                       </Disclosure.Button>
                       <Disclosure.Panel className='mt-2 space-y-2'>
-                        {[...services, ...callsToAction].map((item) => (
+                        {[...navigation.services, ...navigation.callsToAction].map((item) => (
                           <Disclosure.Button
                             key={item.name}
                             as='a'
@@ -227,7 +231,7 @@ const Header = () => {
                         />
                       </Disclosure.Button>
                       <Disclosure.Panel className='mt-2 space-y-2'>
-                        {about.map((item) => (
+                        {navigation.about.map((item) => (
                           <Disclosure.Button
                             key={item.name}
                             as='a'
@@ -260,6 +264,12 @@ const Header = () => {
                   className='-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'
                 >
                   Log in
+                </a>
+                <a
+                  href='/register'
+                  className='-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50'
+                >
+                  Get started
                 </a>
               </div>
             </div>
