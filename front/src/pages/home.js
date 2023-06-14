@@ -1,8 +1,9 @@
 import { React, useState } from 'react'
-import { Question, Award, BookHalf, CalendarCheck, CarFront, ClipboardCheck, Airplane, Briefcase, PatchCheck, BookmarkStar, ListNested, GlobeEuropeAfrica, Boxes, ClipboardPulse, Envelope } from 'react-bootstrap-icons'
+import { Question, Award, BookHalf, CalendarCheck, CarFront, ClipboardCheck, Airplane, Briefcase, PatchCheck, BookmarkStar, ListNested, GlobeEuropeAfrica, Boxes, ClipboardPulse } from 'react-bootstrap-icons'
 import Scholarship from './slices/scholarship'
 import Job from './slices/job'
 import { POSTS } from './config/blog'
+import { TESTIMONIALS } from './config/testimonials'
 import Newsletter from './slices/newsletter'
 
 const Home = () => {
@@ -15,23 +16,6 @@ const Home = () => {
       name: 'Scholarships', 
       component: Scholarship
     }
-  ]
-  const testimonials = [
-    {
-      name: 'Wissam',
-      title: 'Founder of BlueGinnee',
-      quote: 'Thank you so very much for your swift and effective service. I appreciate your feedback! Hopefully after editing, I will get good marks. Thanks again'
-    },
-    {
-      name: 'Maria',
-      title: 'Product designer | Finbarrs',
-      quote: 'Your service was amazing. My thesis editor gave me pretty specific feedback on how to improve my critical discussion, which was most helpful. My work was returned much quicker than I estimated. Very delighted with the outcome. Cannot commend you guys enough. Thank you'
-    },
-    {
-      name: 'Botham Gene',
-      title: 'Student | University of East London',
-      quote: 'Just got my grade for my thesis, it is an A+! Thank you very much for your service. I will definitely recommend hubx consulting to my friends. All the best'
-    },
   ]
 
   const [selectedItem, setSelectedItem ] = useState(0)
@@ -75,7 +59,11 @@ const Home = () => {
 
       {/* Features */}
       <section className='px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20'>
+        <div className='max-w-3xl mx-auto text-center'>
+          <p className='inline-block px-3 py-px mb-12 md:mb-16 text-xs font-semibold tracking-wider text-blue-900 uppercase rounded-full bg-blue-100'>Services overview</p>
+        </div>
         <div className='grid row-gap-8 sm:row-gap-0 sm:grid-cols-2 lg:grid-cols-3'>
+          
           <div className='p-8 border-b sm:border-r'>
             <div className='max-w-md text-center'>
               <div className='flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100 sm:w-16 sm:h-16'>
@@ -438,7 +426,7 @@ const Home = () => {
             <p className='inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-blue-900 uppercase rounded-full bg-blue-100'>What people are saying</p>
             <ul>
               {
-                testimonials.map((item, idx) => (
+                TESTIMONIALS.map((item, idx) => (
                   currentTestimonial === idx ? (
                     <li key={idx}>
                       <figure>
@@ -463,7 +451,7 @@ const Home = () => {
           <div className='mt-6'>
             <ul className='flex gap-x-3 justify-center'>
               {
-                testimonials.map((item, idx) => (
+                TESTIMONIALS.map((item, idx) => (
                   <li key={idx}>
                     <button className={`w-2.5 h-2.5 rounded-full duration-150 ring-offset-2 ring-blue-600 focus:ring ${currentTestimonial === idx ? 'bg-blue-600' : 'bg-gray-300'}`}
                       onClick={() => setCurrentTestimonial(idx)}

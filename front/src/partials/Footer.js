@@ -1,7 +1,7 @@
 import { React } from 'react'
 import { Facebook, Instagram, Twitter } from 'react-bootstrap-icons'
 
-const linkStyle = 'block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-blue-700'
+const linkStyle = 'block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-blue-600'
 const links = {
   services: [
     { name: 'Translation', class: linkStyle, href: '/services/translation' },
@@ -116,13 +116,13 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className='flex flex-col items-center justify-between text-sm text-gray-600 py-5 border-t md:flex-row'>
+      <div className='flex flex-col items-center justify-between text-sm text-gray-600 py-5 border-t md:flex-row font-medium'>
         <p>
           © Copyright 2023 HubX Inc.
         </p>
-        <nav className='flex text-center mt-3 md:mt-0 font-normal'>
+        <nav className='flex text-center'>
           {links.legal.map((item, idx) => (
-            <a key={idx} className='mx-1 duration-300 hover:text-blue-600' href={item.href}>{item.name}</a>
+            <a key={idx} className={`md:mt-0 mx-1 ${linkStyle}`} href={item.href}>{item.name}</a>
           ))}
         </nav>
         <p className='mt-3 md:mt-0'>All rights reserved.</p>
