@@ -4,7 +4,7 @@ const Login = () => {
   const btn = 'flex w-full items-center justify-center rounded-md py-1.5 text-sm'
 
   return (
-    <main>
+    <main className='mt-32'>
       <section className='my-12'>
         <div className='flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8'>
           <div className='sm:mx-auto sm:w-full sm:max-w-sm'>
