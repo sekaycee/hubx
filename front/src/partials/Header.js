@@ -30,11 +30,12 @@ const navigation = {
   about: [
     { name: 'Introduction', description: 'Bootstrap and fast-track your academic|career goals', href: '/about/us', icon: HomeModernIcon },
     { name: 'Press', description: 'Hear what people say about us', href: '/about/press', icon: NewspaperIcon },
-    { name: 'Careers', description: 'We are currently hiring', href: '/about/jobs', icon: IdentificationIcon },
     { name: 'How Tos', description: 'Get to know how we work', href: '/about/how-tos', icon: LifebuoyIcon }
   ],
   insights: [],
-  company: [],
+  company: [
+    { name: 'Careers', description: 'We are currently hiring', href: '/company/jobs', icon: IdentificationIcon },
+  ],
   callsToAction: [
     { name: 'How it works', href: '/about/process', icon: PlayCircleIcon },
     { name: 'Contact support', href: '/contact', icon: PhoneIcon },
@@ -136,7 +137,7 @@ const Header = () => {
               leaveFrom='opacity-100 translate-y-0'
               leaveTo='opacity-0 translate-y-1'
             >
-              <Popover.Panel className='absolute -left-8 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5'>
+              <Popover.Panel className='absolute -left-32 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5'>
                 <div className='p-4'>
                   {navigation.about.map((item) => (
                     <div
