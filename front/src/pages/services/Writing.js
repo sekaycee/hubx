@@ -1,5 +1,5 @@
 import React from 'react'
-import Newsletter from '../../partials/Newsletter'
+import Newsletter from '../slices/newsletter'
 
 const Writing = () => {
   const content = (

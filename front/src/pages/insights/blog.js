@@ -1,6 +1,7 @@
 import { React } from 'react'
 import Insights from './insights'
 import { POSTS } from '../config/blog'
+import Newsletter from '../slices/newsletter'
 
 const Blog = () => {
   const content = (
@@ -95,6 +96,7 @@ const Blog = () => {
       <section className='mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8'>
         <Insights posts={POSTS} />
       </section>
+      <Newsletter />
     </main>
   )
   return content

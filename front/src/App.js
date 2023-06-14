@@ -7,6 +7,7 @@ import DashLayout from './components/dash/Layout'
 import Home from './pages/home'
 import Blog from './pages/insights/blog'
 import * as sv from './pages/services/index'
+import Team from './pages/company/team'
 
 import Welcome from './components/dash/Welcome'
 
@@ -56,6 +57,11 @@ function App() {
 
         <Route path='blog/'>
           <Route index element={<Blog />} />
+        </Route>
+
+        <Route path='company'>
+          <Route index />
+          <Route path='team' element={<Team />} />
         </Route>
       </Route>
 

@@ -1,4 +1,4 @@
-import Newsletter from '../../partials/Newsletter'
+import Newsletter from '../slices/newsletter'
 import Academic from './academic'
 import Accommodation from './accommodation'
 import Career from './career'

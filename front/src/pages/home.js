@@ -1,9 +1,9 @@
 import { React, useState } from 'react'
 import { Question, Award, BookHalf, CalendarCheck, CarFront, ClipboardCheck, Airplane, Briefcase, PatchCheck, BookmarkStar, ListNested, GlobeEuropeAfrica, Boxes, ClipboardPulse, Envelope } from 'react-bootstrap-icons'
-import Scholarship from './common/scholarship'
-import Job from './common/job'
+import Scholarship from './slices/scholarship'
+import Job from './slices/job'
 import { POSTS } from './config/blog'
-import Newsletter from '../partials/Newsletter'
+import Newsletter from './slices/newsletter'
 
 const Home = () => {
   const tabItems = [
