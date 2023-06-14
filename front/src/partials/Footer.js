@@ -91,6 +91,12 @@ const Footer = () => {
         </div>
         <div className='grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4'>
           <div className='text-center md:text-left'>
+            <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase'>About</div>
+            {links.about.map((link, idx) => (
+              <a key={idx} className={link.class} href={link.href}>{link.name}</a>
+            ))}
+          </div>
+          <div className='text-center md:text-left'>
             <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase'>Category</div>
             {links.services.map((link, idx) => (
               <a key={idx} className={link.class} href={link.href}>{link.name}</a>
@@ -99,12 +105,6 @@ const Footer = () => {
           <div className='text-center md:text-left'>
             <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase'>Company</div>
             {links.company.map((link, idx) => (
-              <a key={idx} className={link.class} href={link.href}>{link.name}</a>
-            ))}
-          </div>
-          <div className='text-center md:text-left'>
-            <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase'>About</div>
-            {links.about.map((link, idx) => (
               <a key={idx} className={link.class} href={link.href}>{link.name}</a>
             ))}
           </div>

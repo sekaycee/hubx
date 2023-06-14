@@ -1,7 +1,7 @@
 import React from 'react'
 import Newsletter from '../slices/newsletter'
 
-const Trust = () => {
+const Help = () => {
   const content = (
     <>
       <section className='h-screen place-items-center'>
@@ -13,4 +13,4 @@ const Trust = () => {
   return content
 }
 
-export default Trust
+export default Help
