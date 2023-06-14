@@ -1,9 +1,13 @@
+import React from 'react'
+import Newsletter from '../../partials/Newsletter'
+
 const Academic = () => {
   const content = (
     <>
-      <section>
-        <div className='h-screen text-center text-lg'>Coming Soon</div>
+      <section className='h-screen place-items-center'>
+        <div className='text-center text-[10rem] mt-[20rem]'>Coming Soon</div>
       </section>
+      <Newsletter />
     </>
   )
   return content
