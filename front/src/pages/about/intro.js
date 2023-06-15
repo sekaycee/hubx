@@ -59,9 +59,9 @@ const Intro = () => {
       <section className='py-28' style={{ background: 'linear-gradient(152.92deg, rgba(192, 132, 252, 0.2) 4.54%, rgba(232, 121, 249, 0.17) 34.2%, rgba(192, 132, 252, 0.1) 77.55%)' }}>
         <div className='max-w-screen-xl mx-auto px-4 md:text-center md:px-8'>
           <div className='max-w-xl space-y-3 md:mx-auto'>
-            <h3 className='text-indigo-600 font-semibold'>
-              Get to know us
-            </h3>
+            <div className='max-w-3xl mx-auto text-center'>
+              <p className='inline-block px-3 py-px my-6 text-xs font-semibold tracking-wider text-blue-900 uppercase rounded-full bg-blue-100'>Get to know us</p>
+            </div>
             <p className='text-gray-800 text-3xl font-semibold sm:text-4xl'>
               For an exciting collaboration
             </p>
@@ -70,7 +70,7 @@ const Intro = () => {
             </p>
           </div>
           <div className='mt-4'>
-            <a href='javascript:void(0)' className='inline-block py-2 px-4 text-white font-medium bg-gray-800 duration-150 hover:bg-gray-700 active:bg-gray-900 rounded-lg shadow-md hover:shadow-none'>
+            <a href='/services' className='inline-block py-2 px-4 text-white font-medium bg-gray-800 duration-150 hover:bg-gray-700 active:bg-gray-900 rounded-lg shadow-md hover:shadow-none'>
               Get started
             </a>
           </div>
@@ -139,7 +139,9 @@ const Intro = () => {
       <section className='py-24 sm:py-32'>
         <div className='mx-auto max-w-7xl px-6 lg:px-8'>
           <div className='mx-auto max-w-2xl lg:text-center'>
-            <h2 className='text-base font-semibold leading-7 text-indigo-600'>Our values</h2>
+            <div className='max-w-3xl mx-auto text-center'>
+              <p className='inline-block px-3 py-px mb-6 text-xs font-semibold tracking-wider text-blue-900 uppercase rounded-full bg-blue-100'>Our values</p>
+            </div>
             <p className='mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl'>
               Our creed defines our character
             </p>
@@ -152,7 +154,7 @@ const Intro = () => {
               {features.map((feature) => (
                 <div key={feature.name} className='relative pl-16'>
                   <dt className='text-base font-semibold leading-7 text-gray-900'>
-                    <div className='absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-600'>
+                    <div className='absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-blue-600'>
                       <feature.icon className='h-6 w-6 text-white' aria-hidden='true' />
                     </div>
                     {feature.name}
@@ -172,8 +174,3 @@ const Intro = () => {
 }
 
 export default Intro
-
-
-
-
-
