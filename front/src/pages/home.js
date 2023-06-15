@@ -76,10 +76,9 @@ const Home = () => {
         <div className='max-w-3xl mx-auto text-center'>
           <p className='inline-block px-3 py-px mb-12 md:mb-16 text-xs font-semibold tracking-wider text-blue-900 uppercase rounded-full bg-blue-100'>Services overview</p>
         </div>
-        <div className='grid row-gap-8 sm:row-gap-0 sm:grid-cols-2 lg:grid-cols-3'>
-          
+        <div className='grid text-center row-gap-8 sm:row-gap-0 sm:grid-cols-2 lg:grid-cols-3'>
           <div className='p-8 border-b sm:border-r'>
-            <div className='max-w-md text-center'>
+            <div className='max-w-md'>
               <div className='flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100 sm:w-16 sm:h-16'>
                 <Award size={28} />
               </div>

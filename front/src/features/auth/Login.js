@@ -11,7 +11,7 @@ const Login = () => {
             <img
               className='mx-auto h-10 w-auto'
               src='/media/logos/hubx-circle.svg'
-              alt='Your Company'
+              alt='HubX Consulting'
             />
             <h2 className='mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900'>
               Sign in to your account
@@ -19,7 +19,7 @@ const Login = () => {
           </div>
 
           <div className='mt-10 sm:mx-auto sm:w-full sm:max-w-sm'>
-            <form className='space-y-6' action='/register' method='POST'>
+            <form className='space-y-6' action='/login' method='POST'>
               <div>
                 <label htmlFor='email' className='block text-sm font-medium leading-6 text-gray-900'>
                   Email address
