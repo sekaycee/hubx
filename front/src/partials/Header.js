@@ -49,6 +49,8 @@ function classNames(...classes) {
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
+  // const linkStyle = 'block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-blue-600'
+
   const content = (
     <header className='absolute inset-x-0 top-0 z-50'>
       <nav className='mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8' aria-label='Global'>
@@ -74,7 +76,7 @@ const Header = () => {
           <Popover className='relative'>
             <Popover.Button className='flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900'>
               Services
-              <ChevronDownIcon className='h-5 w-5 flex-none text-gray-400' aria-hidden='true' />
+              <ChevronDownIcon className='h-5 w-5 flex-none text-gray-900' aria-hidden='true' />
             </Popover.Button>
 
             <Transition
@@ -125,7 +127,7 @@ const Header = () => {
           <Popover className='relative'>
             <Popover.Button className='flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900'>
               About
-              <ChevronDownIcon className='h-5 w-5 flex-none text-gray-400' aria-hidden='true' />
+              <ChevronDownIcon className='h-5 w-5 flex-none text-gray-900' aria-hidden='true' />
             </Popover.Button>
 
             <Transition
@@ -137,7 +139,7 @@ const Header = () => {
               leaveFrom='opacity-100 translate-y-0'
               leaveTo='opacity-0 translate-y-1'
             >
-              <Popover.Panel className='absolute -left-36 top-full z-10 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5'>
+              <Popover.Panel className='absolute -left-36 top-full z-50 mt-3 w-screen max-w-md overflow-hidden rounded-3xl bg-white shadow-lg ring-1 ring-gray-900/5'>
                 <div className='p-4'>
                   {navigation.about.map((item) => (
                     <div
@@ -160,6 +162,69 @@ const Header = () => {
               </Popover.Panel>
             </Transition>
           </Popover>
+
+          {/* <Popover className='relative'>
+            <Popover.Button className='flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900'>
+              Insights
+              <ChevronDownIcon className='h-5 w-5 flex-none text-gray-900' aria-hidden='true' />
+            </Popover.Button>
+
+            <Transition
+              as={Fragment}
+              enter='transition ease-out duration-200'
+              enterFrom='opacity-0 translate-y-1'
+              enterTo='opacity-100 translate-y-0'
+              leave='transition ease-in duration-150'
+              leaveFrom='opacity-100 translate-y-0'
+              leaveTo='opacity-0 translate-y-1'
+            >
+              <Popover.Panel className='absolute top-full z-50 pt-12 min-w-fit overflow-hidden bg-white shadow-lg ring-1 ring-gray-900/5 -left-[33rem] -right-[24rem] w-auto'>
+                <div className='py-10 px-6 lg:px-8 grid gap-16 row-gap-10 lg:grid-cols-4'>
+                  <div className='grid grid-cols-2 gap-8 row-gap-8'>
+                    <div className='text-center md:text-left'>
+                      <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase'>Categories</div>
+                      <a href='/blog/category/' className={linkStyle}>Writing</a>
+                      <a href='/blog/category/' className={linkStyle}>Writing</a>
+                      <a href='/blog/category/' className={linkStyle}>Writing</a>
+                      <a href='/blog/category/' className={linkStyle}>Writing</a>
+                      <a href='/blog/category/' className={linkStyle}>Writing</a>
+                      <a href='/blog/category/' className={linkStyle}>Writing</a>
+                    </div>
+                    <div className='text-center md:text-left'>
+                      <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase'>Categories</div>
+                      <a href='/blog/category/' className={linkStyle}>Writing</a>
+                      <a href='/blog/category/' className={linkStyle}>Writing</a>
+                      <a href='/blog/category/' className={linkStyle}>Writing</a>
+                      <a href='/blog/category/' className={linkStyle}>Writing</a>
+                      <a href='/blog/category/' className={linkStyle}>Writing</a>
+                      <a href='/blog/category/' className={linkStyle}>Writing</a>
+                    </div>
+                  </div>
+                  <div className='grid grid-cols-2 gap-5 row-gap-8'>
+                    <div className='text-center md:text-left'>
+                      <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase'>Categories</div>
+                      <a href='/blog/category/' className={linkStyle}>Writing</a>
+                      <a href='/blog/category/' className={linkStyle}>Writing</a>
+                      <a href='/blog/category/' className={linkStyle}>Writing</a>
+                      <a href='/blog/category/' className={linkStyle}>Writing</a>
+                      <a href='/blog/category/' className={linkStyle}>Writing</a>
+                      <a href='/blog/category/' className={linkStyle}>Writing</a>
+                    </div>
+                    <div className='text-center md:text-left'>
+                      <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase'>Categories</div>
+                      <a href='/blog/category/' className={linkStyle}>Writing</a>
+                      <a href='/blog/category/' className={linkStyle}>Writing</a>
+                      <a href='/blog/category/' className={linkStyle}>Writing</a>
+                      <a href='/blog/category/' className={linkStyle}>Writing</a>
+                      <a href='/blog/category/' className={linkStyle}>Writing</a>
+                      <a href='/blog/category/' className={linkStyle}>Writing</a>
+                    </div>
+                  </div>
+                </div>
+              </Popover.Panel>
+            </Transition>
+          </Popover> */}
+
           <a href='/blog' className='text-sm font-semibold leading-6 text-gray-900'>
             Insights
           </a>

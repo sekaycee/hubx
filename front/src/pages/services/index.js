@@ -1,4 +1,5 @@
 import Newsletter from '../slices/newsletter'
+import InstantQuote from '../slices/quote'
 import Academic from './academic'
 import Accommodation from './accommodation'
 import Career from './career'
@@ -16,12 +17,15 @@ import Writing from './writing'
 
 const Service = () => {
   const content = (
-    <>
+    <main>
+      <InstantQuote />
+
       <section className='h-screen place-items-center'>
         <div className='text-center text-[10rem] mt-[20rem]'>Coming Soon</div>
       </section>
+      
       <Newsletter />
-    </>
+    </main>
   )
   return content
 }

@@ -15,8 +15,10 @@ const Newsletter = () => {
             <div className='relative'>
               <Envelope className='w-6 h-6 text-gray-400 absolute left-3 inset-y-0 my-auto' />
               <input
+                name='email'
                 type='email'
                 required
+                autoComplete='email'
                 placeholder='Enter your email'
                 className='w-full pl-12 pr-3 py-2 text-gray-500 bg-white outline-2 border focus:border-blue-600 shadow-sm rounded-lg'
               />

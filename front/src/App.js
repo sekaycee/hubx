@@ -6,25 +6,11 @@ import DashLayout from './components/dash/Layout'
 
 import Home from './pages/home'
 import Blog from './pages/insights/blog'
+import * as ab from './pages/about/intro'
+import * as cp from './pages/company/index'
+import * as lg from './pages/legal/index'
 import * as sv from './pages/services/index'
-import Jobs from './pages/company/jobs'
-import Team from './pages/company/team'
-import Contact from './pages/about/contact'
-import Intro from './pages/about/intro'
-import Press from './pages/about/press'
-import Impact from './pages/about/impact'
-import HowTos from './pages/about/howTos'
-import Podcast from './pages/company/podcast'
-import Investors from './pages/company/investors'
-import Affiliates from './pages/company/affiliates'
-import Terms from './pages/legal/terms'
-import Cookies from './pages/legal/cookies'
-import Privacy from './pages/legal/privacy'
-import Licensing from './pages/legal/licensing'
-import Help from './pages/support/help'
-import FAQs from './pages/support/faqs'
-import Trust from './pages/support/trust'
-import Inquiries from './pages/support/inquiries'
+import * as sp from './pages/support/index'
 
 import Welcome from './components/dash/Welcome'
 
@@ -37,6 +23,14 @@ import NewUserForm from './features/users/NewUserForm'
 import NewProject from './features/projects/NewProject'
 import EditProject from './features/projects/EditProject'
 import ProjectsList from './features/projects/ProjectsList'
+
+// Create the function
+export function AddScript(url) {
+  const script = document.createElement('script')
+  script.src = url
+  script.async = true
+  document.body.appendChild(script)
+}
 
 function App() {
   const location = useLocation();
@@ -53,7 +47,7 @@ function App() {
       <Route path='/' element={<Layout />}>
         <Route index element={<Home />} />
         <Route path='login' element={<Login />} />
-        <Route path='contact' element={<Contact />} />
+        <Route path='contact' element={<ab.Contact />} />
         <Route path='register' element={<Register />} />
 
         <Route path='services/'>
@@ -80,35 +74,35 @@ function App() {
 
         <Route path='about'>
           <Route index />
-          <Route path='us' element={<Intro />} />
-          <Route path='press' element={<Press />} />
-          <Route path='how-tos' element={<HowTos />} />
-          <Route path='impact' element={<Impact />} />
+          <Route path='us' element={<ab.Intro />} />
+          <Route path='press' element={<ab.Press />} />
+          <Route path='how-tos' element={<ab.HowTos />} />
+          <Route path='impact' element={<ab.Impact />} />
         </Route>
 
         <Route path='company'>
           <Route index />
-          <Route path='jobs' element={<Jobs />} />
-          <Route path='team' element={<Team />} />
-          <Route path='podcast' element={<Podcast />} />
-          <Route path='investors' element={<Investors />} />
-          <Route path='affiliates' element={<Affiliates />} />
+          <Route path='jobs' element={<cp.Jobs />} />
+          <Route path='team' element={<cp.Team />} />
+          <Route path='podcast' element={<cp.Podcast />} />
+          <Route path='investors' element={<cp.Investors />} />
+          <Route path='affiliates' element={<cp.Affiliates />} />
         </Route>
 
         <Route path='legal'>
           <Route index />
-          <Route path='terms' element={<Terms />} />
-          <Route path='cookies' element={<Cookies />} />
-          <Route path='privacy' element={<Privacy />} />
-          <Route path='licensing' element={<Licensing />} />
+          <Route path='terms' element={<lg.Terms />} />
+          <Route path='cookies' element={<lg.Cookies />} />
+          <Route path='privacy' element={<lg.Privacy />} />
+          <Route path='licensing' element={<lg.Licensing />} />
         </Route>
 
         <Route path='support'>
           <Route index />
-          <Route path='help' element={<Help />} />
-          <Route path='faqs' element={<FAQs />} />
-          <Route path='trust' element={<Trust />} />
-          <Route path='inquiries' element={<Inquiries />} />
+          <Route path='help' element={<sp.Help />} />
+          <Route path='faqs' element={<sp.FAQs />} />
+          <Route path='trust' element={<sp.Trust />} />
+          <Route path='inquiries' element={<sp.Inquiries />} />
         </Route>
       </Route>
 
@@ -129,6 +123,8 @@ function App() {
           </Route>
         </Route>
       </Route>
+      {/* Call the function to add a script */}
+      {AddScript('../public/static/js/docToText.js')}
     </Routes>
   )
 }

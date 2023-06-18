@@ -1,4 +1,8 @@
 import React from 'react'
+import Contact from './contact'
+import HowTos from './howTos'
+import Impact from './impact'
+import Press from './press'
 import Newsletter from '../slices/newsletter'
 import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon } from '@heroicons/react/24/outline'
 
@@ -173,4 +177,4 @@ const Intro = () => {
   return content
 }
 
-export default Intro
+export { Contact, HowTos, Impact, Intro, Press }

@@ -24,6 +24,7 @@
   </head>
   <body class='font-inter antialiased'>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+    <div id='root'></div>
     <script>
       if (localStorage.getItem('sidebar-expanded') == 'true') {
         document.querySelector('body').classList.add('sidebar-expanded');
@@ -31,6 +32,5 @@
         document.querySelector('body').classList.remove('sidebar-expanded');
       }
     </script>
-    <div id='root'></div>
   </body>
 </html>
