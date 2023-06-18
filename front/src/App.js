@@ -24,14 +24,6 @@ import NewProject from './features/projects/NewProject'
 import EditProject from './features/projects/EditProject'
 import ProjectsList from './features/projects/ProjectsList'
 
-// Create the function
-export function AddScript(url) {
-  const script = document.createElement('script')
-  script.src = url
-  script.async = true
-  document.body.appendChild(script)
-}
-
 function App() {
   const location = useLocation();
 
@@ -123,8 +115,6 @@ function App() {
           </Route>
         </Route>
       </Route>
-      {/* Call the function to add a script */}
-      {AddScript('../public/static/js/docToText.js')}
     </Routes>
   )
 }

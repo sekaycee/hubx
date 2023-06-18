@@ -18,12 +18,11 @@ import Writing from './writing'
 const Service = () => {
   const content = (
     <main>
-      <InstantQuote />
-
       <section className='h-screen place-items-center'>
         <div className='text-center text-[10rem] mt-[20rem]'>Coming Soon</div>
       </section>
-      
+      <InstantQuote />
+
       <Newsletter />
     </main>
   )

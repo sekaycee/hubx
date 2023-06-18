@@ -1,15 +1,8 @@
-import { useEffect } from 'react'
-
-const ImportScript = (src) => {
-  useEffect(() => {
-    const script = document.createElement('script')
-    script.src = src
-    script.async = true
-    document.body.appendChild(script)
-    return () => {
-      document.body.removeChild(script)
-    }
-  }, [src])
+const importScript = (src) => {
+  const script = document.createElement('script');
+  script.src = '../../public/static/js/' + src;
+  script.async = true;
+  document.body.appendChild(script)
 }
 
-export default ImportScript
+export default importScript
