@@ -18,7 +18,7 @@ import Writing from './writing'
 const Service = () => {
   const content = (
     <main className='pt-[10rem] max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8'>
-      <section className='grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center'>
+      <section className='mb-[5rem] grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center'>
         <aside className=''>
           <InstantQuote />
         </aside>
