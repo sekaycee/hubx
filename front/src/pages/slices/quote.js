@@ -192,7 +192,7 @@ const InstantQuote = () => {
       <h1 className='block text-3xl font-bold text-gray-800 sm:text-4xl lg:text-6xl lg:leading-tight dark:text-white'>Get an instant <span className='text-blue-600'>quotation</span></h1>
       <p className='mt-3 text-lg text-gray-800 dark:text-gray-400'>Hand-picked professionals and expertly crafted solutions, designed for any kind of student or professional.</p>
       
-      <form action={getInstantQuote}>
+      <form action='getInstantQuote()'>
         <div className='mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6'>
           <div className='sm:col-span-3'>
             <Listbox value={selected} onChange={setSelected}>
