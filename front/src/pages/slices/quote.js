@@ -190,13 +190,15 @@ const InstantQuote = () => {
     let q = quote
     const qc = cat
     const qt = time
-    const qu = unit
+    //const qu = unit
     const count = wordCount
     
     // perform calc to get quote
-    if (qt > 0) {
+    if (qt > 0 || !qt) {
       if (qc.id === 1 || qc.id === 2 || qc.id === 3 || qc.id === 8) {
         q = qc.charge * count
+      } else if (qc.id === 7) {
+        q = qc.charge
       }
     }
     //fquote = count * ftime
