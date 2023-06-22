@@ -15,22 +15,22 @@ import SelectCountType from './quote/selectCountType'
 GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${version}/pdf.worker.js`
 
 const services = [
-  { id: 1, cat: 'Proofreading and editing', icon: BookHalf },
-  { id: 2, cat: 'CV or Cover letter reviews', icon: Clipboard2Data },
-  { id: 3, cat: 'Personal statement writing', icon: Pencil },
-  { id: 4, cat: 'Poster or Presentation', icon: Projector },
-  { id: 5, cat: 'Mentorship', icon: TelephoneOutbound },
-  { id: 6, cat: 'Accommodation', icon: HouseExclamation },
-  { id: 7, cat: 'Hourly consultation', icon: Clock },
-  { id: 8, cat: 'Translation', icon: Translate },
-  { id: 9, cat: 'Programming', icon: Code },
-  { id: 10, cat: 'Design', icon: Tools}
+  { id: 1, cat: 'Proofreading and editing', icon: BookHalf, charge: 2 },
+  { id: 2, cat: 'CV or Cover letter reviews', icon: Clipboard2Data, charge: 3 },
+  { id: 3, cat: 'Personal statement writing', icon: Pencil, charge: 5 },
+  { id: 4, cat: 'Poster or Presentation', icon: Projector, charge: 50 },
+  { id: 5, cat: 'Mentorship', icon: TelephoneOutbound, charge: 10000 },
+  { id: 6, cat: 'Accommodation', icon: HouseExclamation, charge: 1 },
+  { id: 7, cat: 'Hourly consultation', icon: Clock, charge: 100 },
+  { id: 8, cat: 'Translation', icon: Translate, charge: 4 },
+  { id: 9, cat: 'Programming', icon: Code, charge: 25 },
+  { id: 10, cat: 'Design', icon: Tools, charge: 15}
 ]
 const duration = [
-  { title: 'hour', unitcharge: 2, multiplier: .05 },
-  { title: 'day'},
-  { title: 'week'},
-  { title: 'month'}
+  { id: 1, title: 'hour', multiplier: .05 },
+  { id: 2, title: 'day', multiplier: .08 },
+  { id: 3, title: 'week', multiplier: .15 },
+  { id: 4, title: 'month', multiplier: .2}
 ]
 
 function classNames(...classes) {
@@ -99,24 +99,25 @@ const getTextFromTXT = async (file) => {
 const InstantQuote = () => {
   const [time, setTime] = useState(0)
   const [quote, setQuote] = useState(0)
+  const [cat, setCat] = useState(services[7])
   const [filename, setFilename] = useState('')
   const [unit, setUnit] = useState(duration[0])
   const [wordCount, setWordCount] = useState(0)
   const [quoteOpen, setQuoteOpen] = useState(false)
   const [countMode, setCountMode] = useState(false)
-  const [service, setService] = useState(services[3])
 
   const changeTime = (e) => {
-    let time = parseInt(e.target.value)
-    if (!time || typeof time !== 'number') {
+    let t = parseInt(e.target.value)
+    if (!t || typeof t !== 'number') {
       setTime(0)
+      duration.map(item => item.title.replace('s', ''))
     } else {
-      if (time === 0) {
+      if (t === 0 && unit.title.includes('s')) {
         unit.title.replace('s', '')
-      } else if (time > 1 && unit.title[unit.title.length-1] !== 's') {
+      } else if (t > 1 && unit.title[unit.title.length-1] !== 's') {
         duration.map(item => item.title += 's')
       }
-      setTime(time)
+      setTime(t)
     }
   }
 
@@ -136,6 +137,7 @@ const InstantQuote = () => {
 
   const closeQuote = () => {
     setQuoteOpen(false)
+    setQuote(0)
   }
 
   const openQuote = () => {
@@ -185,16 +187,21 @@ const InstantQuote = () => {
   const getInstantQuote = (e) => {
     e.preventDefault()
     // init quote form variables
-    let fquote = 0
-    const ftime = time
-    const funit = unit
+    let q = quote
+    const qc = cat
+    const qt = time
+    const qu = unit
     const count = wordCount
-    const fservice = service
     
     // perform calc to get quote
-    fquote = count * ftime
+    if (qt > 0) {
+      if (qc.id === 1 || qc.id === 2 || qc.id === 3 || qc.id === 8) {
+        q = qc.charge * count
+      }
+    }
+    //fquote = count * ftime
 
-    setQuote(fquote)
+    setQuote(q)
 
     // open quote modal and reset form
     setQuoteOpen(true)
@@ -211,15 +218,15 @@ const InstantQuote = () => {
       <form onSubmit={getInstantQuote}>
         <div className='mt-10 grid grid-cols-1 gap-x-6 gap-y-8 sm:grid-cols-6'>
           <div className='sm:col-span-3'>
-            <Listbox value={service} onChange={setService}>
+            <Listbox value={cat} onChange={setCat}>
               {({ open }) => (
                 <>
                   <Listbox.Label htmlFor='category' className='block text-sm font-medium leading-6 text-gray-900'>What's your project type?</Listbox.Label>
                   <div className='block relative mt-2'>
                     <Listbox.Button id='category' className='block relative w-full cursor-default rounded-md bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-sm sm:leading-6'>
                       <span className='flex items-center'>
-                        <service.icon />
-                        <span className='ml-3 block truncate'>{service.cat}</span>
+                        <cat.icon />
+                        <span className='ml-3 block truncate'>{cat.cat}</span>
                       </span>
                       <span className='pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2'>
                         <ChevronUpDownIcon className='h-5 w-5 text-gray-400' aria-hidden='true' />
@@ -278,17 +285,20 @@ const InstantQuote = () => {
             </Listbox>
           </div>
           
-          {service.id !== 7 && <ProjectDuration unit={unit} duration={duration} setUnit={setUnit} setTime={changeTime} time={time} />}
+          {(cat.id !== 7 )
+            && <ProjectDuration unit={unit} duration={duration} setUnit={setUnit} setTime={changeTime} time={time} />}
         </div>
 
         {/* Enter wordcount manually? */}
-        {(service.id !== 7 && service.id !== 5)
+        {(cat.id !== 4 && cat.id !== 5 && cat.id !== 6 && cat.id !== 7 && cat.id !== 9 && cat.id !== 10)
           && <SelectCountType enabled={countMode} setEnabled={setCountMode} />}
 
-        {(service.id !== 7 && service.id !== 5 && !countMode) 
+        {(cat.id !== 4 && cat.id !== 5 && cat.id !== 6 && cat.id !== 7 && cat.id !== 9 && cat.id !== 10
+          && !countMode) 
           && <ProjectFile getWordCount={getWordCount} filename={filename} />}
 
-        {(!filename && service.id !== 7 && service.id !== 5 && countMode) 
+        {(cat.id !== 4 && cat.id !== 5 && cat.id !== 6 && cat.id !== 7 && cat.id !== 9 && cat.id !== 10
+          && !filename && countMode) 
           && <InputWordCount value={wordCount} onChange={changeWordCount} />}
 
         {filename && <OutputWordCount wordCount={wordCount} />}
@@ -296,7 +306,7 @@ const InstantQuote = () => {
         <div className='mt-3 grid'>
           <button onClick={openQuote} type='submit' className='inline-flex justify-center items-center gap-x-3 text-center bg-blue-600 hover:bg-blue-700 border border-transparent text-sm lg:text-base text-white font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition py-2 px-3 dark:focus:ring-offset-gray-800'>Get instant quote</button>
         </div>
-        <ShowQuote close={closeQuote} quote={quote} quoteOpen={quoteOpen} cat={service.cat} />
+        <ShowQuote close={closeQuote} quote={quote} quoteOpen={quoteOpen} cat={cat.cat} />
       </form>
     </div>
   )
