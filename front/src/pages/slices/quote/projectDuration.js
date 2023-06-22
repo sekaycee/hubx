@@ -10,7 +10,7 @@ const ProjectDuration = ({ unit, time, setUnit, setTime, duration }) => {
   return (
     <div className='sm:col-span-3'>
       <label htmlFor='time' className='block text-sm font-medium leading-6 text-gray-900'>
-        Project duration
+        When do you want it?
       </label>
       <div className='relative mt-2 rounded-md shadow-sm'>
         <div className='pointer-events-none absolute inset-y-0 left-0 flex items-center pl-3'>
@@ -21,10 +21,10 @@ const ProjectDuration = ({ unit, time, setUnit, setTime, duration }) => {
           value={time}
           onChange={setTime}
           id='time'
-          className='block w-full rounded-md border-0 py-1.5 pl-7 pr-24 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6'
+          className='block w-full rounded-md border-0 py-1.5 pl-8 pr-24 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6'
           placeholder='0'
         />
-        <Listbox value={unit} onChange={setUnit}>
+        <Listbox value={unit} onChange={setUnit} name='duration'>
           {({ open }) => (
             <>
               <Listbox.Label htmlFor='unit' className='sr-only block text-sm font-medium leading-6 text-gray-900'>Time unit</Listbox.Label>
@@ -57,17 +57,17 @@ const ProjectDuration = ({ unit, time, setUnit, setTime, duration }) => {
                         }
                         value={item}
                       >
-                        {({ unit, active }) => (
+                        {({ selected, active }) => (
                           <>
                             <div className='flex items-center'>
                               <span
-                                className={classNames(unit ? 'font-semibold' : 'font-normal', 'ml-3 block truncate')}
+                                className={classNames(selected ? 'font-semibold' : 'font-normal', 'ml-3 block truncate')}
                               >
                                 {item.title}
                               </span>
                             </div>
 
-                            {unit ? (
+                            {selected ? (
                               <span
                                 className={classNames(
                                   active ? 'text-white' : 'text-blue-600',

@@ -9,6 +9,7 @@ import { version, getDocument, GlobalWorkerOptions } from 'pdfjs-dist'
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 import { BookHalf, Clipboard2Data, Clock, Code, HouseExclamation, Pencil, Projector, TelephoneOutbound, Tools, Translate } from 'react-bootstrap-icons'
 import ShowQuote from './quote/showQuote'
+import SelectCountType from './quote/selectCountType'
 //import ShowQuote from './quote/showQuote'
 
 GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${version}/pdf.worker.js`
@@ -102,24 +103,34 @@ const InstantQuote = () => {
   const [unit, setUnit] = useState(duration[0])
   const [wordCount, setWordCount] = useState(0)
   const [quoteOpen, setQuoteOpen] = useState(false)
+  const [countMode, setCountMode] = useState(false)
   const [service, setService] = useState(services[3])
 
-  const getTime = (e) => {
-    let val = parseInt(e.target.value)
-    if (!val || typeof val !== 'number') {
+  const changeTime = (e) => {
+    let time = parseInt(e.target.value)
+    if (!time || typeof time !== 'number') {
       setTime(0)
     } else {
-      if (val === 0 && unit.title[unit.title.length-1] === 's') {
+      if (time === 0) {
         unit.title.replace('s', '')
-      } else if (val > 1 && unit.title[unit.title.length-1] !== 's') {
-        unit.title += 's'
+      } else if (time > 1 && unit.title[unit.title.length-1] !== 's') {
+        duration.map(item => item.title += 's')
       }
-      setTime(val)
+      setTime(time)
     }
   }
 
-  /* const getUnit = (e) => {
-    let val = e.target.value
+  const changeWordCount = (e) => {
+    let count = parseInt(e.target.value)
+    if (count) {
+      setWordCount(count)
+    }
+  }
+
+  /* const changeUnit = (val) => {
+    if (time === 0 && unit.title[unit.title.length-1] === 's') {
+      unit.title.replace('s', '')
+    }
     setUnit(val)
   } */
 
@@ -173,12 +184,21 @@ const InstantQuote = () => {
 
   const getInstantQuote = (e) => {
     e.preventDefault()
-    // quote logic goes here
+    // init quote form variables
+    let fquote = 0
+    const ftime = time
+    const funit = unit
+    const count = wordCount
+    const fservice = service
     
-    const quote = wordCount * time
+    // perform calc to get quote
+    fquote = count * ftime
 
-    setQuote(quote)
+    setQuote(fquote)
+
+    // open quote modal and reset form
     setQuoteOpen(true)
+    setWordCount(0)
     setFilename('')
     setTime(0)
   }
@@ -194,7 +214,7 @@ const InstantQuote = () => {
             <Listbox value={service} onChange={setService}>
               {({ open }) => (
                 <>
-                  <Listbox.Label htmlFor='category' className='block text-sm font-medium leading-6 text-gray-900'>Project categories</Listbox.Label>
+                  <Listbox.Label htmlFor='category' className='block text-sm font-medium leading-6 text-gray-900'>What's your project type?</Listbox.Label>
                   <div className='block relative mt-2'>
                     <Listbox.Button id='category' className='block relative w-full cursor-default rounded-md bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-sm sm:leading-6'>
                       <span className='flex items-center'>
@@ -225,18 +245,18 @@ const InstantQuote = () => {
                             }
                             value={item}
                           >
-                            {({ service, active }) => (
+                            {({ selected, active }) => (
                               <>
                                 <div className='flex items-center'>
                                   <item.icon />
                                   <span
-                                    className={classNames(service ? 'font-semibold' : 'font-normal', 'ml-3 block truncate')}
+                                    className={classNames(selected ? 'font-semibold' : 'font-normal', 'ml-3 block truncate')}
                                   >
                                     {item.cat}
                                   </span>
                                 </div>
 
-                                {service ? (
+                                {selected ? (
                                   <span
                                     className={classNames(
                                       active ? 'text-white' : 'text-blue-600',
@@ -258,14 +278,20 @@ const InstantQuote = () => {
             </Listbox>
           </div>
           
-          {service.id !== 7 && <ProjectDuration unit={unit} duration={duration} setUnit={setUnit} setTime={getTime} time={time} />}
+          {service.id !== 7 && <ProjectDuration unit={unit} duration={duration} setUnit={setUnit} setTime={changeTime} time={time} />}
         </div>
 
-        {service.id !== 7 && <ProjectFile getWordCount={getWordCount} filename={filename} />}
+        {/* Enter wordcount manually? */}
+        {(service.id !== 7 && service.id !== 5)
+          && <SelectCountType enabled={countMode} setEnabled={setCountMode} />}
+
+        {(service.id !== 7 && service.id !== 5 && !countMode) 
+          && <ProjectFile getWordCount={getWordCount} filename={filename} />}
+
+        {(!filename && service.id !== 7 && service.id !== 5 && countMode) 
+          && <InputWordCount value={wordCount} onChange={changeWordCount} />}
 
         {filename && <OutputWordCount wordCount={wordCount} />}
-
-        {!filename && <InputWordCount value={wordCount} onChange={setWordCount} />}
 
         <div className='mt-3 grid'>
           <button onClick={openQuote} type='submit' className='inline-flex justify-center items-center gap-x-3 text-center bg-blue-600 hover:bg-blue-700 border border-transparent text-sm lg:text-base text-white font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition py-2 px-3 dark:focus:ring-offset-gray-800'>Get instant quote</button>
