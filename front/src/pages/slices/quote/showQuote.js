@@ -18,7 +18,7 @@ const ShowQuote = ({ quote, close, quoteOpen, cat}) => {
         </Transition.Child>
 
         <div className='fixed inset-0 overflow-y-auto'>
-          <div className='flex min-h-full items-center justify-center p-4 text-center'>
+          <div className='flex min-h-full items-center justify-center p-6 text-center'>
             <Transition.Child
               as={Fragment}
               enter='ease-out duration-300'
@@ -38,9 +38,9 @@ const ShowQuote = ({ quote, close, quoteOpen, cat}) => {
                 <Dialog.Description>
                   For your {cat.toLowerCase()} gig
                 </Dialog.Description>
-                <div className='mt-2'>
-                  <p className='text-[3rem] text-gray-500'>
-                    ${quote}.00
+                <div className='mt-3'>
+                  <p className='text-[4rem] text-gray-500 p-6'>
+                    ${quote}
                   </p>
                 </div>
 
@@ -55,6 +55,10 @@ const ShowQuote = ({ quote, close, quoteOpen, cat}) => {
                   <button className='ml-3 text-gray-600 hover:text-blue-600 text-sm font-medium' type='button'>
                     Add to cart
                   </button>
+                </div>
+                <div className='mt-9'>
+                  <p className='text-xs text-gray-500'>
+                    This quote is given to serve as an overview or introduction to our service options and a budget estimate to get started on. For a more concrete and detailed insight into what your project will entail, do reach out to us on any of the options we've provided</p>
                 </div>
               </Dialog.Panel>
             </Transition.Child>

@@ -73,7 +73,7 @@ function App() {
         </Route>
 
         <Route path='company'>
-          <Route index />
+          <Route index element={<cp.Company />} />
           <Route path='jobs' element={<cp.Jobs />} />
           <Route path='team' element={<cp.Team />} />
           <Route path='podcast' element={<cp.Podcast />} />

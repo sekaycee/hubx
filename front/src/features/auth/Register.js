@@ -14,7 +14,7 @@ const Register = () => {
               alt='Hubx Consulting'
             />
             <h2 className='mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900'>
-              Get started on an amazing adventure
+              Get started on an exciting adventure with us
             </h2>
           </div>
 

@@ -247,17 +247,27 @@ const Header = () => {
                               <p id='cat-heading' className='font-medium text-gray-500'>
                                 Categories
                               </p>
-                              {navigation.insights.categories.map((cat) => (
-                                <MegaMenuLinks title={'cat'} item={cat} />
-                              ))}
+                              <ul
+                                aria-labelledby='cat-heading'
+                                className='mt-6 space-y-6 sm:mt-4 sm:space-y-4'
+                              >
+                                {navigation.insights.categories.map((cat, idx) => (
+                                  <MegaMenuLinks key={idx} item={cat} />
+                                ))}
+                              </ul>
                             </div>
                             <div>
                               <p id='tag-heading' className='font-medium text-gray-500'>
                                 Tags
                               </p>
-                              {navigation.insights.tags.map((tag) => (
-                                <MegaMenuLinks title={'tag'} item={tag} />
-                              ))}
+                              <ul
+                                aria-labelledby='tag-heading'
+                                className='mt-6 space-y-6 sm:mt-4 sm:space-y-4'
+                              >
+                                {navigation.insights.tags.map((tag, idx) => (
+                                  <MegaMenuLinks key={idx} item={tag} />
+                                ))}
+                              </ul>
                             </div>
                           </div>
                         </div>
@@ -273,11 +283,6 @@ const Header = () => {
             Company
           </a>
         </Popover.Group>
-
-        {/* <Popover.Group className='hidden lg:ml-8 lg:block lg:self-stretch'>
-          <div className='flex h-full space-x-8'></div>
-
-        </Popover.Group> */}
 
         <div className='hidden lg:flex lg:flex-1 lg:justify-end'>
           <a href='/login' className='text-sm font-semibold leading-6 text-gray-900 hover:text-blue-700'>
