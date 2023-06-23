@@ -16,6 +16,7 @@ import {
   LifebuoyIcon
 } from '@heroicons/react/24/outline'
 import { ChevronDownIcon, PhoneIcon, PlayCircleIcon } from '@heroicons/react/20/solid'
+import MegaMenuLinks from './header/MegaMenuLinks'
 
 const navigation = {
   services: [
@@ -32,7 +33,30 @@ const navigation = {
     { name: 'Press', description: 'Hear what people say about us', href: '/about/press', icon: NewspaperIcon },
     { name: 'How Tos', description: 'Get to know how we work', href: '/about/how-tos', icon: LifebuoyIcon }
   ],
-  insights: [],
+  insights: {
+    categories: [
+      {name: 'Scholarship', href: ''},
+      {name: 'Company', href: ''},
+      {name: 'Translation', href: ''},
+      {name: 'Academic', href: ''},
+      {name: 'Career', href: ''}
+    ],
+    tags: [
+      {name: 'School', href: ''},
+      {name: 'Finance', href: ''},
+      {name: 'Proposal', href: ''},
+      {name: 'Resume', href: ''},
+      {name: 'Copywriting', href: ''},
+      {name: 'Jobs', href: ''},
+      {name: 'View all', href: ''}
+    ],
+    recents: [
+      {title: 'Fund acquisition', desc: 'Get the latest news on our funding efforts. The latest round have only been the best yet, with projected growth in multiple key areas.',
+        image: 'https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80', date: '', alt: 'funding', href: ''},
+      {title: 'New podcast series', desc: 'Tune in to our all-new podcast series on ways to maximize the effects of the efforts you employ for a successful academic or career endeavour.',
+        image: 'https://images.unsplash.com/photo-1661956602116-aa6865609028?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1064&q=80', date: '', alt: 'podcast', href: ''}
+    ]
+  },
   company: [
     { name: 'Careers', description: 'We are currently hiring', href: '/company/jobs', icon: IdentificationIcon },
   ],
@@ -72,6 +96,7 @@ const Header = () => {
             <Bars3Icon className='h-6 w-6' aria-hidden='true' />
           </button>
         </div>
+
         <Popover.Group className='hidden lg:flex lg:gap-x-12'>
           <Popover className='relative'>
             <Popover.Button className='flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900'>
@@ -163,75 +188,97 @@ const Header = () => {
             </Transition>
           </Popover>
 
-          {/* <Popover className='relative'>
-            <Popover.Button className='flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900'>
-              Insights
-              <ChevronDownIcon className='h-5 w-5 flex-none text-gray-900' aria-hidden='true' />
-            </Popover.Button>
-
-            <Transition
-              as={Fragment}
-              enter='transition ease-out duration-200'
-              enterFrom='opacity-0 translate-y-1'
-              enterTo='opacity-100 translate-y-0'
-              leave='transition ease-in duration-150'
-              leaveFrom='opacity-100 translate-y-0'
-              leaveTo='opacity-0 translate-y-1'
-            >
-              <Popover.Panel className='absolute top-full z-50 pt-12 min-w-fit overflow-hidden bg-white shadow-lg ring-1 ring-gray-900/5 -left-[33rem] -right-[24rem] w-auto'>
-                <div className='py-10 px-6 lg:px-8 grid gap-16 row-gap-10 lg:grid-cols-4'>
-                  <div className='grid grid-cols-2 gap-8 row-gap-8'>
-                    <div className='text-center md:text-left'>
-                      <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase'>Categories</div>
-                      <a href='/blog/category/' className={linkStyle}>Writing</a>
-                      <a href='/blog/category/' className={linkStyle}>Writing</a>
-                      <a href='/blog/category/' className={linkStyle}>Writing</a>
-                      <a href='/blog/category/' className={linkStyle}>Writing</a>
-                      <a href='/blog/category/' className={linkStyle}>Writing</a>
-                      <a href='/blog/category/' className={linkStyle}>Writing</a>
-                    </div>
-                    <div className='text-center md:text-left'>
-                      <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase'>Categories</div>
-                      <a href='/blog/category/' className={linkStyle}>Writing</a>
-                      <a href='/blog/category/' className={linkStyle}>Writing</a>
-                      <a href='/blog/category/' className={linkStyle}>Writing</a>
-                      <a href='/blog/category/' className={linkStyle}>Writing</a>
-                      <a href='/blog/category/' className={linkStyle}>Writing</a>
-                      <a href='/blog/category/' className={linkStyle}>Writing</a>
-                    </div>
-                  </div>
-                  <div className='grid grid-cols-2 gap-5 row-gap-8'>
-                    <div className='text-center md:text-left'>
-                      <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase'>Categories</div>
-                      <a href='/blog/category/' className={linkStyle}>Writing</a>
-                      <a href='/blog/category/' className={linkStyle}>Writing</a>
-                      <a href='/blog/category/' className={linkStyle}>Writing</a>
-                      <a href='/blog/category/' className={linkStyle}>Writing</a>
-                      <a href='/blog/category/' className={linkStyle}>Writing</a>
-                      <a href='/blog/category/' className={linkStyle}>Writing</a>
-                    </div>
-                    <div className='text-center md:text-left'>
-                      <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase'>Categories</div>
-                      <a href='/blog/category/' className={linkStyle}>Writing</a>
-                      <a href='/blog/category/' className={linkStyle}>Writing</a>
-                      <a href='/blog/category/' className={linkStyle}>Writing</a>
-                      <a href='/blog/category/' className={linkStyle}>Writing</a>
-                      <a href='/blog/category/' className={linkStyle}>Writing</a>
-                      <a href='/blog/category/' className={linkStyle}>Writing</a>
-                    </div>
-                  </div>
-                </div>
-              </Popover.Panel>
-            </Transition>
-          </Popover> */}
-
-          <a href='/blog' className='text-sm font-semibold leading-6 text-gray-900'>
+          {/* <a href='/blog' className='text-sm font-semibold leading-6 text-gray-900'>
             Insights
-          </a>
+          </a> */}
+
+          <Popover className='flex'>
+            {({ open }) => (
+              <>
+                <div className='relative flex'>
+                  <Popover.Button className='flex items-center gap-x-1 text-sm font-semibold leading-6 text-gray-900'>
+                    Insights
+                    <ChevronDownIcon className='h-5 w-5 flex-none text-gray-900' aria-hidden='true' />
+                  </Popover.Button>
+                </div>
+
+                <Transition
+                  as={Fragment}
+                  enter='transition ease-out duration-200'
+                  enterFrom='opacity-0'
+                  enterTo='opacity-100'
+                  leave='transition ease-in duration-150'
+                  leaveFrom='opacity-100'
+                  leaveTo='opacity-0'
+                >
+                  <Popover.Panel className='absolute inset-x-0 top-full text-sm text-gray-500'>
+                    {/* Presentational element used to render the bottom shadow, if we put the shadow on the actual panel it pokes out the top, so we use this shorter element to hide the top of the shadow */}
+                    <div className='absolute inset-0 top-1/2 bg-white shadow' aria-hidden='true' />
+
+                    <div className='relative bg-white'>
+                      <div className='mx-auto max-w-7xl px-8'>
+                        <div className='grid grid-cols-2 gap-x-8 gap-y-10 py-16'>
+                          <div className='col-start-2 grid grid-cols-2 gap-x-8'>
+                            {navigation.insights.recents.map((item, idx) => (
+                              <div key={idx} className='group relative text-base sm:text-sm'>
+                                <div className='aspect-h-9 aspect-w-16 overflow-hidden rounded-lg bg-gray-100 group-hover:opacity-75'>
+                                  <img
+                                    src={item.image}
+                                    alt={item.alt}
+                                    className='w-full object-cover rounded-lg h-36'
+                                  />
+                                </div>
+                                <a href={item.href} className='mt-4 block font-medium text-gray-900'>
+                                  <span className='absolute inset-0 z-10' aria-hidden='true' />
+                                  {item.title}
+                                </a>
+                                <p>{item.desc}</p>
+                                <p aria-hidden='true' className='mt-3 inline-flex items-center gap-x-2 text-sm font-semibold text-gray-800 dark:text-gray-200 hover:text-blue-600'>
+                                  Learn more
+                                  <svg class='w-2.5 h-2.5 transition ease-in-out group-hover:translate-x-1' width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                                    <path fill-rule='evenodd' clip-rule='evenodd' d='M0.975821 6.92249C0.43689 6.92249 -3.50468e-07 7.34222 -3.27835e-07 7.85999C-3.05203e-07 8.37775 0.43689 8.79749 0.975821 8.79749L12.7694 8.79748L7.60447 13.7596C7.22339 14.1257 7.22339 14.7193 7.60447 15.0854C7.98555 15.4515 8.60341 15.4515 8.98449 15.0854L15.6427 8.68862C16.1191 8.23098 16.1191 7.48899 15.6427 7.03134L8.98449 0.634573C8.60341 0.268455 7.98555 0.268456 7.60447 0.634573C7.22339 1.00069 7.22339 1.59428 7.60447 1.9604L12.7694 6.92248L0.975821 6.92249Z' fill='currentColor'/>
+                                  </svg>
+                                </p>
+                              </div>
+                            ))}
+                          </div>
+                          <div className='row-start-1 grid grid-cols-2 gap-x-8 gap-y-10 text-sm'>
+                            <div>
+                              <p id='cat-heading' className='font-medium text-gray-500'>
+                                Categories
+                              </p>
+                              {navigation.insights.categories.map((cat) => (
+                                <MegaMenuLinks title={'cat'} item={cat} />
+                              ))}
+                            </div>
+                            <div>
+                              <p id='tag-heading' className='font-medium text-gray-500'>
+                                Tags
+                              </p>
+                              {navigation.insights.tags.map((tag) => (
+                                <MegaMenuLinks title={'tag'} item={tag} />
+                              ))}
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </Popover.Panel>
+                </Transition>
+              </>
+            )}
+          </Popover>
+
           <a href='/company' className='text-sm font-semibold leading-6 text-gray-900'>
             Company
           </a>
         </Popover.Group>
+
+        {/* <Popover.Group className='hidden lg:ml-8 lg:block lg:self-stretch'>
+          <div className='flex h-full space-x-8'></div>
+
+        </Popover.Group> */}
+
         <div className='hidden lg:flex lg:flex-1 lg:justify-end'>
           <a href='/login' className='text-sm font-semibold leading-6 text-gray-900 hover:text-blue-700'>
             Log in <span aria-hidden='true'>&rarr;</span>
