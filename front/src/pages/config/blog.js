@@ -58,7 +58,7 @@ export const POSTS = [
     },
     tags: ['Review', 'School']
   },
-  {
+  /* {
     id: 4,
     image: 'https://images.unsplash.com/photo-1492724441997-5dc865305da7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3270&q=80',
     title: 'Get details about our latest funding round',
@@ -76,5 +76,5 @@ export const POSTS = [
       imageUrl: PersonFill,
     },
     tags: ['Company', 'Finance']
-  }
+  } */
 ]
