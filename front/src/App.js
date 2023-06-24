@@ -5,6 +5,7 @@ import Layout from './components/Layout'
 import DashLayout from './components/dash/Layout'
 
 import Home from './pages/home'
+import Contact from './pages/contact'
 import Blog from './pages/insights/blog'
 import * as ab from './pages/about/intro'
 import * as cp from './pages/company/index'
@@ -39,7 +40,7 @@ function App() {
       <Route path='/' element={<Layout />}>
         <Route index element={<Home />} />
         <Route path='login' element={<Login />} />
-        <Route path='contact' element={<ab.Contact />} />
+        <Route path='contact' element={<Contact />} />
         <Route path='register' element={<Register />} />
 
         <Route path='services/'>

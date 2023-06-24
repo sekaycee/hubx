@@ -1,7 +1,11 @@
+import { EnvelopeIcon } from '@heroicons/react/24/outline'
 import { React } from 'react'
-import { Envelope } from 'react-bootstrap-icons'
 
 const Newsletter = () => {
+  const subscribe = (e) => {
+    e.target.preventDefault()
+  }
+
   const content = (
     <section className='py-28 relative'>
       <div className='relative z-10 max-w-screen-xl mx-auto px-4 justify-between items-center gap-12 md:px-8 md:flex'>
@@ -11,9 +15,9 @@ const Newsletter = () => {
           </h3>
         </div>
         <div className='flex-1 mt-6 md:mt-0'>
-          <form onSubmit={(e) => e.preventDefault()} className='flex items-center gap-x-3 md:justify-end'>
+          <form onSubmit={subscribe} className='flex items-center gap-x-3 md:justify-end'>
             <div className='relative'>
-              <Envelope className='w-6 h-6 text-gray-400 absolute left-3 inset-y-0 my-auto' />
+              <EnvelopeIcon className='w-6 h-6 text-gray-400 absolute left-3 inset-y-0 my-auto' />
               <input
                 name='email'
                 type='email'

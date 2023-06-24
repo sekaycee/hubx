@@ -122,9 +122,11 @@ const InstantQuote = () => {
   }
 
   const changeWordCount = (e) => {
-    let count = parseInt(e.target.value)
-    if (count) {
-      setWordCount(count)
+    let c = parseInt(e.target.value)
+    if (!c || typeof c !== 'number') {
+      setWordCount(0)
+    } else {
+      setWordCount(c)
     }
   }
 
@@ -225,7 +227,7 @@ const InstantQuote = () => {
                 <>
                   <Listbox.Label htmlFor='category' className='block text-sm font-medium leading-6 text-gray-900'>Type of service needed</Listbox.Label>
                   <div className='block relative mt-2'>
-                    <Listbox.Button id='category' className='block relative w-full cursor-default rounded-md bg-white py-1.5 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-sm sm:leading-6'>
+                    <Listbox.Button id='category' className='block relative w-full cursor-default rounded-md bg-white py-2 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-sm sm:leading-6'>
                       <span className='flex items-center'>
                         <cat.icon />
                         <span className='ml-3 block truncate'>{cat.cat}</span>
@@ -306,7 +308,7 @@ const InstantQuote = () => {
         {filename && <OutputWordCount wordCount={wordCount} />}
 
         <div className='mt-3 grid'>
-          <button onClick={openQuote} type='submit' className='inline-flex justify-center items-center gap-x-3 text-center bg-blue-600 hover:bg-blue-700 border border-transparent text-sm lg:text-base text-white font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 focus:ring-offset-white transition py-2 px-3 dark:focus:ring-offset-gray-800'>Get instant quote</button>
+          <button onClick={openQuote} type='submit' className='block w-full rounded-md bg-blue-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600'>Get instant quote</button>
         </div>
         <ShowQuote close={closeQuote} quote={quote} quoteOpen={quoteOpen} cat={cat.cat} />
       </form>

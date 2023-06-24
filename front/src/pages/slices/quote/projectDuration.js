@@ -21,7 +21,7 @@ const ProjectDuration = ({ unit, time, setUnit, setTime, duration }) => {
           value={time}
           onChange={setTime}
           id='time'
-          className='block w-full rounded-md border-0 py-1.5 pl-8 pr-24 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6'
+          className='block w-full rounded-md border-0 py-2 pl-8 pr-24 text-gray-900 ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6'
           placeholder='0'
         />
         <Listbox value={unit} onChange={setUnit} name='duration'>
@@ -29,7 +29,7 @@ const ProjectDuration = ({ unit, time, setUnit, setTime, duration }) => {
             <>
               <Listbox.Label htmlFor='unit' className='sr-only block text-sm font-medium leading-6 text-gray-900'>Time unit</Listbox.Label>
               <div className='absolute inset-y-0 right-0 flex items-center'>
-                <Listbox.Button id='unit' className='block relative w-full cursor-default rounded-md bg-white py-1.5 pl-3 pr-10 bg-opacity-0 border-r text-gray-900 sm:text-sm sm:leading-6'>
+                <Listbox.Button id='unit' className='block relative w-full cursor-default rounded-md bg-white py-2 pl-3 pr-10 bg-opacity-0 border-r text-gray-900 sm:text-sm sm:leading-6'>
                   <span className='flex items-center'>
                     <span className='ml-3 block truncate'>{unit.title}</span>
                   </span>
@@ -45,7 +45,7 @@ const ProjectDuration = ({ unit, time, setUnit, setTime, duration }) => {
                   leaveFrom='opacity-100'
                   leaveTo='opacity-0'
                 >
-                  <Listbox.Options className='absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-1 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm'>
+                  <Listbox.Options className='absolute z-10 mt-1 max-h-56 w-full overflow-auto rounded-md bg-white py-2 text-base shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none sm:text-sm'>
                     {duration.map((item, idx) => (
                       <Listbox.Option
                         key={idx}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { ChevronDownIcon } from '@heroicons/react/20/solid'
 import { Switch } from '@headlessui/react'
-import Gradient from '../slices/gradient'
+import Gradient from './slices/gradient'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -51,18 +51,23 @@ const Contact = () => {
               </div>
             </div>
             <div className='sm:col-span-2'>
-              <label htmlFor='company' className='block text-sm font-semibold leading-6 text-gray-900'>
-                Company
+              <label htmlFor='position' className='block text-sm font-semibold leading-6 text-gray-900'>
+                Current position
               </label>
-              <div className='mt-2.5'>
-                <input
-                  type='text'
-                  name='company'
-                  id='company'
-                  autoComplete='organization'
-                  className='block w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6'
-                />
+              <div className="mt-2">
+                <select
+                  id='position'
+                  name='position'
+                  className='block bg-transparent appearance-none w-full rounded-md border-0 px-3.5 py-2 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm sm:leading-6'
+                >
+                  <option>Student</option>
+                  <option>Professional</option>
+                </select>
               </div>
+              <ChevronDownIcon
+                className='pointer-events-none absolute right-0 top-0 h-full w-5 text-gray-400'
+                aria-hidden='true'
+              />
             </div>
             <div className='sm:col-span-2'>
               <label htmlFor='email' className='block text-sm font-semibold leading-6 text-gray-900'>
@@ -90,14 +95,14 @@ const Contact = () => {
                   <select
                     id='country'
                     name='country'
-                    className='h-full rounded-md border-0 bg-transparent bg-none py-0 pl-4 pr-9 text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm'
+                    className='h-full rounded-md border-0 bg-transparent bg-none py-0 pl-4 pr-7 text-gray-400 focus:ring-2 focus:ring-inset focus:ring-blue-600 sm:text-sm'
                   >
                     <option>US</option>
                     <option>UK</option>
                     <option>EU</option>
                   </select>
                   <ChevronDownIcon
-                    className='pointer-events-none absolute right-3 top-0 h-full w-5 text-gray-400'
+                    className='pointer-events-none absolute right-0 top-0 h-full w-5 text-gray-400'
                     aria-hidden='true'
                   />
                 </div>

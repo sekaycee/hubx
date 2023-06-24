@@ -1,5 +1,4 @@
 import React from 'react'
-import Contact from './contact'
 import HowTos from './howTos'
 import Impact from './impact'
 import Press from './press'
@@ -177,4 +176,4 @@ const Intro = () => {
   return content
 }
 
-export { Contact, HowTos, Impact, Intro, Press }
+export { HowTos, Impact, Intro, Press }
