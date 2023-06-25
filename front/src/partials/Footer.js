@@ -41,7 +41,7 @@ const links = {
 
 const Footer = () => {
   const content = (
-    <footer className='px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8'>
+    <footer className='px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 font-medium'>
       <div className='grid gap-16 row-gap-10 mb-8 lg:grid-cols-6'>
         <div className='text-center md:text-left md:max-w-md lg:col-span-2'>
           <a
@@ -58,12 +58,12 @@ const Footer = () => {
               Consulting
             </span>
           </a>
-          <div className='my-4 lg:max-w-sm'>
-            <p className='text-sm text-gray-800'>
+          <div className='my-2 lg:max-w-sm text-gray-500'>
+            <p className='text-sm'>
               Welcome to HubX, the consultancy division of HubX limited: 
               Founded in March 2023 with UK company registration number 14722644.
             </p>
-            <p className='mt-4 text-sm text-gray-800'>
+            <p className='mt-2 text-sm'>
               At HubX, we believe that every student and professional have the potential to excel, 
               as such we've made it our mission to support them in their pursuit of excellence.
             </p>
@@ -91,32 +91,32 @@ const Footer = () => {
         </div>
         <div className='grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4'>
           <div className='text-center md:text-left'>
-            <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase'>About</div>
+            <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase my-2'>About</div>
             {links.about.map((link, idx) => (
               <a key={idx} className={link.class} href={link.href}>{link.name}</a>
             ))}
           </div>
           <div className='text-center md:text-left'>
-            <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase'>Category</div>
+            <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase my-2'>Category</div>
             {links.services.map((link, idx) => (
               <a key={idx} className={link.class} href={link.href}>{link.name}</a>
             ))}
           </div>
           <div className='text-center md:text-left'>
-            <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase'>Company</div>
+            <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase my-2'>Company</div>
             {links.company.map((link, idx) => (
               <a key={idx} className={link.class} href={link.href}>{link.name}</a>
             ))}
           </div>
           <div className='text-center md:text-left'>
-            <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase'>Support</div>
+            <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase my-2'>Support</div>
             {links.support.map((link, idx) => (
               <a key={idx} className={link.class} href={link.href}>{link.name}</a>
             ))}
           </div>
         </div>
       </div>
-      <div className='flex flex-col items-center justify-between text-sm text-gray-600 py-5 border-t md:flex-row font-medium'>
+      <div className='flex flex-col items-center justify-between text-sm text-gray-600 py-5 border-t md:flex-row'>
         <p>
           © Copyright 2023 HubX Inc.
         </p>

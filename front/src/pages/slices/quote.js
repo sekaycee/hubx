@@ -26,12 +26,7 @@ const services = [
   { id: 9, cat: 'Programming', icon: Code, charge: 25 },
   { id: 10, cat: 'Design', icon: Tools, charge: 15}
 ]
-const duration = [
-  { id: 1, title: 'hour', multiplier: .05 },
-  { id: 2, title: 'day', multiplier: .08 },
-  { id: 3, title: 'week', multiplier: .15 },
-  { id: 4, title: 'month', multiplier: .2}
-]
+const duration = ['hour', 'day', 'week', 'month']
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -106,18 +101,39 @@ const InstantQuote = () => {
   const [quoteOpen, setQuoteOpen] = useState(false)
   const [countMode, setCountMode] = useState(false)
 
-  const changeTime = (e) => {
-    let t = parseInt(e.target.value)
-    if (!t || typeof t !== 'number') {
-      setTime(0)
-      duration.map(item => item.title.replace('s', ''))
-    } else {
-      if (t === 0 && unit.title.includes('s')) {
-        unit.title.replace('s', '')
-      } else if (t > 1 && unit.title[unit.title.length-1] !== 's') {
-        duration.map(item => item.title += 's')
+  const timeDelta = (t, u) => {
+    // add 's' for plural to time
+    if (t === 0 && u.includes('s')) {
+      duration.map(item => item.replace('s', ''))
+    } else if (t > 1 && u.length-1 !== 's') {
+      duration.map(item => item += 's')
+    }
+
+    // convert hours to days, weeks and months
+    if (t > 24 && t < 169 && duration[1].match(u)) {
+      let nt = ~~(t / 24)
+      u = duration[1]
+      if (t > 168 && t < 721) {
+        nt = ~~(t / 168)
+        u = duration[2]
       }
-      setTime(t)
+      if (t > 720) {
+        nt = ~~(t / 720)
+        u = duration[3]
+      }
+      setTime(nt)
+      setUnit(u)
+    }
+  }
+  const changeTime = (e) => {
+    let u = ''
+    let t = parseInt(e.target.value)
+    setTime(t)
+    if (t) {
+      timeDelta(t, u)
+    } else {
+      setTime(0)
+      duration.map(item => item.replace('s', ''))
     }
   }
 
@@ -205,7 +221,7 @@ const InstantQuote = () => {
     }
     //fquote = count * ftime
 
-    setQuote(q)
+    setQuote(q.toFixed(2))
 
     // open quote modal and reset form
     setQuoteOpen(true)

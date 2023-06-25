@@ -31,7 +31,7 @@ const ProjectDuration = ({ unit, time, setUnit, setTime, duration }) => {
               <div className='absolute inset-y-0 right-0 flex items-center'>
                 <Listbox.Button id='unit' className='block relative w-full cursor-default rounded-md bg-white py-2 pl-3 pr-10 bg-opacity-0 border-r text-gray-900 sm:text-sm sm:leading-6'>
                   <span className='flex items-center'>
-                    <span className='ml-3 block truncate'>{unit.title}</span>
+                    <span className='ml-3 block truncate'>{unit}</span>
                   </span>
                   <span className='pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2'>
                     <ChevronUpDownIcon className='h-5 w-5 text-gray-400' aria-hidden='true' />
@@ -63,7 +63,7 @@ const ProjectDuration = ({ unit, time, setUnit, setTime, duration }) => {
                               <span
                                 className={classNames(selected ? 'font-semibold' : 'font-normal', 'ml-3 block truncate')}
                               >
-                                {item.title}
+                                {item}
                               </span>
                             </div>
 

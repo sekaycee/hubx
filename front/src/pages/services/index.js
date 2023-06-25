@@ -17,8 +17,8 @@ import Writing from './writing'
 
 const Service = () => {
   const content = (
-    <main className='pt-[10rem] max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8'>
-      <section className='mb-[5rem] grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center'>
+    <main>
+      <section className='mt-[10rem] mb-[5rem] grid md:grid-cols-2 gap-4 md:gap-8 xl:gap-20 md:items-center px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20'>
         <aside className=''>
           <InstantQuote />
         </aside>
