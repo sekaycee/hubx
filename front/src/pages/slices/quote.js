@@ -10,23 +10,22 @@ import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/20/solid'
 import { BookHalf, Clipboard2Data, Clock, Code, HouseExclamation, Pencil, Projector, TelephoneOutbound, Tools, Translate } from 'react-bootstrap-icons'
 import ShowQuote from './quote/showQuote'
 import SelectCountType from './quote/selectCountType'
-//import ShowQuote from './quote/showQuote'
 
 GlobalWorkerOptions.workerSrc = `//cdnjs.cloudflare.com/ajax/libs/pdf.js/${version}/pdf.worker.js`
 
 const services = [
-  { id: 1, cat: 'Proofreading and editing', icon: BookHalf, charge: 2 },
-  { id: 2, cat: 'CV or Cover letter reviews', icon: Clipboard2Data, charge: 3 },
-  { id: 3, cat: 'Personal statement writing', icon: Pencil, charge: 5 },
-  { id: 4, cat: 'Poster or Presentation', icon: Projector, charge: 50 },
-  { id: 5, cat: 'Mentorship', icon: TelephoneOutbound, charge: 10000 },
-  { id: 6, cat: 'Accommodation', icon: HouseExclamation, charge: 1 },
-  { id: 7, cat: 'Hourly consultation', icon: Clock, charge: 100 },
-  { id: 8, cat: 'Translation', icon: Translate, charge: 4 },
-  { id: 9, cat: 'Programming', icon: Code, charge: 25 },
-  { id: 10, cat: 'Design', icon: Tools, charge: 15}
+  { id: 1, name: 'Proofreading and editing', icon: BookHalf, charge: 2 },
+  { id: 2, name: 'CV or Cover letter reviews', icon: Clipboard2Data, charge: 3 },
+  { id: 3, name: 'Personal statement writing', icon: Pencil, charge: 5 },
+  { id: 4, name: 'Poster or Presentation', icon: Projector, charge: 50 },
+  { id: 5, name: 'Mentorship', icon: TelephoneOutbound, charge: 10000 },
+  { id: 6, name: 'Accommodation', icon: HouseExclamation, charge: 1 },
+  { id: 7, name: 'Hourly consultation', icon: Clock, charge: 100 },
+  { id: 8, name: 'Translation', icon: Translate, charge: 4 },
+  { id: 9, name: 'Programming', icon: Code, charge: 25 },
+  { id: 10, name: 'Design', icon: Tools, charge: 15}
 ]
-const duration = ['hour', 'day', 'week', 'month']
+let duration = ['hour', 'day', 'week', 'month']
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -102,23 +101,25 @@ const InstantQuote = () => {
   const [countMode, setCountMode] = useState(false)
 
   const timeDelta = (t, u) => {
+    let nt = time
+
     // add 's' for plural to time
     if (t === 0 && u.includes('s')) {
+      //u = u.replace('s', '')
       duration.map(item => item.replace('s', ''))
-    } else if (t > 1 && u.length-1 !== 's') {
-      duration.map(item => item += 's')
-    }
+    } else if (t > 0 && u[u.length-1] !== 's') {
+      //u = u.concat('s')
+      duration.map(item => item.concat('s'))
 
-    // convert hours to days, weeks and months
-    if (t > 24 && t < 169 && duration[1].match(u)) {
-      let nt = ~~(t / 24)
-      u = duration[1]
-      if (t > 168 && t < 721) {
-        nt = ~~(t / 168)
+      // convert hours to days, weeks and months
+      if (t > 24 && u === duration[0]) {
+        nt = ~~(t / 24)
+        u = duration[1]
+      } else if (t > 7 && u === duration[1]) {
+        nt = ~~(t / 7)
         u = duration[2]
-      }
-      if (t > 720) {
-        nt = ~~(t / 720)
+      } else if (t > 4 && u === duration[2]) {
+        nt = ~~(t / 4)
         u = duration[3]
       }
       setTime(nt)
@@ -128,7 +129,7 @@ const InstantQuote = () => {
   const changeTime = (e) => {
     let u = ''
     let t = parseInt(e.target.value)
-    setTime(t)
+    //setTime(t)
     if (t) {
       timeDelta(t, u)
     } else {
@@ -145,13 +146,6 @@ const InstantQuote = () => {
       setWordCount(c)
     }
   }
-
-  /* const changeUnit = (val) => {
-    if (time === 0 && unit.title[unit.title.length-1] === 's') {
-      unit.title.replace('s', '')
-    }
-    setUnit(val)
-  } */
 
   const closeQuote = () => {
     setQuoteOpen(false)
@@ -246,7 +240,7 @@ const InstantQuote = () => {
                     <Listbox.Button id='category' className='block relative w-full cursor-default rounded-md bg-white py-2 pl-3 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 sm:text-sm sm:leading-6'>
                       <span className='flex items-center'>
                         <cat.icon />
-                        <span className='ml-3 block truncate'>{cat.cat}</span>
+                        <span className='ml-3 block truncate'>{cat.name}</span>
                       </span>
                       <span className='pointer-events-none absolute inset-y-0 right-0 ml-3 flex items-center pr-2'>
                         <ChevronUpDownIcon className='h-5 w-5 text-gray-400' aria-hidden='true' />
@@ -279,7 +273,7 @@ const InstantQuote = () => {
                                   <span
                                     className={classNames(selected ? 'font-semibold' : 'font-normal', 'ml-3 block truncate')}
                                   >
-                                    {item.cat}
+                                    {item.name}
                                   </span>
                                 </div>
 
@@ -326,7 +320,7 @@ const InstantQuote = () => {
         <div className='mt-3 grid'>
           <button onClick={openQuote} type='submit' className='block w-full rounded-md bg-blue-600 px-3.5 py-2.5 text-center text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600'>Get instant quote</button>
         </div>
-        <ShowQuote close={closeQuote} quote={quote} quoteOpen={quoteOpen} cat={cat.cat} />
+        <ShowQuote close={closeQuote} quote={quote} quoteOpen={quoteOpen} cat={cat.name} />
       </form>
     </div>
   )
