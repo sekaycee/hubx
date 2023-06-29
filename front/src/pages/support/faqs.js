@@ -79,27 +79,21 @@ const FAQs = () => {
       a: "."
     }
   ]
-  const [activeQuestion, setActiveQuestion] = useState(0)
-
-  const toggleAnswer = (idx) => {
-    if (activeQuestion === idx) setActiveQuestion(null)
-    else setActiveQuestion(idx)
-  }
 
   return (
     <main className='my-64'>
       <section className='px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20'>
-        <div class='max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto'>
-          <div class='grid md:grid-cols-5 gap-10'>
-            <div class='md:col-span-2'>
-              <div class='max-w-xs'>
-                <h2 class='text-2xl font-bold md:text-4xl md:leading-tight dark:text-white'>Frequently<br />asked questions</h2>
-                <p class='mt-1 hidden md:block text-gray-600 dark:text-gray-400'>Answers to the most frequently asked questions. Still confused? Feel free to get in touch</p>
+        <div className='max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto'>
+          <div className='grid md:grid-cols-5 gap-10'>
+            <div className='md:col-span-2'>
+              <div className='max-w-xs'>
+                <h2 className='text-2xl font-bold md:text-4xl md:leading-tight dark:text-white'>Frequently<br />asked questions</h2>
+                <p className='mt-1 hidden md:block text-gray-600 dark:text-gray-400'>Answers to the most frequently asked questions. Still confused? Feel free to get in touch</p>
               </div>
             </div>
 
-            <div class='md:col-span-3'>
-              <div class='hs-accordion-group divide-y divide-gray-200 dark:divide-gray-700'>
+            <div className='md:col-span-3'>
+              <div className='hs-accordion-group divide-y divide-gray-200 dark:divide-gray-700'>
                 {
                   faqs.map((item, idx) => (
                     <FaqsCard key={idx} title={item.q}>

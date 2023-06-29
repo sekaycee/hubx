@@ -94,6 +94,9 @@ const Register = () => {
                   Get started
                 </button>
               </div>
+
+              <div className='py-6 flex items-center text-gray-400 uppercase before:flex-[1_1_0%] before:border-t before:mr-6 after:flex-[1_1_0%] after:border-t after:ml-6 dark:text-gray-500 dark:before:border-gray-600 dark:after:border-gray-600'>Or</div>
+              
               <div className='space-y-4 font-medium'>
                 <button className={`${btn} py-2 gap-x-3 border hover:bg-gray-50 duration-150 active:bg-gray-100`}>
                   <svg className='w-5 h-5' viewBox='0 0 48 48' fill='none' xmlns='http://www.w3.org/2000/svg'>
