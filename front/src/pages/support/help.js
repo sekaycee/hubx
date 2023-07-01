@@ -60,7 +60,7 @@ const Help = () => {
                 <form>
                   <div className='relative z-10 flex space-x-3 p-3 bg-white border rounded-lg shadow-lg shadow-gray-100 dark:bg-gray-800 dark:border-gray-700 dark:shadow-gray-900/[.2]'>
                     <div className='flex-[1_0_0%]'>
-                      <label for='help' className='block text-sm text-gray-700 font-medium dark:text-white'><span className='sr-only'>Search for answers</span></label>
+                      <label htmlFor='help' className='block text-sm text-gray-700 font-medium dark:text-white'><span className='sr-only'>Search for answers</span></label>
                       <input type='email' name='help' id='help' className='p-2.5 block w-full border-transparent rounded-md focus:border-blue-500 focus:ring-blue-500 dark:bg-gray-800 dark:text-gray-400' placeholder='Search for answer' />
                     </div>
                     <div className='flex-[0_0_auto]'>
@@ -69,13 +69,13 @@ const Help = () => {
                           xmlns='http://www.w3.org/2000/svg'
                           fill='none'
                           viewBox='0 0 24 24'
-                          stroke-width='1.5'
+                          strokeWidth='1.5'
                           stroke='currentColor'
                           className='h-5 w-5'
                         >
                           <path
-                            stroke-linecap='round'
-                            stroke-linejoin='round'
+                            strokeLinecap='round'
+                            strokeLinejoin='round'
                             d='M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z'
                           />
                         </svg>

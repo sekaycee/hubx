@@ -43,7 +43,7 @@ const Footer = () => {
   const content = (
     <footer className='px-4 pt-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 font-medium'>
       <div className='grid gap-16 row-gap-10 mb-8 lg:grid-cols-6'>
-        <div className='text-center md:text-left md:max-w-md lg:col-span-2'>
+        <div className='text-center md:text-left lg:col-span-2'>
           <a
             href='/'
             aria-label='Go home'
@@ -58,12 +58,12 @@ const Footer = () => {
               Consulting
             </span>
           </a>
-          <div className='my-2 lg:max-w-sm text-gray-500'>
-            <p className='text-sm'>
+          <div className='my-2 text-sm lg:max-w-sm text-gray-500'>
+            <p>
               Welcome to HubX, the consultancy division of HubX limited: 
               Founded in March 2023 with UK company registration number 14722644.
             </p>
-            <p className='mt-2 text-sm'>
+            <p className='mt-2'>
               At HubX, we believe that every student and professional have the potential to excel, 
               as such we've made it our mission to support them in their pursuit of excellence.
             </p>

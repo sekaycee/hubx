@@ -78,7 +78,7 @@ const Home = () => {
         </div>
         <div className='grid text-center row-gap-8 sm:row-gap-0 sm:grid-cols-2 lg:grid-cols-3'>
           <div className='p-8 border-b sm:border-r'>
-            <div className='max-w-md text-center'>
+            <div className='text-center'>
               <div className='flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100 sm:w-16 sm:h-16'>
                 <Award size={28} />
               </div>
@@ -89,7 +89,7 @@ const Home = () => {
             </div>
           </div>
           <div className='p-8 border-b lg:border-r'>
-            <div className='max-w-md text-center'>
+            <div className='text-center'>
               <div className='flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100 sm:w-16 sm:h-16'>
                 <BookHalf size={28} />
               </div>
@@ -100,7 +100,7 @@ const Home = () => {
             </div>
           </div>
           <div className='p-8 border-b sm:border-r lg:border-r-0'>
-            <div className='max-w-md text-center'>
+            <div className='text-center'>
               <div className='flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100 sm:w-16 sm:h-16'>
                 <CalendarCheck size={28} />
               </div>
@@ -111,7 +111,7 @@ const Home = () => {
             </div>
           </div>
           <div className='p-8 border-b lg:border-b-0 lg:border-r'>
-            <div className='max-w-md text-center'>
+            <div className='text-center'>
               <div className='flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100 sm:w-16 sm:h-16'>
                 <CarFront size={28} />
               </div>
@@ -122,7 +122,7 @@ const Home = () => {
             </div>
           </div>
           <div className='p-8 border-b sm:border-b-0 sm:border-r'>
-            <div className='max-w-md text-center'>
+            <div className='text-center'>
               <div className='flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100 sm:w-16 sm:h-16'>
                 <ClipboardCheck size={28} />
               </div>
@@ -133,7 +133,7 @@ const Home = () => {
             </div>
           </div>
           <div className='p-8'>
-            <div className='max-w-md text-center'>
+            <div className='text-center'>
               <div className='flex items-center justify-center w-16 h-16 mx-auto mb-4 rounded-full bg-blue-100 sm:w-16 sm:h-16'>
                 <Airplane size={28} />
               </div>
@@ -364,7 +364,7 @@ const Home = () => {
       <section className='px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20'>
         <div className='max-w-xl mb-6 sm:mx-auto sm:text-center md:mb-10 lg:max-w-2xl'>
           <p className='inline-block px-3 py-px mb-1 text-xs font-semibold uppercase md:mb-2 tracking-wider text-blue-900 rounded-full bg-blue-100'>
-            Popular Services
+            Core Service Offerings
           </p>
           <p className='text-base text-gray-700 md:text-lg'>
             We've carefully curated the most popular services on offer.
@@ -424,7 +424,10 @@ const Home = () => {
               We provide guidance on affordable accomodation strategies and help you secure an accomodation for the duration of your studies.
             </p>
             <div className='mt-2'>
-              <a href='/services' className='text-sm font-semibold leading-6 text-gray-900 hover:text-blue-700'>
+              <a
+                href='/services/mentorship'
+                className='text-sm font-semibold leading-6 text-gray-900 hover:text-blue-700'
+              >
                 Learn more <span aria-hidden='true'>→</span>
               </a>
             </div>

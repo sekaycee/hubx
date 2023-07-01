@@ -1,16 +1,11 @@
 import React from 'react'
 import Newsletter from '../slices/newsletter'
 
-const MentorCard = () => {
-  return (
-    <div></div>
-  )
-}
 const Mentorship = () => {
   const mentors = [
     {
       id: 1, name: 'Oliver Aguilerra', position: 'Product Manager',
-      bio: 'Vincent Van Gogh\’s most popular painting, The Starry Night.',
+      bio: 'Vincent Van Gogh’s most popular painting, The Starry Night.',
       about: '',
       image: 'https://images.pexels.com/photos/220453/pexels-photo-220453.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=3&amp;h=750&amp;w=1260',
       facebook: '', instagram: '', linkedin: '', twitter: ''
