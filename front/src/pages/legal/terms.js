@@ -34,7 +34,7 @@ const Terms = () => {
       </section>
 
       <section>
-        <div className='relative isolate overflow-hidden bg-white px-4 py-16 sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-2 sm:py-32 lg:overflow-visible lg:px-8 lg:py-20 mx-auto'>
+        <div className='relative isolate overflow-hidden bg-white px-8 py-12 md:px-12 sm:py-16 lg:overflow-visible lg:px-32 lg:py-36 mx-auto'>
           <div className='absolute inset-0 -z-10 overflow-hidden'>
             <svg
               className='absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]'
@@ -61,17 +61,17 @@ const Terms = () => {
               <rect width='100%' height='100%' strokeWidth={0} fill='url(#e813992c-7d03-4cc4-a2bd-151760b470a0)' />
             </svg>
           </div>
-          <div className='mx-auto grid grid-col-3 md:grid-cols-6 gap-x-4 gap-y-8 lg:mx-0 lg:gap-y-10'>
-            <div className='sticky text-right md:top-4 md:col-start-6 sm:row-span-1 sm:row-start-1 md:overflow-hidden'>
-              <div className='p-1'>
-                <div><a href='/'>Accounts</a></div>
-                <div><a href='/'>External Links</a></div>
-                <div><a href='/'>Termination</a></div>
-                <div><a href='/'>Governing Law</a></div>
-                <div><a href='/'>Changes</a></div>
+          <div className='grid grid-col-3 xl:grid-cols-4 gap-x-4 gap-y-8 lg:mx-0 lg:gap-y-10'>
+            <div className='sticky top-4 col-start-1 sm:row-span-1 sm:row-start-1 md:overflow-hidden'>
+              <div>
+                <div className='p-1'><a href='/'>Accounts</a></div>
+                <div className='p-1'><a href='/'>External Links</a></div>
+                <div className='p-1'><a href='/'>Termination</a></div>
+                <div className='p-1'><a href='/'>Governing Law</a></div>
+                <div className='p-1'><a href='/'>Changes</a></div>
               </div>
             </div>
-            <div className='col-span-2 md:col-span-5 md:col-start-1 md:row-start-1 md:mx-auto grid w-full lg:grid-cols-1 md:gap-x-8'>
+            <div className='col-span-2 xl:col-span-3 col-start-2 row-start-1 mx-auto w-full gap-x-6 md:gap-x-16'>
               <div className='lg:pr-4'>
                 <div className='text-gray-700'>
                   <div className='text-base leading-7 text-gray-700'>
