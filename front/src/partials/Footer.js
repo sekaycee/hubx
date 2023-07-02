@@ -68,7 +68,7 @@ const Footer = () => {
               as such we've made it our mission to support them in their pursuit of excellence.
             </p>
           </div>
-          <div className='text-center lg:text-left'>
+          <div className='text-center md:text-left'>
             <a
               href='https://twitter.com/hubx-consulting'
               className='inline-block mr-4 text-gray-500 transition-colors duration-300 hover:text-blue-400'
