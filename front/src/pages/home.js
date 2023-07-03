@@ -139,14 +139,14 @@ const Home = () => {
               </div>
               <h6 className='mb-2 font-semibold leading-5'>Translocation</h6>
               <p className='mb-3 text-sm text-gray-900'>
-                Proven immigration advice and Functional visa guidance
+                Proven immigration advice, Functional visa guidance and Package delivery
               </p>
             </div>
           </div>
         </div>
         <div className='text-center mt-7'>
           <a
-            href='/services'
+            href='/services#quote'
             className='rounded-md bg-blue-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-blue-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-blue-600'
           >
             Get instant quote

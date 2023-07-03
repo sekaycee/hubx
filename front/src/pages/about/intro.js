@@ -3,7 +3,7 @@ import HowTos from './howTos'
 import Impact from './impact'
 import Press from './press'
 import Newsletter from '../slices/newsletter'
-import { ArrowPathIcon, CloudArrowUpIcon, FingerPrintIcon, LockClosedIcon } from '@heroicons/react/24/outline'
+import { ArrowPathIcon, BriefcaseIcon, FireIcon, LockClosedIcon, UserGroupIcon, UserIcon } from '@heroicons/react/24/outline'
 
 const Intro = () => {
   const links = [
@@ -20,10 +20,10 @@ const Intro = () => {
   ]
   const features = [
     {
-      name: 'Client-centric approach',
+      name: 'Collaboration',
       description:
-        'Our consultancy is designed to put our customers first. We believe in providing personalised services that cater to the unique needs of each client.',
-      icon: CloudArrowUpIcon,
+        'We believe in collaboration and partnership, and we work closely with our clients to ensure that they have the support they need to succeed.',
+      icon: UserGroupIcon,
     },
     {
       name: 'Integrity and ethics',
@@ -35,34 +35,34 @@ const Intro = () => {
       name: 'Professionalism',
       description:
         'We are committed to delivering professional services of the highest quality. Our team of experienced professionals is dedicated to providing accurate and up-to-date information to our clients.',
-      icon: ArrowPathIcon,
+      icon: BriefcaseIcon,
     },
     {
       name: 'Innovation',
       description:
         'We are constantly seeking new and innovative ways to improve our services and deliver value to our customers. We invest in technology and tools that help us gather and share information more efficiently.',
-      icon: FingerPrintIcon,
+      icon: ArrowPathIcon,
     },
     {
-      name: 'Collaboration',
+      name: 'Client-centric approach',
       description:
-        'We believe in collaboration and partnership, and we work closely with our clients to ensure that they have the support they need to succeed.',
-      icon: FingerPrintIcon,
+        'Our consultancy is designed to put our customers first. We believe in providing personalised services that cater to the unique needs of each client.',
+      icon: UserIcon,
     },
     {
       name: 'Passion',
       description:
         'We are passionate about education and helping students achieve their dreams. We are committed to delivering services that are of the highest quality and that meet the unique needs of our clients.',
-      icon: FingerPrintIcon,
+      icon: FireIcon,
     },
   ]
 
   const content = (
     <main>
-      <section className='py-28' style={{ background: 'linear-gradient(152.92deg, rgba(192, 132, 252, 0.2) 4.54%, rgba(232, 121, 249, 0.17) 34.2%, rgba(192, 132, 252, 0.1) 77.55%)' }}>
-        <div className='max-w-screen-xl mx-auto px-4 md:text-center md:px-8'>
+      <section style={{ background: 'linear-gradient(152.92deg, rgba(192, 132, 252, 0.2) 4.54%, rgba(232, 121, 249, 0.17) 34.2%, rgba(192, 132, 252, 0.1) 77.55%)' }}>
+        <div className='max-w-screen-xl mx-auto px-4 py-28 md:text-center md:px-8'>
           <div className='max-w-xl space-y-3 md:mx-auto'>
-            <div className='max-w-3xl mx-auto text-center'>
+            <div className='max-w-3xl'>
               <p className='inline-block px-3 py-px my-6 text-xs font-semibold tracking-wider text-blue-900 uppercase rounded-full bg-blue-100'>Get to know us</p>
             </div>
             <p className='text-gray-800 text-3xl font-semibold sm:text-4xl'>
@@ -75,6 +75,87 @@ const Intro = () => {
           <div className='mt-4'>
             <a href='/services' className='inline-block py-2 px-4 text-white font-medium bg-gray-800 duration-150 hover:bg-gray-700 active:bg-gray-900 rounded-lg shadow-md hover:shadow-none'>
               Get started
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <div className='px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-36'>
+          <div className='max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12'>
+            <div>
+              <p className='inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-blue-900 uppercase rounded-full bg-blue-100'>
+                Brand new
+              </p>
+            </div>
+            <h2 className='max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto'>
+              <span className='relative inline-block'>
+                <svg
+                  viewBox='0 0 52 24'
+                  fill='currentColor'
+                  className='absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block'
+                >
+                  <defs>
+                    <pattern
+                      id='9a29985a-fc16-419b-ae53-1670f5ca4491'
+                      x='0'
+                      y='0'
+                      width='.135'
+                      height='.30'
+                    >
+                      <circle cx='1' cy='1' r='.7' />
+                    </pattern>
+                  </defs>
+                  <rect
+                    fill='url(#9a29985a-fc16-419b-ae53-1670f5ca4491)'
+                    width='52'
+                    height='24'
+                  />
+                </svg>
+                <span className='relative'>The</span>
+              </span>{' '}
+              quick, brown fox jumps over a lazy dog
+            </h2>
+            <p className='text-base text-gray-700 md:text-lg'>
+              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
+              accusantium doloremque rem aperiam, eaque ipsa quae.
+            </p>
+          </div>
+          <div className='grid max-w-screen-lg gap-8 row-gap-5 mb-8 sm:grid-cols-2 lg:grid-cols-4 sm:mx-auto'>
+            <img
+              className='object-cover w-full h-56 rounded-md shadow-lg'
+              src='https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260'
+              alt=''
+            />
+            <img
+              className='object-cover w-full h-56 rounded-md shadow-lg'
+              src='https://images.pexels.com/photos/3182746/pexels-photo-3182746.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260'
+              alt=''
+            />
+            <img
+              className='object-cover w-full h-56 rounded-md shadow-lg'
+              src='https://images.pexels.com/photos/3184311/pexels-photo-3184311.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;w=500'
+              alt=''
+            />
+            <img
+              className='object-cover w-full h-56 rounded-md shadow-lg'
+              src='https://images.pexels.com/photos/3184339/pexels-photo-3184339.jpeg?auto=compress&amp;cs=tinysrgb&amp;dpr=2&amp;h=750&amp;w=1260'
+              alt=''
+            />
+          </div>
+          <div className='flex items-center sm:justify-center'>
+            <a
+              href='/'
+              className='inline-flex items-center justify-center h-10 px-6 mr-6 font-medium tracking-wide text-white transition duration-200 rounded-md shadow-md bg-blue-600 hover:bg-blue-500 focus:shadow-outline focus:outline-none'
+            >
+              Sign up
+            </a>
+            <a
+              href='/'
+              aria-label=''
+              className='inline-flex items-center font-semibold transition-colors duration-200 text-blue-600 hover:text-blue-500'
+            >
+              Learn more
             </a>
           </div>
         </div>

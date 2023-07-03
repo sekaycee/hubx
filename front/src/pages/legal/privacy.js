@@ -77,7 +77,7 @@ const Privacy = () => {
           </div>
 
           <div className='relative z-10'>
-            <div className='max-w-[85rem] mx-auto px-4 sm:px-6 lg:px-8 py-10 lg:pt-[10rem]'>
+            <div className='max-w-[85rem] mx-auto mt-[5rem] px-8 py-10 lg:mt-[10rem]'>
               <div className='max-w-2xl mx-auto'>
                 <p className='inline-block text-sm font-medium bg-clip-text bg-gradient-to-l from-blue-600 to-violet-500 text-transparent dark:from-blue-400 dark:to-violet-400'>
                   HubX: A vision for 2023
@@ -98,10 +98,10 @@ const Privacy = () => {
         </div>
       </section>
 
-      <section className='max-w-2xl my-32 mx-auto'>
+      <section className='max-w-2xl px-8 md:px-0 my-16 lg:my-32 mx-auto'>
         <div className='text-base leading-7 text-gray-700'>
           <p>
-            This privacy policy ("Policy") describes how HubX Labs Inc. ("HubX", "we", "us" or "our") collects, protects and uses the personally identifiable information ("Personal Information") you ("User", "you" or "your") may provide through the HubX Consulting website (hubx.consulting) or in the course of purchasing any HubX Consulting products (collectively, "Website"). The Policy also describes the choices available to you regarding our use of your Personal Information and how you can access and update this information. This Policy does not apply to the practices of companies that we do not own or control, or to individuals that we do not employ or manage.
+            This privacy policy ("Policy") describes how HubX Ltd. ("HubX", "we", "us" or "our") collects, protects and uses the personally identifiable information ("Personal Information") you ("User", "you" or "your") may provide through the HubX Consulting website (hubx.consulting) or in the course of purchasing any HubX Consulting products (collectively, "Website"). The Policy also describes the choices available to you regarding our use of your Personal Information and how you can access and update this information. This Policy does not apply to the practices of companies that we do not own or control, or to individuals that we do not employ or manage.
           </p>
         </div>
         {
