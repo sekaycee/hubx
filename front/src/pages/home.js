@@ -10,12 +10,12 @@ import Gradient from './slices/gradient'
 const Home = () => {
   const tabItems = [
     { 
-      name: 'Jobs', 
-      component: Job
-    },
-    { 
       name: 'Scholarships', 
       component: Scholarship
+    },
+    { 
+      name: 'Jobs', 
+      component: Job
     }
   ]
 

@@ -16,6 +16,68 @@ import Translation from './translation'
 import Writing from './writing'
 
 const Service = () => {
+  const services = [
+    {
+      name: 'Scholarships', icon: '', href: '', 
+      desc: 'Disrupt inspire and think tank, social entrepreneur but preliminary thinking think tank compelling.'
+    },
+    {
+      name: 'Jobs', icon: '', href: '', 
+      desc: 'Disrupt inspire and think tank, social entrepreneur but preliminary thinking think tank compelling.'
+    },
+    {
+      name: 'Consultation', icon: '', href: '', 
+      desc: 'Disrupt inspire and think tank, social entrepreneur but preliminary thinking think tank compelling.'
+    },
+    {
+      name: 'Translation', icon: '', href: '', 
+      desc: 'Disrupt inspire and think tank, social entrepreneur but preliminary thinking think tank compelling.'
+    },
+    {
+      name: 'CV | Resume check', icon: '', href: '', 
+      desc: 'Disrupt inspire and think tank, social entrepreneur but preliminary thinking think tank compelling.'
+    },
+    {
+      name: 'Proofreading and editing', icon: '', href: '', 
+      desc: 'Disrupt inspire and think tank, social entrepreneur but preliminary thinking think tank compelling.'
+    },
+    {
+      name: 'Mentorship', icon: '', href: '', 
+      desc: 'Disrupt inspire and think tank, social entrepreneur but preliminary thinking think tank compelling.'
+    },
+    {
+      name: 'Writing', icon: '', href: '', 
+      desc: 'Disrupt inspire and think tank, social entrepreneur but preliminary thinking think tank compelling.'
+    },
+    {
+      name: 'Accommodation', icon: '', href: '', 
+      desc: 'Disrupt inspire and think tank, social entrepreneur but preliminary thinking think tank compelling.'
+    },
+    {
+      name: 'Conciarge', icon: '', href: '', 
+      desc: 'Disrupt inspire and think tank, social entrepreneur but preliminary thinking think tank compelling.'
+    },
+    {
+      name: 'Programming', icon: '', href: '', 
+      desc: 'Disrupt inspire and think tank, social entrepreneur but preliminary thinking think tank compelling.'
+    },
+    {
+      name: 'Design', icon: '', href: '', 
+      desc: 'Disrupt inspire and think tank, social entrepreneur but preliminary thinking think tank compelling.'
+    },
+    {
+      name: 'Digital marketing', icon: '', href: '', 
+      desc: 'Disrupt inspire and think tank, social entrepreneur but preliminary thinking think tank compelling.'
+    },
+    {
+      name: 'Photography', icon: '', href: '', 
+      desc: 'Disrupt inspire and think tank, social entrepreneur but preliminary thinking think tank compelling.'
+    },
+    {
+      name: 'Posters and presentations', icon: '', href: '', 
+      desc: 'Disrupt inspire and think tank, social entrepreneur but preliminary thinking think tank compelling.'
+    }
+  ]
   const content = (
     <main>
       <section id='quote'>
@@ -94,7 +156,7 @@ const Service = () => {
             </p>
           </div>
           <div className='grid gap-8 row-gap-5 md:row-gap-8 lg:grid-cols-3'>
-            <div className='p-5 duration-300 transform bg-white border-2 border-dashed rounded shadow-sm border-blue-100 hover:-translate-y-2'>
+            <div className='p-5 duration-300 transform bg-white border-2 border-dashed rounded-md shadow-sm border-blue-100 hover:-translate-y-2'>
               <div className='flex items-center mb-2'>
                 <p className='flex items-center justify-center w-10 h-10 mr-2 text-lg font-bold text-white rounded-full bg-blue-400'>
                   1
@@ -106,7 +168,7 @@ const Service = () => {
                 epic clipless.
               </p>
             </div>
-            <div className='p-5 duration-300 transform bg-white border-2 border-dashed rounded shadow-sm border-blue-200 hover:-translate-y-2'>
+            <div className='p-5 duration-300 transform bg-white border-2 border-dashed rounded-md shadow-sm border-blue-200 hover:-translate-y-2'>
               <div className='flex items-center mb-2'>
                 <p className='flex items-center justify-center w-10 h-10 mr-2 text-lg font-bold text-white rounded-full bg-blue-400'>
                   2
@@ -118,7 +180,7 @@ const Service = () => {
                 flail 180 berm.
               </p>
             </div>
-            <div className='relative p-5 duration-300 transform bg-white border-2 rounded shadow-sm border-blue-700 hover:-translate-y-2'>
+            <div className='relative p-5 duration-300 transform bg-white border-2 rounded-md shadow-sm border-blue-700 hover:-translate-y-2'>
               <div className='flex items-center mb-2'>
                 <p className='flex items-center justify-center w-10 h-10 mr-2 text-lg font-bold text-white rounded-full bg-blue-400'>
                   3
@@ -231,72 +293,154 @@ const Service = () => {
         </div>
       </section>
 
-      <section className='px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20'>
-        <div className='max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto'>
-          <div className='mx-auto max-w-2xl mb-8 lg:mb-14 text-center'>
-            <h2 className='text-3xl lg:text-4xl text-gray-800 font-bold dark:text-gray-200'>
-              Explore tools
-            </h2>
-            <p className='mt-3 text-gray-800 dark:text-gray-200'>
-              The powerful and flexible agency for all kinds of students and professionals.
-            </p>
-          </div>
-          
-          <div className='mx-auto max-w-3xl grid grid-cols-12 gap-6 lg:gap-8'>
-            <div className='col-span-6 sm:col-span-4 text-center'>
-              <svg className='mx-auto h-auto w-7 md:w-9 text-gray-800 dark:text-gray-200' xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'>
-                <path d='M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z'/>
-                <path d='M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z'/>
-              </svg>
-              <div className='mt-2 sm:mt-6'>
-                <h3 className='text-lg font-semibold text-gray-800 dark:text-gray-200'>
-                  Responsive
-                </h3>
+      <section>
+        <div className='px-8 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-7xl md:px-24 lg:py-20'>
+          <div className='max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto'>
+            <div className='mx-auto max-w-2xl mb-8 lg:mb-14 text-center'>
+              <h2 className='text-3xl lg:text-4xl text-gray-800 font-bold dark:text-gray-200'>
+                Explore tools
+              </h2>
+              <p className='mt-3 text-gray-800 dark:text-gray-200'>
+                The powerful and flexible agency for all kinds of students and professionals.
+              </p>
+            </div>
+            
+            <div className='mx-auto max-w-3xl grid grid-cols-12 gap-6 lg:gap-8'>
+              <div className='col-span-6 sm:col-span-4 text-center'>
+                <svg className='mx-auto h-auto w-7 md:w-9 text-gray-800 dark:text-gray-200' xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'>
+                  <path d='M11 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h6zM5 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H5z'/>
+                  <path d='M8 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z'/>
+                </svg>
+                <div className='mt-2 sm:mt-6'>
+                  <h3 className='text-lg font-semibold text-gray-800 dark:text-gray-200'>
+                    Responsive
+                  </h3>
+                </div>
+              </div>
+              
+              <div className='col-span-6 sm:col-span-4 text-center'>
+                <svg className='mx-auto h-auto w-7 md:w-9 text-gray-800 dark:text-gray-200' xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'>
+                  <path d='M9.465 10H12a2 2 0 1 1 0 4H9.465c.34-.588.535-1.271.535-2 0-.729-.195-1.412-.535-2z'/>
+                  <path d='M6 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 1a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm.535-10a3.975 3.975 0 0 1-.409-1H4a1 1 0 0 1 0-2h2.126c.091-.355.23-.69.41-1H4a2 2 0 1 0 0 4h2.535z'/>
+                  <path d='M14 4a4 4 0 1 1-8 0 4 4 0 0 1 8 0z'/>
+                </svg>
+                <div className='mt-2 sm:mt-6'>
+                  <h3 className='text-lg font-semibold text-gray-800 dark:text-gray-200'>
+                    Customizable
+                  </h3>
+                </div>
+              </div>
+              
+              <div className='col-span-6 col-start-4 sm:col-span-4 text-center'>
+                <svg className='mx-auto h-auto w-7 md:w-9 text-gray-800 dark:text-gray-200' xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'>
+                  <path d='M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1H2zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z'/>
+                  <path d='M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z'/>
+                </svg>
+                <div className='mt-2 sm:mt-6'>
+                  <h3 className='text-lg font-semibold text-gray-800 dark:text-gray-200'>
+                    24/7 Support
+                  </h3>
+                </div>
               </div>
             </div>
             
-            <div className='col-span-6 sm:col-span-4 text-center'>
-              <svg className='mx-auto h-auto w-7 md:w-9 text-gray-800 dark:text-gray-200' xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'>
-                <path d='M9.465 10H12a2 2 0 1 1 0 4H9.465c.34-.588.535-1.271.535-2 0-.729-.195-1.412-.535-2z'/>
-                <path d='M6 15a3 3 0 1 0 0-6 3 3 0 0 0 0 6zm0 1a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm.535-10a3.975 3.975 0 0 1-.409-1H4a1 1 0 0 1 0-2h2.126c.091-.355.23-.69.41-1H4a2 2 0 1 0 0 4h2.535z'/>
-                <path d='M14 4a4 4 0 1 1-8 0 4 4 0 0 1 8 0z'/>
-              </svg>
-              <div className='mt-2 sm:mt-6'>
-                <h3 className='text-lg font-semibold text-gray-800 dark:text-gray-200'>
-                  Customizable
-                </h3>
+            <div className='mt-20 grid grid-cols-12 items-center gap-x-2 sm:gap-x-6 lg:gap-x-8'>
+              <div className='hidden md:block col-span-4 md:col-span-3'>
+                <img className='rounded-xl' src='https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1981&q=80' alt='' />
               </div>
-            </div>
-            
-            <div className='col-span-6 col-start-4 sm:col-span-4 text-center'>
-              <svg className='mx-auto h-auto w-7 md:w-9 text-gray-800 dark:text-gray-200' xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' viewBox='0 0 16 16'>
-                <path d='M2 1a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h9.586a2 2 0 0 1 1.414.586l2 2V2a1 1 0 0 0-1-1H2zm12-1a2 2 0 0 1 2 2v12.793a.5.5 0 0 1-.854.353l-2.853-2.853a1 1 0 0 0-.707-.293H2a2 2 0 0 1-2-2V2a2 2 0 0 1 2-2h12z'/>
-                <path d='M5 6a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm4 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z'/>
-              </svg>
-              <div className='mt-2 sm:mt-6'>
-                <h3 className='text-lg font-semibold text-gray-800 dark:text-gray-200'>
-                  24/7 Support
-                </h3>
+              <div className='col-span-4 md:col-span-3'>
+                <img className='rounded-xl' src='https://images.unsplash.com/photo-1587613991119-fbbe8e90531d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1003&q=80' alt='' />
               </div>
-            </div>
-          </div>
-          
-          <div className='mt-20 grid grid-cols-12 items-center gap-x-2 sm:gap-x-6 lg:gap-x-8'>
-            <div className='hidden md:block col-span-4 md:col-span-3'>
-              <img className='rounded-xl' src='https://images.unsplash.com/photo-1606868306217-dbf5046868d2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1981&q=80' alt='' />
-            </div>
-            <div className='col-span-4 md:col-span-3'>
-              <img className='rounded-xl' src='https://images.unsplash.com/photo-1587613991119-fbbe8e90531d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1003&q=80' alt='' />
-            </div>
-            <div className='col-span-4 md:col-span-3'>
-              <img className='rounded-xl' src='https://images.unsplash.com/photo-1554295405-abb8fd54f153?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=652&q=80' alt='' />
-            </div>
-            <div className='col-span-4 md:col-span-3'>
-              <img className='rounded-xl' src='https://images.unsplash.com/photo-1640622300473-977435c38c04?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80' alt='' />
+              <div className='col-span-4 md:col-span-3'>
+                <img className='rounded-xl' src='https://images.unsplash.com/photo-1554295405-abb8fd54f153?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=652&q=80' alt='' />
+              </div>
+              <div className='col-span-4 md:col-span-3'>
+                <img className='rounded-xl' src='https://images.unsplash.com/photo-1640622300473-977435c38c04?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2072&q=80' alt='' />
+              </div>
             </div>
           </div>
         </div>
       </section>
+      
+
+      <section>
+        <div className="px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-7xl md:px-24 lg:px-8 lg:py-20">
+          <div className="max-w-xl mb-10 md:mx-auto sm:text-center lg:max-w-2xl md:mb-12">
+            <div>
+              <p className="inline-block px-3 py-px mb-4 text-xs font-semibold tracking-wider text-blue-900 uppercase rounded-full bg-blue-100">
+                List of services
+              </p>
+            </div>
+            <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto">
+              <span className="relative inline-block">
+                <svg
+                  viewBox="0 0 52 24"
+                  fill="currentColor"
+                  className="absolute top-0 left-0 z-0 hidden w-32 -mt-8 -ml-20 text-blue-gray-100 lg:w-32 lg:-ml-28 lg:-mt-10 sm:block"
+                >
+                  <defs>
+                    <pattern
+                      id="18302e52-9e2a-4c8e-9550-0cbb21b38e55"
+                      x="0"
+                      y="0"
+                      width=".135"
+                      height=".30"
+                    >
+                      <circle cx="1" cy="1" r=".7" />
+                    </pattern>
+                  </defs>
+                  <rect
+                    fill="url(#18302e52-9e2a-4c8e-9550-0cbb21b38e55)"
+                    width="52"
+                    height="24"
+                  />
+                </svg>
+                <span className="relative">See</span>
+              </span>{' '}
+              all the services we offer
+            </h2>
+            <p className="text-base text-gray-700 md:text-lg">
+              Learn more about our service offerings. If you can't find the service type you need, do let us know.
+              We do handle custom service requests. Sign up today and get started working with us.
+            </p>
+          </div>
+          <div className="grid gap-4 row-gap-5 sm:grid-cols-2 lg:grid-cols-4">
+            {
+              services.map((service, idx) => (
+                <div key={idx} className="flex flex-col justify-between p-5 border rounded-md shadow-sm hover:shadow-lg">
+                  <div>
+                    <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-blue-50">
+                      <svg
+                        className="w-12 h-12 text-blue-600"
+                        stroke="currentColor"
+                        viewBox="0 0 52 52"
+                      >
+                        <polygon
+                          strokeWidth="3"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          fill="none"
+                          points="29 13 14 29 25 29 23 39 38 23 27 23"
+                        />
+                      </svg>
+                    </div>
+                    <h6 className="mb-2 font-semibold leading-5">{service.name}</h6>
+                    <p className="mb-3 text-sm text-gray-900">{service.desc}</p>
+                  </div>
+                  <a
+                    href={"/services/".concat(service.href)}
+                    aria-label={service.name}
+                    className="inline-flex items-center font-semibold transition-colors duration-200 text-gray-900 hover:text-blue-600"
+                  >
+                    Learn more
+                  </a>
+                </div>
+              ))
+            }
+          </div>
+        </div>
+      </section>
+
       <Newsletter />
     </main>
   )
