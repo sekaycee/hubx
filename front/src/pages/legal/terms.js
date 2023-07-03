@@ -101,7 +101,7 @@ const Terms = () => {
               <rect width='100%' height='100%' strokeWidth={0} fill='url(#e813992c-7d03-4cc4-a2bd-151760b470a0)' />
             </svg>
           </div>
-          <div className='grid grid-col-3 xl:grid-cols-4 gap-x-4 gap-y-8 lg:mx-0 lg:gap-y-10'>
+          <div className='grid grid-col-3 lg:grid-cols-4 gap-x-4 gap-y-8 lg:mx-0 lg:gap-y-10'>
             <div className='sticky top-4 col-start-1 sm:row-span-1 sm:row-start-1 md:overflow-hidden'>
               <div>
                 <div className='p-1'><a href='/'>Accounts</a></div>
