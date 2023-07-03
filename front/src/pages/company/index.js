@@ -3,6 +3,7 @@ import Investors from './investors'
 import Jobs from './jobs'
 import Podcast from './podcast'
 import Team from './team'
+import Banner from '../slices/banner'
 
 const stats = [
   {
@@ -60,11 +61,8 @@ const Company = () => {
         </div>
       </section>
 
-      <section className='py-14'>
-        <div className='max-w-screen-xl mx-auto px-4 text-gray-600 gap-x-12 items-start justify-between lg:flex md:px-8'>
-          <div className='sm:hidden lg:block lg:max-w-xl'>
-            <img src='https://images.unsplash.com/photo-1622675363311-3e1904dc1885?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80' className='rounded-lg' alt='' />
-          </div>
+      <section>
+        <div className='max-w-screen-xl mx-auto px-8 text-gray-600 gap-x-12 items-start justify-between lg:flex py-32'>
           <div className='mt-6 gap-12 sm:mt-0 md:flex lg:block'>
             <div className='max-w-2xl'>
               <h3 className='text-gray-800 text-3xl font-semibold sm:text-4xl'>
@@ -87,8 +85,13 @@ const Company = () => {
               </ul>
             </div>
           </div>
+          <div className='sm:hidden lg:block lg:max-w-xl'>
+            <img src='https://images.unsplash.com/photo-1622675363311-3e1904dc1885?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80' className='rounded-lg' alt='' />
+          </div>
         </div>
       </section>
+
+      <Banner />
 
       <section className='px-4 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20'>
         <div className='max-w-[85rem] px-4 py-10 sm:px-6 lg:px-8 lg:py-14 mx-auto'>
@@ -113,10 +116,10 @@ const Company = () => {
               <div className='space-y-6 sm:space-y-8'>
                 <div className='space-y-2 md:space-y-4'>
                   <h2 className='font-bold text-3xl lg:text-4xl text-gray-800 dark:text-gray-200'>
-                    Collaborative tools to design user experience
+                    We collaborate with our clients to build customized solutions
                   </h2>
                   <p className='text-gray-500'>
-                    Use our tools to explore your ideas and make your vision come true. Then share your work easily.
+                    Using effective toolsets and proven processes to explore your ideas and make your vision come true. Then share your success with the world.
                   </p>
                 </div>
 
@@ -139,7 +142,7 @@ const Company = () => {
                     </svg>
 
                     <span className='text-sm sm:text-base text-gray-500'>
-                      Hundreds of thousands saved
+                      Hundreds of thousands of hourly input
                     </span>
                   </li>
 

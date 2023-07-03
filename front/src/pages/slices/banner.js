@@ -1,8 +1,8 @@
 const Banner = () => {
   const content = (
-    <section>
-      <div className='bg-gradient-to-r from-purple-600 to-blue-400'>
-        <div className='max-w-[85rem] px-4 py-4 sm:px-6 lg:px-8 mx-auto'>
+    <section className='px-8 lg:px-20'>
+      <div className='bg-gradient-to-r from-purple-400 to-blue-600 rounded-md'>
+        <div className='max-w-7xl px-4 py-4 sm:px-6 mx-auto'>
           <div className='grid justify-center md:grid-cols-2 md:justify-between md:items-center gap-2'>
             <div className='text-center md:text-left md:order-2 md:flex md:justify-end md:items-center'>
               <p className='mr-5 inline-block text-sm font-semibold text-white'>
@@ -21,7 +21,8 @@ const Banner = () => {
                 Watch demo
               </a>
               <span className='inline-block border-r border-white/[.3] w-px h-5 mx-2'></span>
-              <a className='py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md font-medium text-white hover:bg-white/[.1] focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 transition-all text-sm' href='/'>
+              <a className='py-2 px-3 inline-flex justify-center items-center gap-2 rounded-md font-medium text-white hover:bg-white/[.1] focus:outline-none focus:ring-2 focus:ring-blue-600 focus:ring-offset-2 transition-all text-sm' href='/services'>
+                Get quote
               </a>
             </div>
           </div>
