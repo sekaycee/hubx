@@ -45,6 +45,7 @@ function App() {
 
         <Route path='services/'>
           <Route index element={<sv.Service />} />
+          {/* <Route path='job' element={<sv.Job />} /> */}
           <Route path='writing' element={<sv.Writing />} />
           <Route path='translation' element={<sv.Translation />} />
           <Route path='proofreading' element={<sv.Proofreading />} />
@@ -59,6 +60,7 @@ function App() {
           <Route path='photography' element={<sv.Photography />} />
           <Route path='programming' element={<sv.Programming />} />
           <Route path='mentorship' element={<sv.Mentorship />} />
+          <Route path='scholarship' element={<sv.Scholarship />} />
         </Route>
 
         <Route path='blog/'>

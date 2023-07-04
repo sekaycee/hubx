@@ -1,7 +1,7 @@
 import { React, useState } from 'react'
 import { Question, Award, BookHalf, CalendarCheck, CarFront, ClipboardCheck, Airplane, Briefcase, PatchCheck, BookmarkStar, ListNested, GlobeEuropeAfrica, Boxes, ClipboardPulse } from 'react-bootstrap-icons'
-import Scholarship from './slices/scholarship'
-import Job from './slices/job'
+import ScholarshipSnip from './slices/scholarship'
+import JobSnip from './slices/job'
 import { POSTS } from './config/blog'
 import { TESTIMONIALS } from './config/testimonials'
 import Newsletter from './slices/newsletter'
@@ -11,11 +11,11 @@ const Home = () => {
   const tabItems = [
     { 
       name: 'Scholarships', 
-      component: Scholarship
+      component: ScholarshipSnip
     },
     { 
       name: 'Jobs', 
-      component: Job
+      component: JobSnip
     }
   ]
 

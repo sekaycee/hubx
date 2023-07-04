@@ -20,13 +20,13 @@ import MegaMenuLinks from './header/MegaMenuLinks'
 
 const navigation = {
   services: [
-    { name: 'Academic', description: 'Bootstrap your academic goals', href: '/services/academic', icon: AcademicCapIcon },
-    { name: 'Scholarships', description: 'Access our list of current scholarship positions', href: '/services/scholarships', icon: BuildingLibraryIcon },
-    { name: 'Career', description: 'Get help fast-tracking your career goals', href: '/services/career', icon: BuildingOffice2Icon },
-    { name: 'Jobs', description: 'Access our curated listing of job openings', href: '/services/jobs', icon: BriefcaseIcon },
-    { name: 'Mentorship', description: 'Let our professors guide you', href: '/services/mentorship', icon: LightBulbIcon },
-    { name: 'CV Check', description: 'Check the validity of your CV and Resume', href: '/services/cv-check', icon: DocumentTextIcon },
-    { name: 'Conciarge', description: 'Get help moving from one place to another', href: '/services/conciarge', icon: PaperAirplaneIcon },
+    { name: 'Academic', description: 'Bootstrap your academic goals', href: 'academic', icon: AcademicCapIcon },
+    { name: 'Scholarships', description: 'Access our list of current scholarship positions', href: 'scholarship', icon: BuildingLibraryIcon },
+    { name: 'Career', description: 'Get help fast-tracking your career goals', href: 'career', icon: BuildingOffice2Icon },
+    { name: 'Jobs', description: 'Access our curated listing of job openings', href: 'jobs', icon: BriefcaseIcon },
+    { name: 'Mentorship', description: 'Let our professors guide you', href: 'mentorship', icon: LightBulbIcon },
+    { name: 'CV Check', description: 'Check the validity of your CV and Resume', href: 'cv-check', icon: DocumentTextIcon },
+    { name: 'Conciarge', description: 'Get help moving from one place to another', href: 'conciarge', icon: PaperAirplaneIcon },
   ],
   about: [
     { name: 'Introduction', description: 'Bootstrap and fast-track your academic|career goals', href: '/about/us', icon: HomeModernIcon },
@@ -35,7 +35,7 @@ const navigation = {
   ],
   insights: {
     categories: [
-      {name: 'Scholarship', href: ''},
+      {name: 'Scholarship', href: 'scholarship'},
       {name: 'Company', href: ''},
       {name: 'Translation', href: ''},
       {name: 'Academic', href: ''},
@@ -124,7 +124,7 @@ const Header = () => {
                         <item.icon className='h-6 w-6 text-gray-600 group-hover:text-blue-600' aria-hidden='true' />
                       </div>
                       <div className='flex-auto'>
-                        <a href={item.href} className='block font-semibold text-gray-900'>
+                        <a href={'/services/' + item.href} className='block font-semibold text-gray-900'>
                           {item.name}
                           <span className='absolute inset-0' />
                         </a>

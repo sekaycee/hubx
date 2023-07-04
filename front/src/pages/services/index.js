@@ -2,10 +2,10 @@ import Newsletter from '../slices/newsletter'
 import InstantQuote from '../slices/quote'
 import Academic from './academic'
 import Accommodation from './accommodation'
-import Career from './career'
 import Conciarge from './conciarge'
 import Consultation from './consultation'
 import CVCheck from './cvCheck'
+import { Career, Jobs } from './career'
 import Design from './design'
 import DigitalMarketing from './digitalMarketing'
 import Mentorship from './mentorship'
@@ -14,6 +14,7 @@ import Programming from './programming'
 import Proofreading from './proofreading'
 import Translation from './translation'
 import Writing from './writing'
+import Scholarship from './scholarship'
 
 const Service = () => {
   const services = [
@@ -448,6 +449,6 @@ const Service = () => {
 }
 
 export {
-  Academic, Accommodation, Career, Conciarge, Consultation, CVCheck, Design, DigitalMarketing,
-  Mentorship, Photography, Programming, Proofreading, Service, Translation, Writing
+  Academic, Accommodation, Jobs, Career, Conciarge, Consultation, CVCheck, Design, DigitalMarketing,
+  Mentorship, Photography, Programming, Proofreading, Service, Translation, Writing, Scholarship
 }

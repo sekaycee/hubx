@@ -1,6 +1,12 @@
 import React from 'react'
 import Newsletter from '../slices/newsletter'
 
+const Jobs = () => {
+  return (
+    <></>
+  )
+}
+
 const Career = () => {
   const content = (
     <>
@@ -13,4 +19,4 @@ const Career = () => {
   return content
 }
 
-export default Career
+export { Career, Jobs }

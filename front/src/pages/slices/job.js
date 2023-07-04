@@ -1,7 +1,7 @@
 import { React } from 'react'
 import { Capsule, BrightnessHighFill, BuildingFillCheck, HeartPulseFill, CashStack, Bank2 } from 'react-bootstrap-icons'
 
-const Job = () => {
+const JobSnip = () => {
   const jobs = [
     {
       image: BrightnessHighFill,
@@ -91,4 +91,4 @@ const Job = () => {
   )
 }
 
-export default Job
+export default JobSnip

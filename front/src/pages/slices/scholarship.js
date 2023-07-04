@@ -1,7 +1,7 @@
 import { React } from 'react'
 import { Box2HeartFill, BrightnessHighFill, BuildingFillCheck } from 'react-bootstrap-icons'
 
-const Scholarship = () => {
+const ScholarshipSnip = () => {
   const scholarships = [
     {
       image: BrightnessHighFill,
@@ -73,4 +73,4 @@ const Scholarship = () => {
   )
 }
 
-export default Scholarship
+export default ScholarshipSnip
