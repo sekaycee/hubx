@@ -4,7 +4,7 @@ import { Transition, Dialog } from '@headlessui/react'
 const ShowScholarship = ({ position, close, open }) => {
   const content = (
     <Transition appear show={open} as={Fragment}>
-      <Dialog as='div' className='relative z-10' onClose={close}>
+      <Dialog as='div' className='relative z-60' onClose={close}>
         <Transition.Child
           as={Fragment}
           enter='ease-out duration-300'
@@ -31,12 +31,12 @@ const ShowScholarship = ({ position, close, open }) => {
               <Dialog.Panel className='w-full max-w-7xl transform overflow-hidden rounded-2xl bg-white p-6 text-center align-middle shadow-xl transition-all'>
                 <Dialog.Title
                   as='h3'
-                  className='text-lg font-medium leading-6 text-gray-900'
+                  className='text-lg text-gray-900 font-medium leading-6 py-6 md:py-12'
                 >
                   {position.title}
                 </Dialog.Title>
                 <Dialog.Description>{position.desc}</Dialog.Description>
-                <div className='mt-3 px-36'>
+                <div className='px-8 md:px-28'>
                   <p className='text-[4rem] text-gray-500 p-6'>
                     {position.endDate}
                   </p>

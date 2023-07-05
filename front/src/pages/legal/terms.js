@@ -4,13 +4,13 @@ import Newsletter from '../slices/newsletter'
 const Terms = () => {
   const terms = [
     {
-      title: '1. Accounts',
+      id: 'account', title: '1. Accounts',
       paragraphs: [
         'When you create an account with us, you must provide us information that is accurate, complete, and current at all times. Failure to do so constitutes a breach of the Terms, which may result in immediate termination of your account on our Service.'
       ]
     },
     {
-      title: '2. Links to other websites',
+      id: 'link', title: '2. Links to other websites',
       paragraphs: [
         'Our Service may contain links to third-party web sites or services that are not owned or controlled by HubX.',
         'HubX has no control over, and assumes no responsibility for, the content, privacy policies, or practices of any third party web sites or services. You further acknowledge and agree that HubX shall not be responsible or liable, directly or indirectly, for any damage or loss caused or alleged to be caused by or in connection with use of or reliance on any such content, goods or services available on or through any such web sites or services.',
@@ -18,7 +18,7 @@ const Terms = () => {
       ]
     },
     {
-      title: '3. Termination',
+      id: 'terminate', title: '3. Termination',
       paragraphs: [
         'We may terminate or suspend access to our Service immediately, without prior notice or liability, for any reason whatsoever, including without limitation if you breach the Terms.',
         'All provisions of the Terms which by their nature should survive termination shall survive termination, including, without limitation, ownership provisions, warranty disclaimers, indemnity and limitations of liability.',
@@ -28,14 +28,14 @@ const Terms = () => {
       ]
     },
     {
-      title: '4. Governing law',
+      id: 'law', title: '4. Governing law',
       paragraphs: [
         'These Terms shall be governed and construed in accordance with the laws of UK, without regard to its conflict of law provisions.',
         'Our failure to enforce any right or provision of these Terms will not be considered a waiver of those rights. If any provision of these Terms is held to be invalid or unenforceable by a court, the remaining provisions of these Terms will remain in effect. These Terms constitute the entire agreement between us regarding our Service, and supersede and replace any prior agreements we might have between us regarding the Service.'
       ]
     },
     {
-      title: '5. Changes',
+      id: 'alter', title: '5. Changes',
       paragraphs: [
         'We reserve the right, at our sole discretion, to modify or replace these Terms at any time. If a revision is material we will try to provide at least 30 days notice prior to any new terms taking effect. What constitutes a material change will be determined at our sole discretion.',
         'By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.'
@@ -101,18 +101,23 @@ const Terms = () => {
               <rect width='100%' height='100%' strokeWidth={0} fill='url(#e813992c-7d03-4cc4-a2bd-151760b470a0)' />
             </svg>
           </div>
-          <div className='grid grid-col-3 lg:grid-cols-4 gap-x-4 gap-y-8 lg:mx-0 lg:gap-y-10'>
-            <div className='sticky top-4 col-start-1 sm:row-span-1 sm:row-start-1 md:overflow-hidden'>
-              <div>
-                <div className='p-1'><a href='/'>Accounts</a></div>
-                <div className='p-1'><a href='/'>External Links</a></div>
-                <div className='p-1'><a href='/'>Termination</a></div>
-                <div className='p-1'><a href='/'>Governing Law</a></div>
-                <div className='p-1'><a href='/'>Changes</a></div>
+          
+          {/* <div className='grid grid-col-3 lg:grid-cols-4 gap-x-4 gap-y-8 lg:mx-0 lg:gap-y-10'> */}
+          <div className='p-6 sm:p-10 md:p-16 sm:flex sm:flex-wrap'>
+            <div className='w-full hidden sm:block sm:w-1/4 md:w-1/5 lg:w-1/6 sm:pr-3 md:pr-4 lg:pr-8 order-3 sm:order-1'>
+              <div className='sm:float-right sm:text-right leading-7 tracking-tight sm:sticky sm:top-4'>
+            {/* <div className='sticky top-4 inset-0 col-start-1 sm:row-span-1 sm:row-start-1 md:overflow-hidden'>
+              <div> */}
+                <div className='pb-3 hover:text-blue-600'><a href='#account'>Accounts</a></div>
+                <div className='pb-3 hover:text-blue-600'><a href='#link'>External Links</a></div>
+                <div className='pb-3 hover:text-blue-600'><a href='#terminate'>Termination</a></div>
+                <div className='pb-3 hover:text-blue-600'><a href='#law'>Governing Law</a></div>
+                <div className='pb-0 hover:text-blue-600'><a href='#alter'>Changes</a></div>
               </div>
             </div>
-            <div className='col-span-2 xl:col-span-3 col-start-2 row-start-1 mx-auto w-full gap-x-6 md:gap-x-16'>
-              <div className='lg:pr-4'>
+            {/* <div className='col-span-2 xl:col-span-3 col-start-2 row-start-1 mx-auto w-full gap-x-6 md:gap-x-16'> */}
+            <div className='w-full sm:w-3/4 md:w-4/5 lg:w-5/6 order-1 sm:order-2'>
+              <div className='max-w-lg md:max-w-xl lg:max-w-2xl xl:max-w-3xl'>
                 <div className='text-gray-700'>
                   <div className='text-base leading-7 text-gray-700'>
                     <p>Thanks for using our products and services ('Services'). The Services are provided by HubX Ltd. ('HubX'), founded in March 2023 with UK company registration number 14722644.</p>
@@ -122,7 +127,9 @@ const Terms = () => {
                   {
                     terms.map((term, idx) => (
                     <div key={idx}>
-                      <h3 className='mt-16 text-2xl font-bold tracking-tight text-gray-900'>{term.title}</h3>
+                      <h3 id={term.id} className='mt-16 text-2xl font-bold tracking-tight text-gray-900'>
+                        {term.title}
+                      </h3>
                       {term.paragraphs.map((p, i) => <p key={i} className='mt-6'>{p}</p>)}
                     </div>
                   ))}

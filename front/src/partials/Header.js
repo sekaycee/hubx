@@ -73,8 +73,6 @@ function classNames(...classes) {
 const Header = () => {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
-  // const linkStyle = 'block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-blue-600'
-
   const content = (
     <header className='absolute inset-x-0 top-0 z-50'>
       <nav className='mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8' aria-label='Global'>
@@ -327,7 +325,7 @@ const Header = () => {
                           <Disclosure.Button
                             key={item.name}
                             as='a'
-                            href={item.href}
+                            href={'/services/' + item.href}
                             className='block rounded-lg py-2 pl-6 pr-3 text-sm font-semibold leading-7 text-gray-900 hover:bg-gray-50'
                           >
                             {item.name}
