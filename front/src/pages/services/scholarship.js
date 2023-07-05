@@ -2,6 +2,7 @@ import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/24/outline'
 import SparkIcon from '../../lib/icons/spark'
 import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
+import ShowScholarship from '../slices/showScholarship.js'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
@@ -20,7 +21,10 @@ const Scholarship = () => {
     'Those options are already baked in'
   ]
   const scholarships = [
-    {id: 1, title: 'Macfidelis Foundation Scholarship', location: 'London', course: 'Software Engineering', url: ''},
+    {
+      id: 1, title: 'Macfidelis Foundation Scholarship', location: 'London', 
+      course: 'Software Engineering', url: '', desc: '', startDate: '', endDate: ''
+    },
     {id: 2, title: 'Kingsman Scholarship', location: 'Manchester', course: 'Pharmacy', url: ''},
     {id: 3, title: 'Zunderveld Trust Grant', location: 'Miami', course: 'Education', url: ''},
     {id: 4, title: 'Shenjing Health Trust', location: 'Fuzhou', course: 'Medicine and Surgery', url: ''},
@@ -31,8 +35,25 @@ const Scholarship = () => {
   const courses = [
     'All courses', 'Software Engineering', 'Medicine and Surgery', 'Pharmacy', 'Education'
   ]
+
+  /* const filteredSch = []
+  const filterLocation = (e) => {
+    const location = e.target.value
+  } */
+
   const [course, setCourse] = useState(courses[0])
   const [location, setLocation] = useState(locations[0])
+  const [position, setPosition] = useState(scholarships[0])
+  const [scholarshipOpen, setScholarshipOpen] = useState(false)
+
+  const closeScholarship = () => {
+    setScholarshipOpen(false)
+  }
+
+  const openScholarship = (pos) => {
+    setPosition(pos)
+    setScholarshipOpen(true)
+  }
 
   const content = (
     <main>
@@ -211,7 +232,7 @@ const Scholarship = () => {
         </div>
       </section>
 
-      <section>
+      <section id='positions'>
         <div className='px-8 mx-auto mt-24 py-24 lg:py-36 max-w-6xl border-t border-gray-100'>
           <div className='lg:text-center'>
             <h5 className='text-4xl font-extrabold leading-none md:pl-2'>
@@ -377,19 +398,40 @@ const Scholarship = () => {
                     className={classNames(s.id % 2 !== 0 ? 'bg-blue-100' : 'bg-0',
                     'py-6 sm:grid sm:grid-cols-6 sm:gap-4 -mx-4 px-4 rounded-md')}
                   >
-                    <dt className='text-sm font-medium leading-6 text-gray-900 sm:col-span-2'>{s.title}</dt>
+                    <dt className='text-sm font-medium leading-6 text-gray-900 sm:col-span-2  my-auto'>{s.title}</dt>
                     <dd className='mt-2 text-sm text-gray-900 sm:col-span-4 sm:mt-0 sm:grid sm:grid-cols-4 sm:gap-4'>
-                      <div className='sm:col-span-1'>{s.location}</div>
-                      <div className='sm:col-span-2'>{s.course}</div>
-                      <div className='sm:col-span-1 sm:text-right'>
-                        <a href={s.url} className='hover:text-blue-600'>Apply</a>
+                      <div className='sm:col-span-1 my-auto'>{s.location}</div>
+                      <div className='sm:col-span-2 my-auto'>{s.course}</div>
+                      <div className='sm:col-span-1 sm:text-right group inline-flex my-auto'>
+                        <a href={s.url} className='hover:text-blue-600 inline-flex items-center gap-x-2'>
+                          Apply
+                          <svg class='w-2.5 h-2.5 transition ease-in-out group-hover:translate-x-1' width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                            <path fill-rule='evenodd' clip-rule='evenodd' d='M0.975821 6.92249C0.43689 6.92249 -3.50468e-07 7.34222 -3.27835e-07 7.85999C-3.05203e-07 8.37775 0.43689 8.79749 0.975821 8.79749L12.7694 8.79748L7.60447 13.7596C7.22339 14.1257 7.22339 14.7193 7.60447 15.0854C7.98555 15.4515 8.60341 15.4515 8.98449 15.0854L15.6427 8.68862C16.1191 8.23098 16.1191 7.48899 15.6427 7.03134L8.98449 0.634573C8.60341 0.268455 7.98555 0.268456 7.60447 0.634573C7.22339 1.00069 7.22339 1.59428 7.60447 1.9604L12.7694 6.92248L0.975821 6.92249Z' fill='currentColor'/>
+                          </svg>
+                        </a>
+                        <a onClick={() => openScholarship(s)} className='text-right ml-3 hover:text-blue-600 cursor-pointer'>•••</a>
                       </div>
                     </dd>
                   </div>
                 ))}
               </dl>
             </div>
-            
+          </div>
+
+          <ShowScholarship position={position} open={scholarshipOpen} close={closeScholarship} />
+
+          <div className='text-center max-w-2xl mx-auto'>
+            <p className='mt-7 mb-5 md:mt-10 md:mb-7 md text-sm text-gray-500'>
+              Don't worry if you don't see any positions you want to apply for now. Register your interest to be notified of any positions that come along that meet your criteria. You can also have our agents process your selected position for a premium.
+            </p>
+            <div>
+              <a
+                href='/contact'
+                className='inline-flex items-center justify-center w-auto h-10 px-4 font-medium tracking-wide text-white transition duration-200 rounded-md shadow-md bg-blue-600 hover:bg-blue-500 focus:shadow-outline focus:outline-none text-sm'
+              >
+                Register your interest
+              </a>
+            </div>
           </div>
         </div>
       </section>
