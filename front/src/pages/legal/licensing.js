@@ -39,6 +39,7 @@ const Licensing = () => {
       { h: 'ENTIRE AGREEMENT.', p: 'This EULA and the terms expressly incorporated by reference herein, constitute the entire agreement between the parties with respect to the subject matter hereof and supersede and replace all prior or contemporaneous understandings or agreements, written or oral, regarding such subject matter.' },
     ]},
   ]
+
   const content = (
     <main>
       <section>
