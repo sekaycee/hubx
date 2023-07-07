@@ -1,8 +1,101 @@
 import { Fragment } from 'react'
 import { Transition, Dialog } from '@headlessui/react'
-import { CheckIcon } from '@heroicons/react/24/outline'
+import { CalendarIcon, CheckCircleIcon, CheckIcon } from '@heroicons/react/24/outline'
 
+const AwardCard = () => {
+  return (
+    <div>
+      <h2></h2>
+      <dl>
+        <dt></dt>
+        <dd></dd>
+      </dl>
+    </div>
+  )
+}
 const ShowScholarship = ({ position, close, open }) => {
+  const summary = [
+    { h: 'Award Value', p: position?.award?.value },
+    { h: 'Award Purpose', p: position?.award?.purpose?.tags },
+    { h: 'Award Duration', p: position?.award?.duration },
+    { h: position?.eligibility?.who?.title, p: position?.eligibility?.who?.body },
+    { h: position?.eligibility?.level?.title, p: position?.eligibility?.level?.body },
+    { h: position?.eligibility?.mode?.title, p: position?.eligibility?.mode?.body },
+    { h: position?.eligibility?.location?.title,
+      p: position?.eligibility?.location?.body.length + ' nationalities',
+      a: { url: '/', title: 'See full list' }
+    },
+    { h: 'Application deadline',
+      p: <CalendarIcon width={18} />,
+      a: { url: '/', title: 'See details below' }
+    },
+    { h: 'Application results date',
+      p: <CalendarIcon width={18} />,
+      a: { url: '/', title: 'See details below' }
+    },
+    { h: 'Award Year', p: position?.award?.year }
+  ]
+  const body = [
+    { title: 'Award details', content: [
+      { dt: 'Award value', dd: position?.award?.value },
+      { dt: 'Award duration', dd: position?.award?.duration },
+      { dt: 'Award purpose', dd: { t: position?.award?.purpose?.tags, b: position?.award?.purpose?.para }},
+      { dt: 'No. of awards', dd: '80 (approximately)' },
+      { dt: 'Award year', dd: position?.award?.year },
+      { dt: 'Extendable duration',
+        dd: { t: 'Yes', b: ['Gates Cambridge Scholarships provide a maintenance allowance of up to 4 years for PhD Scholars at the outset. Extensions are considered on a case by case basis in the event of intermission or illness if the scholar cannot complete their studies within the original tenure of their award.']}
+      },
+      { dt: 'Basis of award grant',
+        dd: {
+          t: position?.award?.basis?.tags,
+          b: ['Candidates are assessed based on four criteria:', position?.award?.basis?.para, 'More information can be found at https://www.gatescambridge.org/apply/criteria/']
+        }
+      },
+      { dt: 'Requirements for applicants to fulfill', dd: 'During the tenure of their award, students will be required to sign in with the Trust each quarter to receive their maintenance payment and they will be asked to provide an annual Gates Cambridge progress report.' },
+      { dt: 'Only for advertising?', dd: 'No' }
+    ]},
+    { title: 'Eligibility', content: [
+      { icn: <CheckCircleIcon width={18} color='blue' />,
+        dt: position?.eligibility?.who?.title, dd: { t: position?.eligibility?.who?.body }},
+      { icn: <CheckCircleIcon width={18} color='blue' />,
+        dt: position?.eligibility?.level?.title, dd: {t: position?.eligibility?.level?.body }},
+      { icn: <CheckCircleIcon width={18} color='blue' />,
+        dt: position?.eligibility?.mode?.title, dd: {t: position?.eligibility?.mode?.body }},
+      { icn: <CheckCircleIcon width={18} color='blue' />,
+        dt: position?.eligibility?.location?.title,
+        dd: {
+          p: position?.eligibility?.location?.body.length + ' nationalities, ',
+          a: { url: '/', title: 'See all list' }
+        }
+      },
+      { icn: <CheckCircleIcon width={18} color='blue' />,
+        dt: position?.eligibility?.course?.title,
+        dd: { 
+          p: position?.eligibility?.course?.body.length + ' courses, ',
+          a: { url: '/', title: 'See all list' }
+        }
+      }
+    ]},
+    { title: 'Application process', content: [
+      { dt: 'Opt in for funding through the Applicant Portal?', dd: {p: 'Yes', a: {url: '/', title: ''}} },
+      { dt: 'Additional questions in the Applicant Portal?', dd: 'Yes' },
+    ]},
+    { title: 'Key dates', content: [
+      { dt: 'Application deadline', ic: <CalendarIcon width={18} />,
+        dd: [
+          'US Round - US nationals living in the USA should apply by ' + position?.dates?.deadline?.local,
+          'International Round - all other nationalities should apply by the funding deadline for their course (' + position?.dates?.deadline?.international + ')'
+        ]
+      },
+      { dt: 'Application results date', ic: <CalendarIcon width={18} />,
+        dd: [
+          'US Round - successful candidates will be informed by ' + position?.dates?.results?.local,
+          'International Round - successful candidates will be informed by ' + position?.dates?.results?.international
+        ]
+      }
+    ]}
+  ]
+
   const content = (
     <Transition appear show={open} as={Fragment}>
       <Dialog as='div' className='relative z-60' onClose={close}>
@@ -47,52 +140,34 @@ const ShowScholarship = ({ position, close, open }) => {
                       as='h1'
                       className='text-3xl font-bold leading-6 py-6 md:py-12'
                     >
-                      {position.title}
+                      {position?.title}
                     </Dialog.Title>
                       <p className='mb-6 text-base text-blue-600 md:text-lg'>
-                        <a href={position.website}>Visit website</a>
+                        <a href={position?.website}>Visit website</a>
                         <span className='mx-9'>·</span>
-                        <a href={position.email}>Contact us</a>
+                        <a href={position?.email}>Contact us</a>
                       </p>
                     </div>
                   </div>
                   <div className='px-4 md:px-8'>
                     <div className='h-1/2' />
                     <div className='relative grid mx-auto overflow-hidden bg-blue-100 rounded-md shadow max-w-6xl sm:grid-cols-3 gap-2 p-6'>
-                      <div>
-                        <h4>Award Value</h4>
-                        <p>{position.award?.value}</p>
-                      </div>
-                      <div>
-                        <h4>{position.eligibility?.who?.title}</h4>
-                        {position.eligibility?.who?.body.map((p, i) => <p key={i}>{p}</p>)}
-                      </div>
-                      <div>
-                        <h4>{position.eligibility?.location?.title}</h4>
-                        <p>
-                          {position.eligibility?.location?.body.length} nationalities,
-                          <a href='/'> See full list</a>
-                        </p>
-                      </div>
-                      <div>
-                        <h4>Award Year</h4>
-                        <p>{position.award?.year}</p>
-                      </div>
-                      <div className='inline-block p-2'>
-                        
-                        
-                      </div>
-
-                      <div className='inline-block'>
-                        <div>
-                          <h4>Award Purpose</h4>
-                          <div>
-                            {position.award?.purpose?.tags.map((p, i) => <p key={i} className='mr-4 inline-flex break-all'>{p}</p>)}
-                          </div>
+                      {summary.map((item, idx) => (
+                        <div key={idx} className='py-3'>
+                          <h4 className='text-sm text-gray-700 mb-2'>{item.h}</h4>
+                          {Array.isArray(item.p) ? 
+                            item.p.map((p, i) => (
+                              <p key={i} className='font-medium inline-flex'>
+                                <span className='mr-2 my-auto'>{p}</span>
+                              </p>
+                            )) :
+                            <p className='font-medium flex'>
+                              <span className='mr-2 my-auto'>{item.p}</span>
+                              <a href={item.a?.url} className='hover:text-blue-600'>{item.a?.title}</a>
+                            </p>
+                          }
                         </div>
-                      </div>
-                      <div className='inline-block'>
-                      </div>
+                      ))}
                     </div>
                   </div>
                 </div>
@@ -100,94 +175,74 @@ const ShowScholarship = ({ position, close, open }) => {
                 <div className='max-w-6xl mx-auto px-6 md:px-8'>
                   <div className=''>
                     <Dialog.Description>
-                      <h2 className='text-xl font-normal my-10'>About</h2>
-                      {position.about.map((p, i) => <p key={i} className='mb-2'>{p}</p>)}
+                      <h2 className='text-xl font-medium mt-10 mb-8'>About</h2>
+                      {position?.about.map((p, i) => <p key={i} className='mb-2 text-gray-700'>{p}</p>)}
                     </Dialog.Description>
                   </div>
                   
-                  <div className='mt-10 xl:-mx-8 border-2 border-blue-100 rounded-md p-6'>
-                    <h2 className='uppercase'>Award details</h2>
-                    <dl className=''>
-                      <div className='sm:flex w-full'>
-                        <dt className='sm:w-1/3 lg:w-1/4'>Award value</dt>
-                        <dd className='sm:w-2/3 lg:w-3/4 sm:text-right'>{position.award?.value}</dd>
+                  <div className='mt-10'>
+                    {body.map((item, idx) => (
+                      <div key={idx} className='mt-10 xl:-mx-8 border-2 border-blue-100 rounded-md p-6'>
+                        <h2 className='uppercase font-medium text-md'>{item?.title}</h2>
+                        <dl className=''>
+                          {item?.content.map((c, id) => (
+                            <div key={id} className='sm:grid sm:grid-cols-3 mt-4'>
+                              <dt className='sm:col-span-1 text-gray-500 text-sm font-normal'>
+                                { c?.icn ? 
+                                  <span className='flex'><i className='pr-2 mt-[2px]'>{c?.icn}</i> {c?.dt}</span> :
+                                  <span>{c?.dt}</span> }
+                              </dt>
+                              { typeof c?.dd === 'string' ? 
+                                <dd className='sm:col-span-2'><p>{c?.dd}</p></dd> : 
+                                Array.isArray(c?.dd) ?
+                                  <dd className='sm:col-span-2'>
+                                    <div className='flex'>
+                                      <p>{c?.ic}</p>
+                                      <div className='ml-2'>
+                                        {c?.dd?.map((d, i) => (
+                                          <p key={i} className='mb-2'>{d}</p>
+                                        ))}
+                                      </div>
+                                    </div>
+                                  </dd> :
+                                  <dd className='sm:col-span-2'>
+                                    { c?.dd?.p ?
+                                      <p className='mb-2'>{c?.dd?.p}<a href={c?.dd?.a?.url}>{c?.dd?.a?.title}</a></p> : ''
+                                    }
+                                    <div className='flex'>
+                                      {Array.isArray(c?.dd?.t) ? c?.dd?.t.map((t, i) => (
+                                        <p
+                                          key={i}
+                                          className='py-1.5 px-3 mr-2 bg-blue-200 text-xs rounded font-medium text-blue-800'>
+                                          {t}
+                                        </p>
+                                      )) :
+                                        <p>{c?.dd?.t}</p>
+                                      }
+                                    </div>
+                                    <div className='mt-2'>
+                                      {Array.isArray(c?.dd?.b) ? c?.dd?.b.map((b, i) => (
+                                        Array.isArray(b) ?
+                                          b.map((l, id) => (
+                                            <p key={id} className='mt-2 ml-4 text-sm'>
+                                              {id+1}{'. '+ l}
+                                            </p>
+                                          )) :
+                                          <p key={i} className='mt-2'>{b}</p>
+                                      )) : ''
+                                      }
+                                    </div>
+                                  </dd>
+                              }
+                            </div>
+                          ))}
+                        </dl>
                       </div>
-                    </dl>
-                  </div>
-
-                  <div className='mt-10 xl:-mx-8 border-2 border-blue-100 rounded-md p-6'>
-                    <h2 className='uppercase'>Eligibility</h2>
-                    <dl className=''>
-                      <div className='sm:flex w-full'>
-                        <dt className='sm:w-1/3 lg:w-1/4'>Award value</dt>
-                        <dd className='sm:w-2/3 lg:w-3/4 sm:text-right'>{position.award?.value}</dd>
-                      </div>
-                    </dl>
-                  </div>
-
-                  <div className='mt-10 xl:-mx-8 border-2 border-blue-100 rounded-md p-6'>
-                    <h2 className='uppercase'>Application process</h2>
-                    <dl className=''>
-                      <div className='sm:flex w-full'>
-                        <dt className='sm:w-1/3 lg:w-1/4'>Award value</dt>
-                        <dd className='sm:w-2/3 lg:w-3/4 sm:text-right'>{position.award?.value}</dd>
-                      </div>
-                    </dl>
-                  </div>
-
-                  <div className='mt-10 xl:-mx-8 border-2 border-blue-100 rounded-md p-6'>
-                    <h2 className='uppercase'>Key dates</h2>
-                    <dl className=''>
-                      <div className='sm:flex w-full'>
-                        <dt className='sm:w-1/3 lg:w-1/4'>Application deadline</dt>
-                        <dd className='sm:w-2/3 lg:w-3/4 sm:text-right'>{position.award?.value}</dd>
-                      </div>
-                    </dl>
-                  </div>
-                </div>
-                
-                <div className='px-4 md:px-8'>
-                  <p className='text-[4rem] text-gray-500 p-6'>
-                    {position.endDate}
-                  </p>
-                  <div className='text-left'>
-                    <h2 className='font-bold text-lg'>Eligibility</h2>
-                    <p className='flex mb-2'>
-                      <CheckIcon color='blue' width={18} />
-                      <span className='ml-2 text-gray-700'>Under 30 years</span>
-                    </p>
-                  </div>
-                  <p className=''>
-                  By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.
-                  By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.
-                  By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.
-                  By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.
-                  By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.
-                  By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.
-                  By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.
-                  By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.
-                  By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.
-                  By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.
-                  By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.
-                  By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.
-                  By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.
-                  By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.
-                  By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.
-                  By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.
-                  By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.
-                  By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.
-                  By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.
-                  By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.
-                  By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.
-                  By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.
-                  By continuing to access or use our Service after those revisions become effective, you agree to be bound by the revised terms. If you do not agree to the new terms, please stop using the Service.
-                  </p>
-                  <div className='my-10'>
-                    <a href='/' className='justify-center rounded-md border border-transparent bg-blue-600 px-10 md:px-14 lg:px-20 py-2.5 text-sm text-white font-medium hover:bg-blue-500 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2'>Apply now</a>
+                    ))}
                   </div>
                 </div>
 
-                <div className='text-center'>
+                <div className='text-center mt-24 md:mt-36'>
                   <button
                     type='button'
                     className='inline-flex justify-center rounded-md border border-transparent bg-blue-100 px-4 py-2 text-sm font-medium text-blue-600 hover:bg-blue-50 focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-500 focus-visible:ring-offset-2'
