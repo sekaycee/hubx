@@ -125,10 +125,10 @@ const Mentorship = () => {
                 Brief <span className='text-blue-600'>summary</span>
               </h3>
               <p className='text-gray-500 leading-relaxed mt-3'>
-                Our mentorship invloves tailored, in-depth not unlike a university tutor but even better. If you need a coach and someone to keep you accountable, then do get in touch with one of our mentors.
+                Our mentorship offers personalized and comprehensive guidance akin to a professional tutor|counsellor, but with even greater benefits. Contact one of our mentors if you need a coach and someone to keep you accountable.
               </p>
               <p className='text-gray-500 leading-relaxed mt-2'>
-                If you also need individualized support and continous guidance throughout the academic year, then this service is for you.
+                This service is perfect for those seeking individualized support and continous guidance throughout the academic year, and those looking to get ahead in their career.
               </p>
           </div>
           <a

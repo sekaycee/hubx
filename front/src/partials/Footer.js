@@ -65,7 +65,7 @@ const Footer = () => {
             </p>
             <p className='mt-2'>
               At HubX, we believe that every student and professional have the potential to excel, 
-              as such we've made it our mission to support them in their pursuit of excellence.
+              as such we have made it our mission to support them in their pursuit of excellence.
             </p>
           </div>
           <div className='text-center md:text-left'>

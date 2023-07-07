@@ -100,41 +100,39 @@ const InstantQuote = () => {
   const [quoteOpen, setQuoteOpen] = useState(false)
   const [countMode, setCountMode] = useState(false)
 
-  const timeDelta = (t, u) => {
-    let nt = time
+  const timeDelta = (t) => {
+    let nt = 0
+    let u = unit
 
-    // add 's' for plural to time
-    if (t === 0 && u.includes('s')) {
-      //u = u.replace('s', '')
-      duration.map(item => item.replace('s', ''))
-    } else if (t > 0 && u[u.length-1] !== 's') {
-      //u = u.concat('s')
-      duration.map(item => item.concat('s'))
-
-      // convert hours to days, weeks and months
-      if (t > 24 && u === duration[0]) {
-        nt = ~~(t / 24)
-        u = duration[1]
-      } else if (t > 7 && u === duration[1]) {
-        nt = ~~(t / 7)
-        u = duration[2]
-      } else if (t > 4 && u === duration[2]) {
-        nt = ~~(t / 4)
-        u = duration[3]
-      }
-      setTime(nt)
-      setUnit(u)
+    // convert hours to days, weeks and months
+    if (t > 24 && u === duration[0]) {
+      nt = ~~(t / 24)
+      u = duration[1]
+    } else if (t > 7 && u === duration[1]) {
+      nt = ~~(t / 7)
+      u = duration[2]
+    } else if (t > 4 && u === duration[2]) {
+      nt = ~~(t / 4)
+      u = duration[3]
     }
+
+    setTime(nt)
+    setUnit(u)
   }
   const changeTime = (e) => {
-    let u = ''
-    let t = parseInt(e.target.value)
-    //setTime(t)
-    if (t) {
-      timeDelta(t, u)
-    } else {
-      setTime(0)
+    let u = unit
+    let t = Number(e)
+    setTime(t)
+
+    // add 's' for plural to time
+    if (time === 0 && u.includes('s')) {
       duration.map(item => item.replace('s', ''))
+      u = u.replace('s', '')
+      setUnit(u)
+    } else if (time > 0 && u[u.length-1] !== 's') {
+      duration.map(item => item.concat('s'))
+      u = u.concat('s')
+      timeDelta(time)
     }
   }
 
@@ -300,7 +298,7 @@ const InstantQuote = () => {
           </div>
           
           {(cat.id !== 7 )
-            && <ProjectDuration unit={unit} duration={duration} setUnit={setUnit} setTime={changeTime} time={time} />}
+            && <ProjectDuration unit={unit} duration={duration} setUnit={setUnit} onChange={e => changeTime(e.target.value)} time={time} />}
         </div>
 
         {/* Enter wordcount manually? */}
