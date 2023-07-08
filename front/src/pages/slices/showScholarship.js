@@ -122,7 +122,7 @@ const ShowScholarship = ({ position, close, open }) => {
               leaveFrom='opacity-100 scale-100'
               leaveTo='opacity-0 scale-95'
             >
-              <Dialog.Panel className='w-full max-w-7xl transform overflow-hidden rounded-2xl bg-white align-middle shadow-xl transition-all'>
+              <Dialog.Panel className='w-full max-w-7xl transform overflow-hidden rounded-2xl bg-white align-middle shadow-xl transition-all m-4'>
                 <div className='relative bg-blue-50'>
                   <div className='absolute inset-x-0 bottom-0'>
                     <svg
@@ -197,7 +197,7 @@ const ShowScholarship = ({ position, close, open }) => {
                                 Array.isArray(c?.dd) ?
                                   <dd className='sm:col-span-2'>
                                     <div className='flex'>
-                                      <p>{c?.ic}</p>
+                                      <p className='mt-[2px]'>{c?.ic}</p>
                                       <div className='ml-2'>
                                         {c?.dd?.map((d, i) => (
                                           <p key={i} className='mb-2'>{d}</p>

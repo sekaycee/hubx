@@ -205,30 +205,7 @@ const Scholarship = () => {
         </div>
       </section>
 
-      <section>
-        <div className='px-8 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:py-20'>
-          <div className='lg:text-center'>
-            <h5 className='text-4xl font-extrabold leading-none md:pl-2'>
-              Get to know the{' '}
-              <br className='hidden md:block' />
-              <span className='inline-block text-blue-600'>
-                perks of our scholarships
-              </span>
-            </h5>
-            <p className='text-gray-700 mt-3 mb-7'>
-              The scholarship positions we provide have the following benefits amongst others:
-            </p>
-          </div>
-          
-          <div className='grid gap-3 row-gap-3 lg:grid-cols-3 text-gray-700'>
-            {
-              perks.map((perk, idx) => (
-                <div key={idx} className='flex'><span className='mr-1'><SparkIcon /></span>{perk}</div>
-              ))
-            }
-          </div>
-        </div>
-      </section>
+      <section></section>
 
       <section id='positions'>
         <div className='px-8 mx-auto mt-24 py-24 lg:py-36 max-w-6xl border-t border-gray-100'>
@@ -424,14 +401,14 @@ const Scholarship = () => {
 
           <div className='text-center max-w-2xl mx-auto'>
             <p className='mt-7 mb-5 md:mt-10 md:mb-7 md text-sm text-gray-500'>
-              Don't worry if you don't see any positions you want to apply for now. Register your interest to be notified of any positions that come along that meet your criteria. You can also have our agents process your selected position for a premium.
+              Don't worry if you don't see any awards you want to apply for now. Register your interest to be notified of any awards that come along that meet your criteria. You can also add or reccommend a scholarship for some hubx points or have our agents automatically process your selected award for a premium.
             </p>
             <div>
               <a
                 href='/contact'
                 className='inline-flex items-center justify-center w-auto h-10 px-4 font-medium tracking-wide text-white transition duration-200 rounded-md shadow-md bg-blue-600 hover:bg-blue-500 focus:shadow-outline focus:outline-none text-sm'
               >
-                Register your interest
+                Add your scholarship
               </a>
             </div>
           </div>
