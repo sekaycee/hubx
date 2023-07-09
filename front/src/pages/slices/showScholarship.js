@@ -134,22 +134,22 @@ const ShowScholarship = ({ position, close, open }) => {
                       <path d='M0,0 C48.8902582,6.27314026 86.2235915,9.40971039 112,9.40971039 C137.776408,9.40971039 175.109742,6.27314026 224,0 L224,12.0441132 L0,12.0441132 L0,0 Z' />
                     </svg>
                   </div>
-                  <div className='px-4 py-10 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20'>
+                  <div className='px-6 py-10 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:px-8 lg:py-20'>
                     <div className='relative max-w-2xl sm:mx-auto sm:max-w-xl md:max-w-2xl sm:text-center'>
-                    <Dialog.Title
-                      as='h1'
-                      className='text-3xl font-bold leading-6 py-6 md:py-12'
-                    >
-                      {position?.title}
-                    </Dialog.Title>
+                      <Dialog.Title
+                        as='h1'
+                        className='text-3xl font-bold leading-6 py-6 md:py-12'
+                      >
+                        {position?.title}
+                      </Dialog.Title>
                       <p className='mb-6 text-base text-blue-600 md:text-lg'>
                         <a href={position?.website}>Visit website</a>
-                        <span className='mx-9'>·</span>
+                        <span className='mx-7'>·</span>
                         <a href={position?.email}>Contact us</a>
                       </p>
                     </div>
                   </div>
-                  <div className='px-4 md:px-8'>
+                  <div className='px-6 md:px-8'>
                     <div className='h-1/2' />
                     <div className='relative grid mx-auto overflow-hidden bg-blue-100 rounded-md shadow max-w-6xl sm:grid-cols-3 gap-2 p-6'>
                       {summary.map((item, idx) => (
@@ -254,7 +254,7 @@ const ShowScholarship = ({ position, close, open }) => {
                     Add to cart
                   </button>
                 </div>
-                <div className='mt-9 p-4 md:p-8 text-center'>
+                <div className='max-w-4xl mx-auto my-9 p-6 md:p-8 text-center'>
                   <p className='text-xs text-gray-500'>
                     This scholarship position is given to provide an overview to our scholarship service options with the option to get the process handled by our agents for a premium. To learn more about what your project will entail, do reach out to us on any of the <a href='/contact'>options we've provided</a></p>
                 </div>

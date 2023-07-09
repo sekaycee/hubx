@@ -152,8 +152,8 @@ const Service = () => {
               the step-by-step approach to get started
             </h2>
             <p className='text-base text-gray-700 md:text-lg'>
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-              accusantium doloremque rem aperiam, eaque ipsa quae.
+              Here's a brief overview of how our project delivery pipeline works.
+              Familiarize yourself with it by trying it out today.
             </p>
           </div>
           <div className='grid gap-8 row-gap-5 md:row-gap-8 lg:grid-cols-3'>
@@ -165,8 +165,7 @@ const Service = () => {
                 <p className='text-lg font-bold leading-5'>Get quote and Sign up</p>
               </div>
               <p className='text-sm text-gray-900'>
-                Bro ipsum dolor sit amet gaper backside single track, manny Bike
-                epic clipless.
+                Select your service, delivery date and upload your document to get your word count or you can input it manually. Click "Get a quote" to get our budget estimate of your project. You can add the project to your cart adding write additional comments or attach supporting documentts then proceed to checkout if already signed in or register if not.
               </p>
             </div>
             <div className='p-5 duration-300 transform bg-white border-2 border-dashed rounded-md shadow-sm border-blue-200 hover:-translate-y-2'>
@@ -177,8 +176,7 @@ const Service = () => {
                 <p className='text-lg font-bold leading-5'>Initiate a new project</p>
               </div>
               <p className='text-sm text-gray-900'>
-                Skate ipsum dolor sit amet, alley oop vert mute-air Colby Carter
-                flail 180 berm.
+                Once your purchase is made, our AI will automatically match your project to an available agent, who will receive and immediately start on your document. We use Word Track Changes to keep track on the edits we make on your project.
               </p>
             </div>
             <div className='relative p-5 duration-300 transform bg-white border-2 rounded-md shadow-sm border-blue-700 hover:-translate-y-2'>
@@ -189,8 +187,7 @@ const Service = () => {
                 <p className='text-lg font-bold leading-5'>Get your project delivered</p>
               </div>
               <p className='text-sm text-gray-900'>
-                A flower in my garden, a mystery in my panties. Heart attack never
-                stopped.
+                You'll receive your project within the timeframe you selected while making your quote. We also try to send it in as soon as possible. Once received, you can request for revisions to be made at a premium, till you're satisfied 99% with the final result. We accept all major credit cards, PayPal, Stripe or Bank transfers.
               </p>
               <p className='absolute top-0 right-0 flex items-center justify-center w-8 h-8 -mt-4 -mr-4 font-bold rounded-full bg-blue-400 sm:-mt-5 sm:-mr-5 sm:w-10 sm:h-10'>
                 <svg

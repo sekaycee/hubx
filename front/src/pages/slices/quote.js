@@ -119,7 +119,7 @@ const InstantQuote = () => {
     setTime(nt)
     setUnit(u)
   }
-  const changeTime = (e) => {
+  const handleSetTime = (e) => {
     let u = unit
     let t = Number(e)
     setTime(t)
@@ -298,7 +298,7 @@ const InstantQuote = () => {
           </div>
           
           {(cat.id !== 7 )
-            && <ProjectDuration unit={unit} duration={duration} setUnit={setUnit} onChange={e => changeTime(e.target.value)} time={time} />}
+            && <ProjectDuration unit={unit} duration={duration} setUnit={setUnit} setTime={handleSetTime} time={time} />}
         </div>
 
         {/* Enter wordcount manually? */}

@@ -57,7 +57,7 @@ const Scholarship = () => {
     <main>
       <section>
         <div className='mb-16'>
-          <div className='bg-gray-100 pt-16'>
+          <div className='bg-blue-50 pt-16'>
             <div className='px-8 py-16 mx-auto sm:max-w-xl md:max-w-full lg:max-w-screen-xl md:px-24 lg:py-20'>
               <div className='flex flex-col justify-between lg:flex-row'>
                 <div className='mb-12 lg:max-w-lg lg:pr-5 lg:mb-0'>
@@ -80,7 +80,7 @@ const Scholarship = () => {
                       </a>
                     </div>
                   </div>
-                  <hr className='mb-6 border-gray-300' />
+                  <hr className='mb-6 border-blue-100' />
                   <div className='flex'>
                     <a href='/' aria-label='Play Song' className='mr-3'>
                       <div className='flex items-center justify-center w-10 h-10 text-white transition duration-300 transform rounded-full shadow-md bg-blue-600 hover:bg-blue-500 hover:scale-110'>
@@ -97,12 +97,12 @@ const Scholarship = () => {
                     </div>
                   </div>
                 </div>
-                <div className='px-5 pt-6 pb-5 text-center border border-gray-300 rounded lg:w-2/5'>
+                <div className='px-5 pt-6 pb-5 text-center border border-blue-100 rounded lg:w-2/5'>
                   <div className='mb-5 font-semibold'>Create an account</div>
                   <div className='flex justify-center w-full mb-3'>
                     <a
                       href='/'
-                      className='inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-blue-600 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none'
+                      className='inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded shadow-md md:w-auto bg-blue-600 hover:bg-blue-500 focus:shadow-outline focus:outline-none'
                     >
                       <div className='flex items-center'>
                         <div className='mr-3 font-semibold text-white'>
@@ -122,9 +122,9 @@ const Scholarship = () => {
                     Signing up means that you automatically agree our terms of service and privacy policies.
                   </p>
                   <div className='flex items-center w-full mb-5'>
-                    <hr className='flex-1 border-gray-300' />
+                    <hr className='flex-1 border-blue-100' />
                     <div className='px-3 text-xs text-gray-500 sm:text-sm'>or</div>
-                    <hr className='flex-1 border-gray-300' />
+                    <hr className='flex-1 border-blue-100' />
                   </div>
                   <a
                     href='/register'
@@ -138,10 +138,10 @@ const Scholarship = () => {
           </div>
 
           <div className='relative px-4 sm:px-0'>
-            <div className='absolute inset-0 bg-gray-100 h-1/2' />
+            <div className='absolute inset-0 bg-blue-50 h-1/2' />
             <div className='relative grid mx-auto overflow-hidden bg-white divide-y rounded shadow sm:divide-y-0 sm:divide-x sm:max-w-screen-sm sm:grid-cols-3 lg:max-w-screen-md'>
               <div className='inline-block p-8 text-center'>
-                <div className='flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full bg-indigo-50'>
+                <div className='flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full bg-blue-50'>
                   <svg
                     className='w-10 h-10 text-blue-600'
                     stroke='currentColor'
@@ -161,7 +161,7 @@ const Scholarship = () => {
                 </p>
               </div>
               <div className='inline-block p-8 text-center'>
-                <div className='flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full bg-indigo-50'>
+                <div className='flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full bg-blue-50'>
                   <svg
                     className='w-10 h-10 text-blue-600'
                     stroke='currentColor'
@@ -181,7 +181,7 @@ const Scholarship = () => {
                 </p>
               </div>
               <div className='inline-block p-8 text-center'>
-                <div className='flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full bg-indigo-50'>
+                <div className='flex items-center justify-center w-12 h-12 mx-auto mb-4 rounded-full bg-blue-50'>
                   <svg
                     className='w-10 h-10 text-blue-600'
                     stroke='currentColor'
@@ -208,7 +208,7 @@ const Scholarship = () => {
       <section></section>
 
       <section id='positions'>
-        <div className='px-8 mx-auto mt-24 py-24 lg:py-36 max-w-6xl border-t border-gray-100'>
+        <div className='px-8 mx-auto mt-24 py-24 lg:py-36 max-w-6xl border-t border-blue-100'>
           <div className='lg:text-center'>
             <h5 className='text-4xl font-extrabold leading-none md:pl-2'>
               Current{' '}
@@ -381,13 +381,16 @@ const Scholarship = () => {
                           <span>US: {s.dates?.deadline?.local}</span>
                           <span className='ml-2'>International: {s.dates?.deadline?.international}</span>
                       </div>
-                      <div className='sm:col-span-1 group place-self-end inline-flex my-auto'>
-                        <a href={s.website} className='hover:text-blue-600 inline-flex items-center gap-x-1'>
-                          Apply
-                          <svg class='w-2.5 h-2.5 transition ease-in-out group-hover:translate-x-1' width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'>
-                            <path fill-rule='evenodd' clip-rule='evenodd' d='M0.975821 6.92249C0.43689 6.92249 -3.50468e-07 7.34222 -3.27835e-07 7.85999C-3.05203e-07 8.37775 0.43689 8.79749 0.975821 8.79749L12.7694 8.79748L7.60447 13.7596C7.22339 14.1257 7.22339 14.7193 7.60447 15.0854C7.98555 15.4515 8.60341 15.4515 8.98449 15.0854L15.6427 8.68862C16.1191 8.23098 16.1191 7.48899 15.6427 7.03134L8.98449 0.634573C8.60341 0.268455 7.98555 0.268456 7.60447 0.634573C7.22339 1.00069 7.22339 1.59428 7.60447 1.9604L12.7694 6.92248L0.975821 6.92249Z' fill='currentColor'/>
-                          </svg>
-                        </a>
+                      <div className='sm:col-span-1 place-self-end inline-flex my-auto'>
+                        <div className='group'>
+                          <a href={s.website} className='hover:text-blue-600 inline-flex items-center gap-x-1'>
+                            Apply
+                            <svg class='w-2.5 h-2.5 transition ease-in-out group-hover:translate-x-1' width='16' height='16' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'>
+                              <path fill-rule='evenodd' clip-rule='evenodd' d='M0.975821 6.92249C0.43689 6.92249 -3.50468e-07 7.34222 -3.27835e-07 7.85999C-3.05203e-07 8.37775 0.43689 8.79749 0.975821 8.79749L12.7694 8.79748L7.60447 13.7596C7.22339 14.1257 7.22339 14.7193 7.60447 15.0854C7.98555 15.4515 8.60341 15.4515 8.98449 15.0854L15.6427 8.68862C16.1191 8.23098 16.1191 7.48899 15.6427 7.03134L8.98449 0.634573C8.60341 0.268455 7.98555 0.268456 7.60447 0.634573C7.22339 1.00069 7.22339 1.59428 7.60447 1.9604L12.7694 6.92248L0.975821 6.92249Z' fill='currentColor'/>
+                            </svg>
+                          </a>
+                        </div>
+                        
                         <a onClick={() => openScholarship(s)} className='ml-4 hover:text-blue-600 cursor-pointer'>•••</a>
                       </div>
                     </dd>

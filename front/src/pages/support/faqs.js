@@ -1,15 +1,14 @@
 import { useState } from 'react'
 
-const FaqsCard = ({ title, children }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const FaqsCard = ({ title, children, isOpen, onShow }) => {
   return (
     <div className='border rounded-md shadow-sm mb-2'>
       <button
         type='button'
-        aria-label='Open item'
-        title='Open item'
+        aria-label='Open faq'
+        title='Open faq'
         className='flex items-center justify-between w-full p-4 focus:outline-none'
-        onClick={() => setIsOpen(!isOpen)}
+        onClick={onShow}
       >
         <p className='text-lg font-medium'>{title}</p>
         <div className='flex items-center justify-center w-8 h-8 border rounded-full'>
@@ -79,6 +78,7 @@ const FAQs = () => {
       a: "."
     }
   ]
+  const [activeIdx, setActiveIdx] = useState(0)
 
   return (
     <main className='my-64'>
@@ -96,7 +96,7 @@ const FAQs = () => {
               <div className='hs-accordion-group divide-y divide-gray-200 dark:divide-gray-700'>
                 {
                   faqs.map((item, idx) => (
-                    <FaqsCard key={idx} title={item.q}>
+                    <FaqsCard key={idx} title={item.q} isOpen={activeIdx === idx } onShow={() => setActiveIdx(idx)}>
                       {item.a}
                     </FaqsCard>
                   ))
