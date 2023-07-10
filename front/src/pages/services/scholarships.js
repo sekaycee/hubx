@@ -3,13 +3,13 @@ import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/24/outline'
 import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import ShowScholarship from '../slices/showScholarship.js'
-import { COURSES, LOCATIONS, SCHOLARSHIPS } from '../config/scholarships'
+import { COURSES, LOCATIONS, SCHOLARSHIPS } from '../config/scholarships.js'
 
 function classNames(...classes) {
   return classes.filter(Boolean).join(' ')
 }
 
-const Scholarship = () => {
+const Scholarships = () => {
   const scholarships = SCHOLARSHIPS
   const courses = COURSES
   const locations = LOCATIONS
@@ -402,4 +402,4 @@ const Scholarship = () => {
   return content
 }
 
-export default Scholarship
+export default Scholarships

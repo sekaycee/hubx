@@ -5,7 +5,7 @@ import Accommodation from './accommodation'
 import Conciarge from './conciarge'
 import Consultation from './consultation'
 import CVCheck from './cvCheck'
-import { Career, Jobs } from './career'
+import Career from './career'
 import Design from './design'
 import DigitalMarketing from './digitalMarketing'
 import Mentorship from './mentorship'
@@ -14,7 +14,8 @@ import Programming from './programming'
 import Proofreading from './proofreading'
 import Translation from './translation'
 import Writing from './writing'
-import Scholarship from './scholarship'
+import Jobs from './jobs'
+import Scholarships from './scholarships'
 
 const Service = () => {
   const services = [
@@ -187,7 +188,7 @@ const Service = () => {
                 <p className='text-lg font-bold leading-5'>Get your project delivered</p>
               </div>
               <p className='text-sm text-gray-900'>
-                You'll receive your project within the timeframe you selected while making your quote. We also try to send it in as soon as possible. Once received, you can request for revisions to be made at a premium, till you're satisfied 99% with the final result. We accept all major credit cards, PayPal, Stripe or Bank transfers.
+                You'll receive your project within the timeframe you selected while making your quote. Once received, you can request for revisions to be made for a premium, till you're 99% satisfied with the final result. We accept all major credit cards, PayPal, Stripe or Bank transfers.
               </p>
               <p className='absolute top-0 right-0 flex items-center justify-center w-8 h-8 -mt-4 -mr-4 font-bold rounded-full bg-blue-400 sm:-mt-5 sm:-mr-5 sm:w-10 sm:h-10'>
                 <svg
@@ -447,5 +448,5 @@ const Service = () => {
 
 export {
   Academic, Accommodation, Jobs, Career, Conciarge, Consultation, CVCheck, Design, DigitalMarketing,
-  Mentorship, Photography, Programming, Proofreading, Service, Translation, Writing, Scholarship
+  Mentorship, Photography, Programming, Proofreading, Service, Translation, Writing, Scholarships
 }

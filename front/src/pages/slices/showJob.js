@@ -66,67 +66,6 @@ const ShowJob = ({ position, close, open }) => {
                       {position?.about.map((p, i) => <p key={i} className='mb-2 text-gray-700'>{p}</p>)}
                     </Dialog.Description>
                   </div>
-                  
-                  <div className='mt-10'>
-                    {body.map((item, idx) => (
-                      <div key={idx} className='mt-10 xl:-mx-8 border-2 border-blue-100 rounded-md p-6'>
-                        <h2 className='uppercase font-medium text-md'>{item?.title}</h2>
-                        <dl className=''>
-                          {item?.content.map((c, id) => (
-                            <div key={id} className='sm:grid sm:grid-cols-3 mt-4'>
-                              <dt className='sm:col-span-1 text-gray-500 text-sm font-normal'>
-                                { c?.icn ? 
-                                  <span className='flex'><i className='pr-2 mt-[2px]'>{c?.icn}</i> {c?.dt}</span> :
-                                  <span>{c?.dt}</span> }
-                              </dt>
-                              { typeof c?.dd === 'string' ? 
-                                <dd className='sm:col-span-2'><p>{c?.dd}</p></dd> : 
-                                Array.isArray(c?.dd) ?
-                                  <dd className='sm:col-span-2'>
-                                    <div className='flex'>
-                                      <p className='mt-[2px]'>{c?.ic}</p>
-                                      <div className='ml-2'>
-                                        {c?.dd?.map((d, i) => (
-                                          <p key={i} className='mb-2'>{d}</p>
-                                        ))}
-                                      </div>
-                                    </div>
-                                  </dd> :
-                                  <dd className='sm:col-span-2'>
-                                    { c?.dd?.p ?
-                                      <p className='mb-2'>{c?.dd?.p}<a href={c?.dd?.a?.url}>{c?.dd?.a?.title}</a></p> : ''
-                                    }
-                                    <div className='flex'>
-                                      {Array.isArray(c?.dd?.t) ? c?.dd?.t.map((t, i) => (
-                                        <p
-                                          key={i}
-                                          className='py-1.5 px-3 mr-2 bg-blue-200 text-xs rounded font-medium text-blue-800'>
-                                          {t}
-                                        </p>
-                                      )) :
-                                        <p>{c?.dd?.t}</p>
-                                      }
-                                    </div>
-                                    <div className='mt-2'>
-                                      {Array.isArray(c?.dd?.b) ? c?.dd?.b.map((b, i) => (
-                                        Array.isArray(b) ?
-                                          b.map((l, id) => (
-                                            <p key={id} className='mt-2 ml-4 text-sm'>
-                                              {id+1}{'. '+ l}
-                                            </p>
-                                          )) :
-                                          <p key={i} className='mt-2'>{b}</p>
-                                      )) : ''
-                                      }
-                                    </div>
-                                  </dd>
-                              }
-                            </div>
-                          ))}
-                        </dl>
-                      </div>
-                    ))}
-                  </div>
                 </div>
 
                 <div className='text-center mt-24 md:mt-36'>
