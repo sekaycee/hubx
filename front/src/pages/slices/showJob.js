@@ -1,90 +1,7 @@
 import { Fragment } from 'react'
 import { Transition, Dialog } from '@headlessui/react'
-import { CalendarIcon, CheckCircleIcon } from '@heroicons/react/24/outline'
 
-const ShowScholarship = ({ award, close, open }) => {
-  const summary = [
-    { h: 'Award Value', p: award?.award?.value },
-    { h: 'Award Purpose', p: award?.award?.purpose?.tags },
-    { h: 'Award Duration', p: award?.award?.duration },
-    { h: award?.eligibility?.who?.title, p: award?.eligibility?.who?.body },
-    { h: award?.eligibility?.level?.title, p: award?.eligibility?.level?.body },
-    { h: award?.eligibility?.mode?.title, p: award?.eligibility?.mode?.body },
-    { h: award?.eligibility?.location?.title,
-      p: award?.eligibility?.location?.body.length + ' nationalities',
-      a: { url: '/', title: 'See full list' }
-    },
-    { h: 'Application deadline',
-      p: <CalendarIcon width={18} />,
-      a: { url: '/', title: 'See details below' }
-    },
-    { h: 'Application results date',
-      p: <CalendarIcon width={18} />,
-      a: { url: '/', title: 'See details below' }
-    },
-    { h: 'Award Year', p: award?.award?.year }
-  ]
-  const body = [
-    { title: 'Award details', content: [
-      { dt: 'Award value', dd: award?.award?.value },
-      { dt: 'Award duration', dd: award?.award?.duration },
-      { dt: 'Award purpose', dd: { t: award?.award?.purpose?.tags, b: award?.award?.purpose?.para }},
-      { dt: 'No. of awards', dd: '80 (approximately)' },
-      { dt: 'Award year', dd: award?.award?.year },
-      { dt: 'Extendable duration',
-        dd: { t: 'Yes', b: ['Gates Cambridge Scholarships provide a maintenance allowance of up to 4 years for PhD Scholars at the outset. Extensions are considered on a case by case basis in the event of intermission or illness if the scholar cannot complete their studies within the original tenure of their award.']}
-      },
-      { dt: 'Basis of award grant',
-        dd: {
-          t: award?.award?.basis?.tags,
-          b: ['Candidates are assessed based on four criteria:', award?.award?.basis?.para, 'More information can be found at https://www.gatescambridge.org/apply/criteria/']
-        }
-      },
-      { dt: 'Requirements for applicants to fulfill', dd: 'During the tenure of their award, students will be required to sign in with the Trust each quarter to receive their maintenance payment and they will be asked to provide an annual Gates Cambridge progress report.' },
-      { dt: 'Only for advertising?', dd: 'No' }
-    ]},
-    { title: 'Eligibility', content: [
-      { icn: <CheckCircleIcon width={18} color='blue' />,
-        dt: award?.eligibility?.who?.title, dd: { t: award?.eligibility?.who?.body }},
-      { icn: <CheckCircleIcon width={18} color='blue' />,
-        dt: award?.eligibility?.level?.title, dd: {t: award?.eligibility?.level?.body }},
-      { icn: <CheckCircleIcon width={18} color='blue' />,
-        dt: award?.eligibility?.mode?.title, dd: {t: award?.eligibility?.mode?.body }},
-      { icn: <CheckCircleIcon width={18} color='blue' />,
-        dt: award?.eligibility?.location?.title,
-        dd: {
-          p: award?.eligibility?.location?.body.length + ' nationalities, ',
-          a: { url: '/', title: 'See all list' }
-        }
-      },
-      { icn: <CheckCircleIcon width={18} color='blue' />,
-        dt: award?.eligibility?.course?.title,
-        dd: { 
-          p: award?.eligibility?.course?.body.length + ' courses, ',
-          a: { url: '/', title: 'See all list' }
-        }
-      }
-    ]},
-    { title: 'Application process', content: [
-      { dt: 'Opt in for funding through the Applicant Portal?', dd: {p: 'Yes', a: {url: '/', title: ''}} },
-      { dt: 'Additional questions in the Applicant Portal?', dd: 'Yes' },
-    ]},
-    { title: 'Key dates', content: [
-      { dt: 'Application deadline', ic: <CalendarIcon width={18} />,
-        dd: [
-          'US Round - US nationals living in the USA should apply by ' + award?.dates?.deadline?.local,
-          'International Round - all other nationalities should apply by the funding deadline for their course (' + award?.dates?.deadline?.international + ')'
-        ]
-      },
-      { dt: 'Application results date', ic: <CalendarIcon width={18} />,
-        dd: [
-          'US Round - successful candidates will be informed by ' + award?.dates?.results?.local,
-          'International Round - successful candidates will be informed by ' + award?.dates?.results?.international
-        ]
-      }
-    ]}
-  ]
-
+const ShowJob = ({ position, close, open }) => {
   const content = (
     <Transition appear show={open} as={Fragment}>
       <Dialog as='div' className='relative z-60' onClose={close}>
@@ -129,35 +46,16 @@ const ShowScholarship = ({ award, close, open }) => {
                         as='h1'
                         className='text-3xl font-bold leading-6 py-6 md:py-12'
                       >
-                        {award?.title}
+                        {position?.title}
                       </Dialog.Title>
                       <p className='mb-6 text-base text-blue-600 md:text-lg'>
-                        <a href={award?.website}>Visit website</a>
+                        <a href={position?.website}>Visit website</a>
                         <span className='mx-7'>·</span>
-                        <a href={award?.email}>Contact us</a>
+                        <a href={position?.email}>Contact us</a>
                       </p>
                     </div>
                   </div>
                   <div className='px-6 md:px-8'>
-                    <div className='h-1/2' />
-                    <div className='relative grid mx-auto overflow-hidden bg-blue-100 rounded-md shadow max-w-6xl sm:grid-cols-3 gap-2 p-6'>
-                      {summary.map((item, idx) => (
-                        <div key={idx} className='py-3'>
-                          <h4 className='text-sm text-gray-700 mb-2'>{item.h}</h4>
-                          {Array.isArray(item.p) ? 
-                            item.p.map((p, i) => (
-                              <p key={i} className='font-medium inline-flex'>
-                                <span className='mr-2 my-auto'>{p}</span>
-                              </p>
-                            )) :
-                            <p className='font-medium flex'>
-                              <span className='mr-2 my-auto'>{item.p}</span>
-                              <a href={item.a?.url} className='hover:text-blue-600'>{item.a?.title}</a>
-                            </p>
-                          }
-                        </div>
-                      ))}
-                    </div>
                   </div>
                 </div>
 
@@ -165,7 +63,7 @@ const ShowScholarship = ({ award, close, open }) => {
                   <div className=''>
                     <Dialog.Description>
                       <h2 className='text-xl font-medium mt-10 mb-8'>About</h2>
-                      {award?.about.map((p, i) => <p key={i} className='mb-2 text-gray-700'>{p}</p>)}
+                      {position?.about.map((p, i) => <p key={i} className='mb-2 text-gray-700'>{p}</p>)}
                     </Dialog.Description>
                   </div>
                   
@@ -240,12 +138,12 @@ const ShowScholarship = ({ award, close, open }) => {
                     Got it, thanks!
                   </button>
                   <button className='ml-3 text-gray-600 hover:text-blue-600 text-sm font-medium' type='button'>
-                    Add to cart
+                    Add job listing
                   </button>
                 </div>
                 <div className='max-w-4xl mx-auto my-9 p-6 md:p-8 text-center'>
                   <p className='text-xs text-gray-500'>
-                    This scholarship award is given to provide an overview to our scholarship service options with the option to get the process handled by our agents for a premium. To learn more about what your project will entail, do reach out to us on any of the <a href='/contact'>options we've provided</a></p>
+                    This job position is given to provide an overview to our career service options with the option to get the process handled by our agents for a premium. To learn more about what your project will entail, do reach out to us on any of the <a href='/contact'>options we've provided</a></p>
                 </div>
               </Dialog.Panel>
             </Transition.Child>
@@ -257,4 +155,4 @@ const ShowScholarship = ({ award, close, open }) => {
   return content
 }
 
-export default ShowScholarship
+export default ShowJob

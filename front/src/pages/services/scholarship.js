@@ -1,5 +1,5 @@
 import { CheckIcon, ChevronUpDownIcon } from '@heroicons/react/24/outline'
-import SparkIcon from '../../lib/icons/spark'
+//import SparkIcon from '../../lib/icons/spark'
 import { Fragment, useState } from 'react'
 import { Listbox, Transition } from '@headlessui/react'
 import ShowScholarship from '../slices/showScholarship.js'
@@ -13,26 +13,6 @@ const Scholarship = () => {
   const scholarships = SCHOLARSHIPS
   const courses = COURSES
   const locations = LOCATIONS
-  const perks = [
-    'Sed ut perspiciatis unde omnis iste',
-    'I\'ll be sure to note that in my log',
-    'Well, that\'s certainly good to know',
-    'Leverage agile frameworks to provide',
-    'Dingy I\'m tellin\' you rhubaahb Bangah',
-    'That is the true genius of America',
-    'We meet at one of those defining',
-    'We did not go by choice, we went',
-    'Those options are already baked in'
-  ]
-  /* const scholarships = [
-    {
-      id: 1, title: 'Macfidelis Foundation Scholarship', location: 'London', 
-      course: 'Software Engineering', url: '', desc: '', startDate: '', endDate: ''
-    },
-    {id: 2, title: 'Kingsman Scholarship', location: 'Manchester', course: 'Pharmacy', url: ''},
-    {id: 3, title: 'Zunderveld Trust Grant', location: 'Miami', course: 'Education', url: ''},
-    {id: 4, title: 'Shenjing Health Trust', location: 'Fuzhou', course: 'Medicine and Surgery', url: ''},
-  ] */
 
   /* const filteredSch = []
   const filterLocation = (e) => {
@@ -41,7 +21,7 @@ const Scholarship = () => {
 
   const [course, setCourse] = useState('All Courses')
   const [location, setLocation] = useState('All Locations')
-  const [position, setPosition] = useState(scholarships[0])
+  const [award, setAward] = useState(scholarships[0])
   const [scholarshipOpen, setScholarshipOpen] = useState(false)
 
   const closeScholarship = () => {
@@ -49,7 +29,7 @@ const Scholarship = () => {
   }
 
   const openScholarship = (pos) => {
-    setPosition(pos)
+    setAward(pos)
     setScholarshipOpen(true)
   }
 
@@ -63,7 +43,7 @@ const Scholarship = () => {
                 <div className='mb-12 lg:max-w-lg lg:pr-5 lg:mb-0'>
                   <div className='max-w-xl mb-6'>
                     <p className='mb-3 text-base text-[1rem] text-gray-600 md:text-lg'>
-                      459 positions in 18 locations
+                      459 awards in 18 locations
                     </p>
                     <h2 className='max-w-lg mb-6 font-sans text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 lg:text-[4rem] sm:leading-none'>
                       What's your next{' '}
@@ -74,9 +54,9 @@ const Scholarship = () => {
                     </h2>
                     <div>
                       <a 
-                        href='#positions'
+                        href='#awards'
                         className='inline-flex items-center justify-center w-auto h-12 px-6 font-medium tracking-wide text-white transition duration-200 rounded-md shadow-md bg-blue-600 hover:bg-blue-500 focus:shadow-outline focus:outline-none'>
-                        Explore positions
+                        Explore awards
                       </a>
                     </div>
                   </div>
@@ -91,7 +71,7 @@ const Scholarship = () => {
                     </a>
                     <div className='flex flex-col'>
                       <div className='text-sm font-semibold'>
-                        Scholarship positions overview
+                        Scholarship awards overview
                       </div>
                       <div className='text-xs text-gray-700'>Intro</div>
                     </div>
@@ -207,7 +187,7 @@ const Scholarship = () => {
 
       <section></section>
 
-      <section id='positions'>
+      <section id='awards'>
         <div className='px-8 mx-auto mt-24 py-24 lg:py-36 max-w-6xl border-t border-blue-100'>
           <div className='lg:text-center'>
             <h5 className='text-4xl font-extrabold leading-none md:pl-2'>
@@ -218,7 +198,7 @@ const Scholarship = () => {
               </span>
             </h5>
             <p className='text-gray-700 mt-3 mb-7'>
-              Here's our finely curated list of current scholarship positions. Buckle up and start applying
+              Here's our finely curated list of current scholarship awards. Buckle up and start applying
             </p>
           </div>
 
@@ -400,7 +380,7 @@ const Scholarship = () => {
             </div>
           </div>
 
-          <ShowScholarship position={position} open={scholarshipOpen} close={closeScholarship} />
+          <ShowScholarship award={award} open={scholarshipOpen} close={closeScholarship} />
 
           <div className='text-center max-w-2xl mx-auto'>
             <p className='mt-7 mb-5 md:mt-10 md:mb-7 md text-sm text-gray-500'>
