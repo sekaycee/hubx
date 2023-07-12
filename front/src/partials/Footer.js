@@ -1,7 +1,7 @@
 import { React } from 'react'
 import { Facebook, Instagram, Twitter } from 'react-bootstrap-icons'
 
-const linkStyle = 'block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-blue-600'
+const linkStyle = 'block mt-3 text-sm font-medium text-gray-600 duration-300 hover:text-blue-600 dark:text-gray-400'
 const links = {
   services: [
     { name: 'Translation', class: linkStyle, href: '/services/translation' },
@@ -50,15 +50,15 @@ const Footer = () => {
             title='Company'
             className='inline-flex items-center'
           >
-            <span className='text-xl font-bold tracking-wide text-gray-800 uppercase'>
+            <span className='text-xl font-bold tracking-wide text-gray-900 uppercase'>
               Hub
             </span>
             <img width={16} height={16} src='/media/logos/hubx-logo.svg' alt='Logo'/>
-            <span className='ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase'>
+            <span className='ml-2 text-xl font-bold tracking-wide text-gray-900 uppercase'>
               Consulting
             </span>
           </a>
-          <div className='my-2 text-sm lg:max-w-sm text-gray-500'>
+          <div className='my-2 text-sm lg:max-w-sm text-gray-600 dark:text-gray-400'>
             <p>
               Welcome to HubX, the consultancy division of HubX limited: 
               Founded in March 2023 with UK company registration number 14722644.
@@ -71,19 +71,19 @@ const Footer = () => {
           <div className='text-center md:text-left'>
             <a
               href='https://twitter.com/hubx-consulting'
-              className='inline-block mr-4 text-gray-500 transition-colors duration-300 hover:text-blue-400'
+              className='inline-block mr-4 text-gray-600 transition-colors duration-300 hover:text-blue-400'
             >
               <Twitter size={16} />
             </a>
             <a
               href='https://instagram.com/hubx-consulting'
-              className='inline-block mr-4 text-gray-500 transition-colors duration-300 hover:text-purple-400'
+              className='inline-block mr-4 text-gray-600 transition-colors duration-300 hover:text-purple-400'
             >
               <Instagram size={16} />
             </a>
             <a
               href='https://facebook.com/hubx-consulting'
-              className='inline-block text-gray-500 transition-colors duration-300 hover:text-blue-700'
+              className='inline-block text-gray-600 transition-colors duration-300 hover:text-blue-700'
             >
               <Facebook size={16} />
             </a>
@@ -91,25 +91,25 @@ const Footer = () => {
         </div>
         <div className='grid grid-cols-2 gap-5 row-gap-8 lg:col-span-4 md:grid-cols-4'>
           <div className='text-center md:text-left'>
-            <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase my-2'>About</div>
+            <div className='text-xs font-semibold text-gray-900 tracking-wide uppercase my-2'>About</div>
             {links.about.map((link, idx) => (
               <a key={idx} className={link.class} href={link.href}>{link.name}</a>
             ))}
           </div>
           <div className='text-center md:text-left'>
-            <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase my-2'>Category</div>
+            <div className='text-xs font-semibold text-gray-900 tracking-wide uppercase my-2'>Category</div>
             {links.services.map((link, idx) => (
               <a key={idx} className={link.class} href={link.href}>{link.name}</a>
             ))}
           </div>
           <div className='text-center md:text-left'>
-            <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase my-2'>Company</div>
+            <div className='text-xs font-semibold text-gray-900 tracking-wide uppercase my-2'>Company</div>
             {links.company.map((link, idx) => (
               <a key={idx} className={link.class} href={link.href}>{link.name}</a>
             ))}
           </div>
           <div className='text-center md:text-left'>
-            <div className='text-xs font-semibold text-gray-800 tracking-wide uppercase my-2'>Support</div>
+            <div className='text-xs font-semibold text-gray-900 tracking-wide uppercase my-2'>Resources</div>
             {links.support.map((link, idx) => (
               <a key={idx} className={link.class} href={link.href}>{link.name}</a>
             ))}
